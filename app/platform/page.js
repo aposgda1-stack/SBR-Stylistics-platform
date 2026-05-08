@@ -1,26 +1,60 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
+  const router = useRouter();
   const [mounted, setMounted] = useState(false);
   const [points, setPoints] = useState(0);
+  const [accuracy, setAccuracy] = useState(0);
+  const [progress, setProgress] = useState(0);
   const [mistakes, setMistakes] = useState([]);
   const [countdown, setCountdown] = useState('');
   const [userName, setUserName] = useState('Researcher');
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const saved = localStorage.getItem('stylistics_user_name');
     if (saved) setUserName(saved);
-  }, []);
+    
+    // Check if user is logged in
+    const userId = localStorage.getItem('stylistics_user_id');
+    if (!userId) {
+      router.push('/login');
+    }
+  }, [router]);
 
   useEffect(() => {
     setMounted(true);
     
-    const syncProgress = () => {
-      const progress = JSON.parse(localStorage.getItem('stylistics_user_progress') || '{"totalPoints": 0}');
-      setPoints(progress.totalPoints || 0);
-      setMistakes(JSON.parse(localStorage.getItem('stylistics_mistakes') || '[]'));
+    const fetchUserData = async () => {
+      const userId = localStorage.getItem('stylistics_user_id');
+      if (!userId) return;
+
+      try {
+        const res = await fetch(`/api/user?userId=${userId}`);
+        const data = await res.json();
+        
+        if (data.user) {
+          setPoints(data.user.totalPoints || 0);
+          setAccuracy(data.stats?.accuracy || 0);
+          setProgress(data.stats?.progress || 0);
+          
+          // Sync mistakes from DB to local for the Review section
+          if (data.user.mistakes) {
+            localStorage.setItem('stylistics_mistakes', JSON.stringify(data.user.mistakes));
+            setMistakes(data.user.mistakes);
+          }
+
+          // Sync localStorage for offline components
+          localStorage.setItem('stylistics_user_progress', JSON.stringify({ totalPoints: data.user.totalPoints }));
+        }
+      } catch (err) {
+        console.error("Failed to fetch user stats", err);
+      } finally {
+        setLoading(false);
+      }
     };
 
     const updateCountdown = () => {
@@ -41,23 +75,26 @@ export default function Home() {
       setCountdown(`${d}d ${h}h ${m}m ${s}s`);
     };
 
-    syncProgress();
+    fetchUserData();
     updateCountdown();
+    setMistakes(JSON.parse(localStorage.getItem('stylistics_mistakes') || '[]'));
     
-    const progressInterval = setInterval(syncProgress, 1000);
     const countdownInterval = setInterval(updateCountdown, 1000);
-    
-    return () => {
-      clearInterval(progressInterval);
-      clearInterval(countdownInterval);
-    };
+    return () => clearInterval(countdownInterval);
   }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem('stylistics_user_id');
+    localStorage.removeItem('stylistics_user_name');
+    localStorage.removeItem('stylistics_user_email');
+    router.push('/login');
+  };
 
   if (!mounted) return null;
 
   const navCards = [
-    { label: 'Study Pack', icon: 'menu_book', path: '/lab', color: 'bg-blue-500', desc: 'Summaries.' },
-    { label: 'Final Prep', icon: 'timer', path: '/exams', color: 'bg-secondary', desc: 'Mock Exams.' },
+    { label: 'Study Pack', icon: 'menu_book', path: '/lab', color: 'bg-blue-500', desc: 'Chapter Practice.' },
+    { label: 'Exam Prep', icon: 'timer', path: '/exams', color: 'bg-secondary', desc: 'Official Materials.' },
     { label: 'My Dossier', icon: 'folder_managed', path: '/dashboard', color: 'bg-rose-500', desc: 'Mistakes Archive.' },
     { label: 'The Podium', icon: 'military_tech', path: '/leaderboard', color: 'bg-emerald-500', desc: 'Class Ranks.' },
   ];
@@ -88,7 +125,7 @@ export default function Home() {
               <span className="text-[9px] font-black text-slate-300 uppercase tracking-widest italic">SBR ACTIVE</span>
             </div>
             <div className="px-3 py-1.5 bg-secondary/10 rounded-lg border border-secondary/20 flex items-center gap-2">
-              <span className="text-[9px] font-black text-secondary uppercase tracking-widest italic">LEVEL {Math.floor(points / 500) + 1}</span>
+              <span className="text-[9px] font-black text-secondary uppercase tracking-widest italic">RANK: {points >= 10000 ? 'VANGUARD' : points >= 5000 ? 'ANALYST' : points >= 2000 ? 'THINKER' : 'SCHOLAR'}</span>
             </div>
           </div>
         </section>
@@ -96,9 +133,14 @@ export default function Home() {
         {/* Global Stats Card */}
         <section className="lg:col-span-4 bg-gradient-to-br from-secondary/20 to-transparent rounded-[24px] md:rounded-[32px] border border-secondary/20 p-6 md:p-10 flex flex-col items-center justify-center text-center relative overflow-hidden group">
           <span className="text-[9px] font-black text-slate-500 uppercase tracking-[0.3em] mb-2 md:mb-4">Mastery Points</span>
-          <div className="text-5xl md:text-7xl font-black text-white italic tracking-tighter group-hover:scale-110 transition-all">{points.toLocaleString()}</div>
+          <div className="text-5xl md:text-7xl font-black text-white italic tracking-tighter group-hover:scale-110 transition-all">
+            {loading ? '...' : points.toLocaleString()}
+          </div>
           <div className="mt-4 md:mt-8 pt-4 md:pt-8 border-t border-white/5 w-full">
-            <button className="w-full flex items-center justify-center gap-2 text-[9px] font-black text-rose-500 uppercase hover:text-white transition-colors">
+            <button 
+              onClick={handleLogout}
+              className="w-full flex items-center justify-center gap-2 text-[9px] font-black text-rose-500 uppercase hover:text-white transition-colors"
+            >
               <span className="material-symbols-outlined text-sm">logout</span> Take a break
             </button>
           </div>
@@ -113,15 +155,22 @@ export default function Home() {
               <span className="px-2 py-0.5 bg-white/20 rounded-full text-[8px] md:text-[10px] font-bold text-white uppercase tracking-widest mb-2 md:mb-4 inline-block italic">Ready for the exam?</span>
               <h2 className="text-2xl md:text-5xl font-black text-white uppercase tracking-tighter italic leading-tight">SMASH THE EXAM.</h2>
             </div>
-            <Link href="/lab" className="bg-white text-blue-900 px-6 py-3 md:px-10 md:py-4 rounded-xl md:rounded-2xl font-black uppercase tracking-widest flex items-center justify-center gap-2 w-full md:w-fit hover:scale-105 transition-all shadow-xl">
-              <span className="material-symbols-outlined text-sm md:text-base">play_arrow</span> Start Studying
+            <Link href="/exams" className="bg-white text-blue-900 px-6 py-3 md:px-10 md:py-4 rounded-xl md:rounded-2xl font-black uppercase tracking-widest flex items-center justify-center gap-2 w-full md:w-fit hover:scale-105 transition-all shadow-xl">
+              <span className="material-symbols-outlined text-sm md:text-base">play_arrow</span> Start Prep
             </Link>
           </div>
 
-          <div className="relative z-10 w-24 h-24 md:w-40 md:h-40 bg-white/10 rounded-full border border-white/20 flex items-center justify-center backdrop-blur-md shrink-0">
-            <div className="absolute inset-0 border-4 md:border-8 border-white/20 rounded-full" />
-            <div className="absolute inset-0 border-4 md:border-8 border-white rounded-full transition-all duration-1000" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 45%, 0 45%)' }} />
-            <span className="text-xl md:text-4xl font-black text-white italic">45%</span>
+          <div className="relative z-10 w-24 h-24 md:w-40 md:h-40 bg-white/10 rounded-full border border-white/20 flex items-center justify-center backdrop-blur-md shrink-0 overflow-hidden">
+            <div 
+              className="absolute inset-0 transition-all duration-1000" 
+              style={{ 
+                background: `conic-gradient(#fff ${progress}%, transparent 0)`,
+                opacity: 0.2
+              }} 
+            />
+            <div className="absolute inset-2 md:inset-4 border border-white/20 rounded-full flex items-center justify-center bg-[#0a0a0b]/40 backdrop-blur-md">
+              <span className="text-xl md:text-4xl font-black text-white italic">{progress}%</span>
+            </div>
           </div>
         </section>
 
@@ -144,7 +193,7 @@ export default function Home() {
         <div className="lg:col-span-12 grid grid-cols-1 md:grid-cols-3 gap-4">
            <div className="glass-card p-6 flex items-center justify-between">
               <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Accuracy</span>
-              <span className="text-xl font-black text-white italic">92%</span>
+              <span className="text-xl font-black text-white italic">{accuracy}%</span>
            </div>
            
            <div className="glass-card p-6 flex items-center justify-between bg-gradient-to-r from-secondary/5 to-transparent border-secondary/20">

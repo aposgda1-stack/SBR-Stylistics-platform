@@ -4,11 +4,11 @@
   "theoretical": [
     { "term": "Poetic Licence", "definition": "The poet's right to ignore rules and conventions generally observed by users of the language." },
     { "term": "Levels of Language", "definition": "The levels of realization (Phonology/Graphology), form (Lexicon/Grammar), and meaning (Semantics)." },
-    { "term": "Foregrounding", "definition": "The psychological effect of certain textual devices that make aspects of a text stand out or appear prominent." },
-    { "term": "Parallelism", "definition": "A means of creating textual patterns involving an element of identity and an element of contrast." },
-    { "term": "Deviation", "definition": "Disrupting or departing from readers' expectations or from a pattern established by the text." },
-    { "term": "Internal Deviation", "definition": "Deviation that takes place against the background of the poem/text itself." },
-    { "term": "External Deviation", "definition": "Deviation explicated against some norm which lies outside the limits of the text." }
+    { "term": "Foregrounding", "definition": "The psychological effect of certain textual devices that make aspects of a text stand out or appear prominent, controlling the reader's attention." },
+    { "term": "Parallelism", "definition": "A means of creating textual patterns involving an element of identity (same structure) and an element of contrast (different lexical items)." },
+    { "term": "Deviation", "definition": "Disrupting or departing from readers' expectations or from a pattern established within or outside the text." },
+    { "term": "Repetition", "definition": "The recurrence of a word or pattern in a text to emphasize meaning and foreground a quality or action (e.g., 'Blow, blow, thou winter wind')." },
+    { "term": "Neologism", "definition": "A new word invented by an author, especially one created for a single occasion, also called a nonce-formation (e.g., 'manunkind', 'foresuffer')." }
   ],
   "applied": [
     {
@@ -150,6 +150,62 @@
       "options": ["Compounding", "Affixation", "Functional Conversion", "Syncope"],
       "correct": "Affixation",
       "explanation": "It uses the prefix 'un-' in an irregular way within the word 'mankind'."
+    },
+    {
+      "text": "Identify the foregrounding type: 'Seven boys and girls are we;'",
+      "question": "Type:",
+      "options": ["Syntactic Deviation (Inversion)", "Semantic Deviation", "Phonological Syncope", "Graphological Layout"],
+      "correct": "Syntactic Deviation (Inversion)",
+      "explanation": "The word order is inverted from the standard 'We are seven...', which is a syntactic deviation.",
+      "source": "Exam June 2024"
+    },
+    {
+      "text": "Identify the foregrounding type: 'o’er-brimm’d'",
+      "question": "Type:",
+      "options": ["Aphesis", "Syncope", "Apocope", "Metaphor"],
+      "correct": "Syncope",
+      "explanation": "The omission of the medial 'v' in 'over' is a phonological deviation called syncope.",
+      "source": "Exam June 2024"
+    },
+    {
+      "text": "From T.S. Eliot's 'The Hollow Men': 'We are the hollow men / We are the stuffed men' / 'Shape without form, shade without colour, / Paralysed force, gesture without motion.'",
+      "question": "The repeated structure 'X without Y' is an example of:",
+      "options": ["Repetition only", "Parallelism (structural identity with lexical contrast)", "Semantic Deviation (Paradox)", "External Deviation"],
+      "correct": "Parallelism (structural identity with lexical contrast)",
+      "explanation": "The structure 'X without Y' is held constant (identity) while the lexical items (shape/form, shade/colour) vary (contrast) — the hallmark of parallelism.",
+      "source": "Curriculum Exercise"
+    },
+    {
+      "text": "From 'The Hollow Men': 'This is the dead land / This is the cactus land'",
+      "question": "What foregrounding device is used here?",
+      "options": ["External Deviation", "Internal Parallelism + Repetition", "Phonological Deviation", "Semantic Inversion"],
+      "correct": "Internal Parallelism + Repetition",
+      "explanation": "'This is the X land' is repeated with lexical variation — this combines repetition (structural pattern) with parallelism.",
+      "source": "Curriculum Exercise"
+    },
+    {
+      "text": "From Hopkins' 'No worst, there is none': 'My cries heave, herds-long; huddle in a main, a chief / Woe, world-sorrow; on an age-old anvil wince and sing'",
+      "question": "The clustered alliteration (heave/herds/huddle) and internal rhyme (wince/sing) are examples of foregrounding at which level?",
+      "options": ["Graphological", "Phonological (Parallelism at sound level)", "Semantic Deviation", "Syntactic Inversion"],
+      "correct": "Phonological (Parallelism at sound level)",
+      "explanation": "Sound patterning through alliteration and internal rhyme creates phonological parallelism — a foregrounding device.",
+      "source": "Curriculum Exercise"
+    },
+    {
+      "text": "Parallelism and repetition can occur on 'micro or macro scales'. What is a macro-scale parallelism?",
+      "question": "Definition:",
+      "options": ["Repetition of a single word", "A structural pattern extended across an entire stanza or text", "The rhyme scheme at the end of lines", "A nonce-formation"],
+      "correct": "A structural pattern extended across an entire stanza or text",
+      "explanation": "Macro-scale patterns govern large sections of a text, while micro-scale patterns are local (e.g., within a line).",
+      "source": "Curriculum Exercise"
+    },
+    {
+      "text": "A foregrounded element is described as one the author, consciously or unconsciously, is signalling as crucial to understanding the text. This definition comes from which school of thought?",
+      "question": "Source:",
+      "options": ["Labov's narrative schema", "Gibbons & Whiteley's Stylistics framework", "Brown & Levinson's politeness model", "Grice's Co-operative Principle"],
+      "correct": "Gibbons & Whiteley's Stylistics framework",
+      "explanation": "The definition of foregrounding as controlling readers' attention comes from Gibbons & Whiteley (2018).",
+      "source": "Curriculum Exercise"
     }
   ]
 }

@@ -150,6 +150,51 @@
       "options": ["Deixis", "Anaphora", "Pragmatics", "Metaphor"],
       "correct": "Anaphora",
       "explanation": "Anaphora involves pro-forms; cohesion is broader but focuses on intersentential links."
+    },
+    {
+      "text": "Identify the conjunction type: yet, but, however, on the contrary.",
+      "question": "These are:",
+      "options": ["Causal", "Temporal", "Additive", "Adversative"],
+      "correct": "Adversative",
+      "explanation": "Adversative conjunctions signal a contrast or unexpected development."
+    },
+    {
+      "text": "In the Irvine Welsh extract (Select Magazine, 1996): 'Welsh is known to disappear abroad for months at a time. But it's happening now.' — What type of cohesion links 'it' to the previous context?",
+      "question": "Type of cohesion:",
+      "options": ["Lexical Cohesion", "Reference (Demonstrative)", "Ellipsis", "Conjunction (Adversative)"],
+      "correct": "Reference (Demonstrative)",
+      "explanation": "'It' links back to the previously described situation of being recognised in public — demonstrative reference cohesion."
+    },
+    {
+      "text": "In the Irvine Welsh extract: 'Welsh was shocked at the attention he attracted on visiting London and Manchester earlier this year. The 37 year old former TV repairman only picked up a pen seriously five years ago.'",
+      "question": "'The 37 year old former TV repairman' refers to Irvine Welsh. What type of cohesive device is this?",
+      "options": ["Reference (personal pronoun)", "Lexical Cohesion (superordinate/reformulation)", "Ellipsis", "Conjunction (causal)"],
+      "correct": "Lexical Cohesion (superordinate/reformulation)",
+      "explanation": "Substituting 'Welsh' with a descriptive noun phrase is lexical cohesion through reformulation."
+    },
+    {
+      "text": "In A.S. Byatt's 'The Game': 'The main course was dried lamb chops...Cassandra, leaning across to address someone, entangled her dangling crucifix in the spaghetti. It had to be wiped clean.'",
+      "question": "What does 'It' in 'It had to be wiped clean' refer to?",
+      "options": ["The main course", "Cassandra's crucifix", "The spaghetti bowl", "The table"],
+      "correct": "Cassandra's crucifix",
+      "explanation": "The pronoun 'it' refers back to 'her dangling crucifix' — this is anaphoric reference cohesion.",
+      "source": "Curriculum Exercise"
+    },
+    {
+      "text": "Reference that refers back to something already mentioned in the text is called:",
+      "question": "Type:",
+      "options": ["Cataphoric Reference", "Anaphoric Reference", "Deixis", "Substitution"],
+      "correct": "Anaphoric Reference",
+      "explanation": "Anaphoric reference points backward to previously mentioned material.",
+      "source": "Exam 2021"
+    },
+    {
+      "text": "Reference that refers forward to something that hasn't been mentioned yet is called:",
+      "question": "Type:",
+      "options": ["Cataphoric Reference", "Anaphoric Reference", "Deixis", "Collocation"],
+      "correct": "Cataphoric Reference",
+      "explanation": "Cataphoric reference points forward to material coming later in the text.",
+      "source": "Exam 2021"
     }
   ]
 }

@@ -2,13 +2,17 @@
   "chapterId": "lecture-02",
   "title": "Deviation: The Irregularity of Language",
   "theoretical": [
-    { "term": "Internal Deviation", "definition": "A departure from a pattern established within the text itself." },
-    { "term": "External Deviation", "definition": "A departure from the norms of the general language system outside the text." },
-    { "term": "Lexical Deviation", "definition": "Achieved through neologisms, affixation, compounding, and functional conversion." },
-    { "term": "Syntactic Deviation", "definition": "Deviating from syntactic constraints, such as word order in noun phrases." },
-    { "term": "Phonological Deviation", "definition": "Oddities in pronunciation or stress (e.g., Elision, Aphesis, Syncope, Apocope)." },
-    { "term": "Graphological Deviation", "definition": "Typographic irregularities in layout, punctuation, and spelling." },
-    { "term": "Semantic Deviation", "definition": "Logically inconsistent or paradoxical meaning relations (e.g., Metaphor, Paradox)." }
+    { "term": "Internal Deviation", "definition": "A departure from a pattern established within the text itself (the text sets its own norm, then breaks it)." },
+    { "term": "External Deviation", "definition": "A departure from the norms of the general language system outside the text (measured against standard usage)." },
+    { "term": "Lexical Deviation", "definition": "Creating new words (neologisms) through Affixation (adding prefixes/suffixes), Compounding (joining items), or Functional Conversion (using a word in a new grammatical class)." },
+    { "term": "Syntactic Deviation", "definition": "Deviating from standard syntactic constraints such as normal word order in noun phrases or clause structure (e.g., post-nominal adjectives, subject-verb inversion)." },
+    { "term": "Phonological Deviation", "definition": "Oddities in pronunciation or stress to fit rhyme or meter. Includes Elision, Aphesis (initial vowel loss: 'gainst), Syncope (medial loss: o'er), and Apocope (final loss)." },
+    { "term": "Graphological Deviation", "definition": "Typographic irregularities in layout, punctuation, spelling, or letter arrangement (e.g., splitting H-E-L-L across lines to force phonetic reading)." },
+    { "term": "Semantic Deviation", "definition": "Logically inconsistent or paradoxical meaning relations, such as metaphor (treating abstract as concrete) or paradox (cold as 'heart's heat')." },
+    { "term": "Functional Conversion", "definition": "Adapting a word to a new grammatical function without changing its form (e.g., using the noun 'justice' as a verb: 'The just man justices')." },
+    { "term": "Aphesis", "definition": "The gradual loss of an initial unstressed vowel from a word (e.g., 'against' → ''gainst'). A specific type of phonological deviation." },
+    { "term": "Syncope", "definition": "The omission of sounds from the middle of a word (e.g., 'over' → 'o'er'). A specific type of phonological deviation." },
+    { "term": "Apocope", "definition": "The loss of sounds from the end of a word (e.g., 'child' → 'chil'). A specific type of phonological deviation." }
   ],
   "applied": [
     {
@@ -142,8 +146,13 @@
       "question": "The word 'wherewhen' is an example of which lexical deviation?",
       "options": ["Affixation", "Compounding", "Functional Conversion", "Aphesis"],
       "correct": "Compounding",
-      "explanation": "It joins two question words (where + when) into a single item."
     },
+    {
+      "text": "'into a mountainrange ; lenses extend unwish through curving wherewhen till unwish returns on its unself.' (e. e. cummings)",
+      "question": "The word 'unwish' is primarily an example of:",
+      "options": ["Compounding", "Affixation (prefix un- on a verb)", "Functional Conversion", "Syncope"],
+      "correct": "Affixation (prefix un- on a verb)",
+      "explanation": "Adding the negative prefix 'un-' to the verb 'wish' creates the neologism 'unwish'."
     },
     {
       "text": "Death feeds on his mute voice, and laughs at our despair.",
@@ -184,6 +193,22 @@
       "correct": "Syntactic Deviation (Inversion)",
       "explanation": "The inversion of subject and verb (ceased she) is a syntactic deviation.",
       "source": "Exam 2020"
+    },
+    {
+      "text": "No worst, there is none. Pitched past pitch of grief, / More pangs will, schooled at forepangs, wilder wring. (Gerard Manley Hopkins)",
+      "question": "The word 'forepangs' is an example of which type of lexical deviation?",
+      "options": ["Compounding", "Affixation", "Functional Conversion", "Apocope"],
+      "correct": "Affixation",
+      "explanation": "Hopkins coins 'forepangs' by prefixing 'fore-' (meaning beforehand) to 'pangs', similar to 'foresuffer' in the lecture.",
+      "source": "Curriculum Exercise"
+    },
+    {
+      "text": "Identify the foregrounding type: 'o'er-brimm'd'",
+      "question": "Type:",
+      "options": ["Aphesis", "Syncope", "Apocope", "Metaphor"],
+      "correct": "Syncope",
+      "explanation": "The omission of the medial 'v' in 'over' is a phonological deviation called syncope.",
+      "source": "Exam June 2024"
     }
   ]
 }

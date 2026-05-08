@@ -6,7 +6,7 @@ const navItems = [
   { label: 'Platform', icon: 'dashboard', path: '/platform' },
   { label: 'Study', icon: 'menu_book', path: '/lab' },
   { label: 'Exams', icon: 'timer', path: '/exams' },
-  { label: 'Progress', icon: 'folder_managed', path: '/dashboard' },
+  { label: 'Dossier', icon: 'folder_managed', path: '/dashboard' },
   { label: 'Podium', icon: 'military_tech', path: '/leaderboard' },
 ];
 

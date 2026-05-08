@@ -11,17 +11,26 @@ export default function ReviewPage() {
     setMistakes(savedMistakes);
   }, []);
 
-  const clearMistakes = () => {
+  const clearMistakes = async () => {
     localStorage.removeItem('stylistics_mistakes');
     setMistakes([]);
+    // Also clear from DB
+    const userId = localStorage.getItem('stylistics_user_id');
+    if (userId) {
+      await fetch('/api/user', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userId, mistakes: [] })
+      });
+    }
   };
 
   return (
     <div className="px-6 pt-10 pb-32 max-w-4xl mx-auto space-y-8">
-      <div className="flex justify-between items-end mb-8">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mb-8">
         <div>
-          <h2 className="text-4xl font-bold mb-2 tracking-tight">Mistakes Archive</h2>
-          <p className="text-slate-400 text-lg">Analyze and master the concepts you previously missed.</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-2 tracking-tight">Mistakes Archive</h2>
+          <p className="text-slate-400 text-base md:text-lg">Analyze and master the concepts you previously missed.</p>
         </div>
         {mistakes.length > 0 && (
           <button 
@@ -50,7 +59,14 @@ export default function ReviewPage() {
                 <span className="px-3 py-1 bg-white/5 rounded-lg text-[10px] font-bold text-slate-500 uppercase">
                   {m.chapter || 'Assessment Error'}
                 </span>
-                <span className="material-symbols-outlined text-rose-500/40">error</span>
+                <div className="flex flex-col items-end gap-1">
+                  <span className="material-symbols-outlined text-rose-500/40">error</span>
+                  {m.timestamp && (
+                    <span className="text-[8px] text-slate-600 font-bold">
+                      {new Date(m.timestamp).toLocaleDateString('en-GB', { day: '2-digit', month: 'short' })}
+                    </span>
+                  )}
+                </div>
               </div>
               
               <div className="bg-black/40 p-6 rounded-2xl mb-6">

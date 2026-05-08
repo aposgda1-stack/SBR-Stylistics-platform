@@ -5,15 +5,13 @@ export default function NotificationCenter({ isOpen, onClose }) {
   const [notifications, setNotifications] = useState([]);
 
   useEffect(() => {
-    // In a real app, this would be an API call
-    fetch('/data/notifications.json')
+    fetch('/api/notifications')
       .then(res => res.json())
-      .then(data => setNotifications(data.notifications))
+      .then(data => setNotifications(data.notifications || []))
       .catch(() => {
-        // Fallback if fetch fails (e.g. static export)
         setNotifications([
-          { id: 1, title: 'Exam Prep Live', msg: 'The Monday exam models are now available.', date: '2h ago', type: 'announcement' },
-          { id: 2, title: 'Rank Up!', msg: 'You just reached Stylistic Analyst rank!', date: '1d ago', type: 'achievement' }
+          { id: 1, title: 'Welcome to SBR 2026', msg: 'All 2020-2025 past papers are now live!', date: 'Now', type: 'announcement' },
+          { id: 2, title: 'Model B Live', msg: 'New Mock Exam Model B is available in the Exams section.', date: 'Now', type: 'update' }
         ]);
       });
   }, []);

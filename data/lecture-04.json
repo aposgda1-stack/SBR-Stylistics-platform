@@ -149,6 +149,62 @@
       "options": ["Reason for obligation", "Proof of probability", "Statement of usuality", "Expression of willingness"],
       "correct": "Reason for obligation",
       "explanation": "'Should' in this context is querying the necessity or duty (obligation)."
+    },
+    {
+      "text": "From 'Living in Sin' (Adrienne Rich): 'She had thought the studio would keep itself; / no dust upon the furniture of love.'",
+      "question": "The phrase 'She had thought' is an example of:",
+      "options": ["Direct modal auxiliary", "Metaphorized (Advanced) Modality", "Unmodalized futurity", "Generic sentence"],
+      "correct": "Metaphorized (Advanced) Modality",
+      "explanation": "'Thought' here is not reporting a literal cognitive act but expressing the speaker's subjective probability/expectation.",
+      "source": "Curriculum Exercise"
+    },
+    {
+      "text": "From the textbook dialogue: 'You could stay, you know.' / 'Why should I?' / 'Possibly because you want to. And because I might want you to.'",
+      "question": "The word 'Possibly' expresses which modality parameter?",
+      "options": ["Obligation", "Probability", "Willingness", "Usuality"],
+      "correct": "Probability",
+      "explanation": "'Possibly' is a modal adverb expressing the speaker's assessment of the probability of the listener's desire.",
+      "source": "Curriculum Exercise"
+    },
+    {
+      "text": "From the textbook dialogue: 'I might want you to.' (Jack's reply)",
+      "question": "The modal 'might' here expresses:",
+      "options": ["Obligation", "Unmodalized futurity", "Willingness", "Usuality"],
+      "correct": "Willingness",
+      "explanation": "'Might' here signals Jack's potential willingness for the addressee to stay.",
+      "source": "Curriculum Exercise"
+    },
+    {
+      "text": "From The Kite Runner: 'Afghanistan is the land of Pashtuns. It always has been, always will be, we are the true Afghans, the pure Afghans.'",
+      "question": "This statement is best described as a/an:",
+      "options": ["Metaphorized Modality", "Generic Sentence expressing partisan ideology", "Modal Auxiliary", "Evaluative Adverb"],
+      "correct": "Generic Sentence expressing partisan ideology",
+      "explanation": "The speaker presents a sweeping, timeless 'truth' as incontestable — a generic sentence used to encode ideological prejudice.",
+      "source": "Curriculum Exercise"
+    },
+    {
+      "text": "From The Kite Runner: 'Knowing you are virtuous, good and decent. Knowing you're doing God's work. It's breathtaking.'",
+      "question": "The adjectives 'virtuous, good and decent' used by the Taliban character are:",
+      "options": ["Objective descriptions", "Evaluative adjectives revealing the speaker's attitude", "Modal adverbs", "Generic predicates"],
+      "correct": "Evaluative adjectives revealing the speaker's attitude",
+      "explanation": "These adjectives are speaker-expressive, revealing a deluded self-assessment — a key evaluative device.",
+      "source": "Curriculum Exercise"
+    },
+    {
+      "text": "Amir (The Kite Runner) says: 'Hassan always knew when something was bothering me.' The word 'always' stresses Hassan's constant ability.",
+      "question": "The word 'always' here is a marker of which modality parameter?",
+      "options": ["Probability", "Obligation", "Willingness", "Usuality"],
+      "correct": "Usuality",
+      "explanation": "'Always' is a usuality adverb indicating how frequently/constantly an action or state occurs.",
+      "source": "Curriculum Exercise"
+    },
+    {
+      "text": "Identify the modality parameter: 'I need to leave, you see. You do see, don't you?'",
+      "question": "'Need' expresses:",
+      "options": ["Probability", "Obligation", "Willingness", "Usuality"],
+      "correct": "Obligation",
+      "explanation": "'Need' signals a necessity or obligation — the speaker feels compelled to leave.",
+      "source": "Curriculum Exercise"
     }
   ]
 }

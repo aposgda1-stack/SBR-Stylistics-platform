@@ -16,7 +16,10 @@ export async function GET() {
       name: u.name,
       points: u.totalPoints,
       rank: i + 1,
-      badge: u.totalPoints > 10000 ? 'vanguard' : u.totalPoints > 5000 ? 'analyst' : u.totalPoints > 2000 ? 'thinker' : 'scholar'
+      badge: u.totalPoints >= 10000 ? 'vanguard'
+           : u.totalPoints >= 5000  ? 'analyst'
+           : u.totalPoints >= 2000  ? 'thinker'
+           : 'scholar'
     }));
 
     return NextResponse.json({ success: true, leaders: formattedLeaders });

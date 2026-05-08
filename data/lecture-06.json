@@ -176,6 +176,102 @@
       "correct": "Relation",
       "explanation": "The response is not directly about intentions but implies that B cannot do anything due to the headache.",
       "source": "Exam 2020"
+    },
+    {
+      "text": "Identify the flouted maxim: Meredith: 'Thanks, that really takes the pressure off.' (Said when told many people are depending on her)",
+      "question": "Maxim:",
+      "options": ["Quality (Sarcasm)", "Quantity", "Relation", "Manner"],
+      "correct": "Quality (Sarcasm)",
+      "explanation": "Meredith is saying the opposite of what is true to express the increased pressure, which is a flouting of Quality via sarcasm.",
+      "source": "Exam June 2024"
+    },
+    {
+      "text": "Identify the flouted maxim: Student: 'I’m dead.' (After a long day)",
+      "question": "Maxim:",
+      "options": ["Quality (Hyperbole)", "Quantity", "Relation", "Manner"],
+      "correct": "Quality (Hyperbole)",
+      "explanation": "The student is not literally dead; they are using hyperbole (overstatement) to express exhaustion, flouting Quality.",
+      "source": "Exam June 2024"
+    },
+    {
+      "text": "True or False: 'Indicating pessimism is one of the positive politeness strategies.'",
+      "question": "Result:",
+      "options": ["True", "False"],
+      "correct": "False",
+      "explanation": "Indicating pessimism (e.g., 'I don't suppose you could...') is a Negative Politeness strategy.",
+      "source": "Exam June 2024"
+    },
+    {
+      "text": "Exercise A — Flouting: A: 'What can you tell me about Catherine's ability to concentrate on a task?' B: 'Catherine is a butterfly flitting from flower to flower.'",
+      "question": "Speaker B flouts which maxim?",
+      "options": ["Quality (Metaphor)", "Quantity", "Relation", "Manner"],
+      "correct": "Quality (Metaphor)",
+      "explanation": "Describing Catherine as a butterfly is literally untrue — a metaphor that flouts Quality to imply she is easily distracted.",
+      "source": "Curriculum Exercise"
+    },
+    {
+      "text": "Exercise A — Flouting: A: 'What has happened to the roast beef?' B: 'The dog is looking very happy.'",
+      "question": "Speaker B flouts which maxim?",
+      "options": ["Quality", "Quantity", "Relation", "Manner"],
+      "correct": "Relation",
+      "explanation": "B's answer is not a direct answer about the beef, but the implicature (the dog ate it) is inferred via relevance.",
+      "source": "Curriculum Exercise"
+    },
+    {
+      "text": "Exercise A — Flouting: Interviewer: 'Did the government promise teachers a raise and not start legal procedures?' Spokesperson: 'I would not try to direct you away from that conclusion.'",
+      "question": "The spokesperson flouts which maxim?",
+      "options": ["Quality", "Quantity", "Relation", "Manner (Obscurity)"],
+      "correct": "Manner (Obscurity)",
+      "explanation": "The spokesman is deliberately obscure and indirect, flouting the maxim of Manner, to confirm without directly confirming.",
+      "source": "Curriculum Exercise"
+    },
+    {
+      "text": "Exercise A — Flouting: Carmen: 'Did you get the milk and the eggs?' Dave: 'I got the milk.'",
+      "question": "Dave flouts which maxim?",
+      "options": ["Quality", "Quantity (Under-informative)", "Relation", "Manner"],
+      "correct": "Quantity (Under-informative)",
+      "explanation": "Dave provides less information than required — he doesn't mention the eggs, implying he didn't get them.",
+      "source": "Curriculum Exercise"
+    },
+    {
+      "text": "Exercise A — Flouting: Mike: 'Where are you going?' Mary: 'We are going to the D-O-C-T-O-R.'",
+      "question": "Mary flouts which maxim?",
+      "options": ["Quality", "Quantity", "Relation", "Manner"],
+      "correct": "Manner",
+      "explanation": "Spelling out the word is deliberately obscure to hide the meaning from a child nearby — a manner flout.",
+      "source": "Curriculum Exercise"
+    },
+    {
+      "text": "Exercise A — Flouting: Teacher: 'What time is it?' Student: 'It's 10:44 and 35.6 seconds.'",
+      "question": "The student flouts which maxim?",
+      "options": ["Quality", "Quantity (Over-informative)", "Relation", "Manner"],
+      "correct": "Quantity (Over-informative)",
+      "explanation": "The student provides far more information than required — an over-informative quantity flout.",
+      "source": "Curriculum Exercise"
+    },
+    {
+      "text": "Politeness strategy: 'Professor, I was wondering if you could tell us about the Chamber of Secrets.' (Hermione in Harry Potter)",
+      "question": "Which negative politeness strategy is used?",
+      "options": ["Be pessimistic", "Use indirectness and hedges", "Minimise the imposition", "Bald on-record"],
+      "correct": "Use indirectness and hedges",
+      "explanation": "'I was wondering if you could...' uses past tense distancing and hedging ('wondering', 'could') as negative politeness strategies.",
+      "source": "Curriculum Exercise"
+    },
+    {
+      "text": "Politeness strategy: 'I apologize for taking up so much of your time.'",
+      "question": "Which politeness strategy is this?",
+      "options": ["Indicate deference", "Apologise (Negative Politeness)", "Positive politeness - compliment", "Off-record"],
+      "correct": "Apologise (Negative Politeness)",
+      "explanation": "Explicitly apologizing for the imposition is a classic negative politeness strategy.",
+      "source": "Curriculum Exercise"
+    },
+    {
+      "text": "A college dean to a job applicant: 'You might be happier at a smaller — or a larger — college, son!'",
+      "question": "This is an example of which politeness strategy?",
+      "options": ["Positive Politeness (compliment)", "Off-record (hint/implicature)", "Bald on-record rejection", "Negative Politeness — be pessimistic"],
+      "correct": "Off-record (hint/implicature)",
+      "explanation": "The dean is hinting that the applicant is unsuitable without explicitly saying 'you are rejected' — an off-record strategy.",
+      "source": "Curriculum Exercise"
     }
   ]
 }

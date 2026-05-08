@@ -52,7 +52,14 @@ export default function QuizPage() {
   const handleTheoreticalComplete = (score, total) => {
     setScores(prev => ({ ...prev, theoretical: score }));
     setTotals(prev => ({ ...prev, theoretical: total }));
-    setSection('applied');
+    
+    // If there's an applied section, go to it. Otherwise, end.
+    if (data.applied || data.questions) {
+      setSection('applied');
+    } else {
+      setSection('results');
+      syncProgress((scores.theoretical || 0) + score, (totals.theoretical || 0) + total);
+    }
   };
 
   const formatTime = (ms) => {
@@ -62,7 +69,32 @@ export default function QuizPage() {
     return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
   };
 
-  const handleAppliedComplete = (score, total) => {
+  const syncProgress = async (finalScore, finalTotal) => {
+    const userId = localStorage.getItem('stylistics_user_id');
+    if (userId) {
+      try {
+        const mistakes = JSON.parse(localStorage.getItem('stylistics_mistakes') || '[]');
+        await fetch('/api/user', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            userId,
+            quizResult: {
+              quizId: chapterId,
+              score: finalScore,
+              totalQuestions: finalTotal
+            },
+            mistakes // Sync mistakes too
+          })
+        });
+        console.log("Cloud sync successful");
+      } catch (err) {
+        console.error("Cloud sync failed", err);
+      }
+    }
+  };
+
+  const handleAppliedComplete = async (score, total) => {
     const end = Date.now();
     const diff = end - startTime;
     setDuration(formatTime(diff));
@@ -70,6 +102,8 @@ export default function QuizPage() {
     setScores(prev => ({ ...prev, applied: score }));
     setTotals(prev => ({ ...prev, applied: total }));
     setSection('results');
+
+    syncProgress((scores.theoretical || 0) + score, (totals.theoretical || 0) + total);
   };
 
   const startQuiz = () => {
@@ -187,18 +221,18 @@ export default function QuizPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-2xl mx-auto relative z-10">
-            <div className="bg-black/40 border border-white/5 p-8 rounded-3xl">
-              <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest block mb-2">Score</span>
-              <div className="text-2xl font-black text-white italic">{totalCorrect}/{totalQuestions}</div>
+          <div className="grid grid-cols-3 gap-3 md:gap-4 max-w-2xl mx-auto relative z-10">
+            <div className="bg-black/40 border border-white/5 p-5 md:p-8 rounded-2xl md:rounded-3xl">
+              <span className="text-[9px] md:text-[10px] font-bold text-slate-500 uppercase tracking-widest block mb-1 md:mb-2">Score</span>
+              <div className="text-xl md:text-2xl font-black text-white italic">{totalCorrect}/{totalQuestions}</div>
             </div>
-            <div className="bg-secondary text-black p-8 rounded-3xl shadow-xl shadow-secondary/10">
-              <span className="text-[10px] font-bold text-black/60 uppercase tracking-widest block mb-2">Rank Points</span>
-              <div className="text-2xl font-black">+{pointsEarned}</div>
+            <div className="bg-secondary text-black p-5 md:p-8 rounded-2xl md:rounded-3xl shadow-xl shadow-secondary/10">
+              <span className="text-[9px] md:text-[10px] font-bold text-black/60 uppercase tracking-widest block mb-1 md:mb-2">Points</span>
+              <div className="text-xl md:text-2xl font-black">+{pointsEarned}</div>
             </div>
-            <div className="bg-black/40 border border-white/5 p-8 rounded-3xl">
-              <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest block mb-2">Duration</span>
-              <div className="text-2xl font-black text-white italic">{duration}</div>
+            <div className="bg-black/40 border border-white/5 p-5 md:p-8 rounded-2xl md:rounded-3xl">
+              <span className="text-[9px] md:text-[10px] font-bold text-slate-500 uppercase tracking-widest block mb-1 md:mb-2">Time</span>
+              <div className="text-xl md:text-2xl font-black text-white italic">{duration}</div>
             </div>
           </div>
 

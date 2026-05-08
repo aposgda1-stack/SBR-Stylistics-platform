@@ -29,6 +29,8 @@ export default function Login() {
         localStorage.setItem('stylistics_user_id', data.user.userId);
         localStorage.setItem('stylistics_user_name', data.user.name);
         localStorage.setItem('stylistics_user_email', data.user.email);
+        // Sync points immediately so header shows correct value
+        localStorage.setItem('stylistics_user_progress', JSON.stringify({ totalPoints: data.user.totalPoints || 0 }));
         
         // Redirect to platform
         router.push('/platform');

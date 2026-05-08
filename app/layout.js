@@ -18,28 +18,17 @@ export default function RootLayout({ children }) {
 
   useEffect(() => {
     setMounted(true);
-    // Initial fetch from "Cloud" (LocalStorage mockup)
+    // Only read from localStorage for the header points display
+    // Actual DB sync happens in individual pages after quiz completion
     const updatePoints = () => {
       const saved = JSON.parse(localStorage.getItem('stylistics_user_progress') || '{"totalPoints": 0}');
       setPoints(saved.totalPoints || 0);
-      
-      let userId = localStorage.getItem('stylistics_user_id');
-      const name = localStorage.getItem('stylistics_user_name') || 'Student';
-      const activity = JSON.parse(localStorage.getItem('stylistics_activity') || '{}');
-
-      if (userId) {
-        fetch('/api/user', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ userId, name, totalPoints: saved.totalPoints || 0, activity })
-        }).catch(e => console.log('Sync offline'));
-      }
     };
 
     updatePoints();
     // Listen for storage changes to sync across tabs/components
     window.addEventListener('storage', updatePoints);
-    const interval = setInterval(updatePoints, 10000); // Sync every 10 seconds
+    const interval = setInterval(updatePoints, 5000);
     
     return () => {
       window.removeEventListener('storage', updatePoints);

@@ -47,7 +47,7 @@ export default function AppliedQuiz({ questions, onComplete, mode }) {
         setFloatingPoints({ x: e.clientX, y: e.clientY, value: '+10' });
         
         // SYNC TO CLOUD (Progress Update)
-        const progress = JSON.parse(localStorage.getItem('stylistics_user_progress') || '{"totalPoints": 12450}');
+        const progress = JSON.parse(localStorage.getItem('stylistics_user_progress') || '{"totalPoints": 0}');
         progress.totalPoints += 10;
         localStorage.setItem('stylistics_user_progress', JSON.stringify(progress));
         
@@ -60,7 +60,8 @@ export default function AppliedQuiz({ questions, onComplete, mode }) {
           userAnswer: option,
           correct: currentQ.correct,
           explanation: currentQ.explanation,
-          chapter: currentQ.chapter || 'Applied Analysis'
+          chapter: currentQ.chapter || 'Applied Analysis',
+          timestamp: new Date().toISOString()
         };
         const currentMistakes = JSON.parse(localStorage.getItem('stylistics_mistakes') || '[]');
         // Avoid duplicates
@@ -143,12 +144,12 @@ export default function AppliedQuiz({ questions, onComplete, mode }) {
           
           <div className="bg-black/40 border border-white/5 p-6 md:p-8 rounded-2xl mb-8">
             <h3 className="text-xl md:text-2xl font-medium text-white leading-relaxed">
-              "{currentQ.text}"
+              {currentQ.text}
             </h3>
           </div>
 
           <p className="text-lg text-slate-300 mb-8 font-semibold">
-            {currentQ.question}
+            {currentQ.question || 'Identify the correct answer:'}
           </p>
 
           <div className="grid grid-cols-1 gap-3">

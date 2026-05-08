@@ -2,23 +2,35 @@ import dbConnect from "@/lib/mongodb";
 import { UserProgress } from "@/lib/models";
 import { NextResponse } from "next/server";
 
-export async function GET() {
+const ADMIN_SECRET = process.env.ADMIN_SECRET || 'sbr-admin-2026';
+
+export async function GET(req) {
+  // Secure this route with a secret token
+  const { searchParams } = new URL(req.url);
+  const secret = searchParams.get('secret');
+
+  if (secret !== ADMIN_SECRET) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
   try {
     await dbConnect();
     
-    // Delete users with name 'Student' and points 12450 (the fake ones)
+    // Delete users with placeholder data only
     const result = await UserProgress.deleteMany({
-      $or: [
+      $and: [
         { name: 'Student' },
-        { totalPoints: 12450 }
+        { totalPoints: 0 },
+        { quizScores: { $size: 0 } }
       ]
     });
 
     return NextResponse.json({ 
       success: true, 
-      message: `Cleaned up ${result.deletedCount} fake entries.` 
+      message: `Cleaned up ${result.deletedCount} placeholder entries.` 
     });
   } catch (error) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
+
