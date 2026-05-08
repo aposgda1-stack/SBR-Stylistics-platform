@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import playSound from '@/lib/sounds';
 import { syncToCloud } from '@/lib/sync';
 
-export default function AppliedQuiz({ questions, onComplete, mode }) {
+export default function AppliedQuiz({ questions, onComplete, mode, startIndex = 0 }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState({});
   const [showExplanation, setShowExplanation] = useState(false);
@@ -113,6 +113,9 @@ export default function AppliedQuiz({ questions, onComplete, mode }) {
     }
   };
 
+  const totalPossible = shuffledQuestions.length + startIndex;
+  const currentPos = currentIndex + startIndex + 1;
+
   if (shuffledQuestions.length === 0) return null;
 
   return (
@@ -133,7 +136,7 @@ export default function AppliedQuiz({ questions, onComplete, mode }) {
           <div className="space-y-1">
             <span className="text-[10px] font-black text-slate-600 uppercase tracking-[0.2em] block">Training Progress</span>
             <div className="text-xl font-black text-white italic">
-              {currentIndex + 1} <span className="text-slate-600 font-medium text-sm">/ {shuffledQuestions.length}</span>
+              {currentPos} <span className="text-slate-600 font-medium text-sm">/ {totalPossible}</span>
             </div>
           </div>
           {mode === 'practice' && (
@@ -149,7 +152,7 @@ export default function AppliedQuiz({ questions, onComplete, mode }) {
         <div className="h-1.5 bg-white/5 rounded-full overflow-hidden shadow-inner">
           <div 
             className="h-full bg-blue-500 transition-all duration-700 ease-out shadow-[0_0_15px_rgba(59,130,246,0.5)]" 
-            style={{ width: `${((currentIndex + 1) / shuffledQuestions.length) * 100}%` }} 
+            style={{ width: `${(currentPos / totalPossible) * 100}%` }} 
           />
         </div>
       </div>

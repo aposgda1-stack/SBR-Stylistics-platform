@@ -213,6 +213,7 @@ function QuizContent({ paramsPromise }) {
             mode={mode}
             onComplete={handleAppliedComplete} 
             onError={handleMistake}
+            startIndex={data.theoretical?.length || 0}
           />
         </div>
       )}
