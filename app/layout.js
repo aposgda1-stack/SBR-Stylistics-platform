@@ -5,6 +5,7 @@ import "./globals.css";
 import BottomNav from "@/components/BottomNav";
 import NotificationCenter from "@/components/NotificationCenter";
 import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 
 const inter = Inter({ subsets: ["latin"] });
 
