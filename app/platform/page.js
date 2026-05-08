@@ -18,8 +18,8 @@ export default function Home() {
     setMounted(true);
     
     const syncProgress = () => {
-      const progress = JSON.parse(localStorage.getItem('stylistics_user_progress') || '{"totalPoints": 12450}');
-      setPoints(progress.totalPoints);
+      const progress = JSON.parse(localStorage.getItem('stylistics_user_progress') || '{"totalPoints": 0}');
+      setPoints(progress.totalPoints || 0);
       setMistakes(JSON.parse(localStorage.getItem('stylistics_mistakes') || '[]'));
     };
 
@@ -71,12 +71,10 @@ export default function Home() {
           <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/5 blur-[80px] rounded-full -mr-32 -mt-32" />
           
           <div className="relative z-10 flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6 text-center md:text-left">
-            <div className="w-16 h-16 md:w-24 md:h-24 rounded-2xl md:rounded-3xl border-4 border-secondary/20 p-1 bg-[#1c1c1e] shrink-0">
-              <img 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiVohECAJJTmITVWBy-o-vwvNe1iUEy-ZoOm_FrSWb5XSs7THEZgyo0pRdhnb34KuivNALvf5X5SeqwXx7BXEMnZwQu2fu9B1JS87X9CO3bCvB-JSZVWYJy0R-cvsEtcHwPGbGZaxhM80gaiALLaYgHeytP7PnEWDOxYweWt5yX2hiN80UcFDk-sf_ujdBD-syRuph_e6UGslXVs2xo9x97kMHK7Vt6pIQryiRlLTuQVhJb0mRNXMkcQQwf-h3Y" 
-                className="w-full h-full rounded-xl md:rounded-2xl object-cover" 
-                alt="Avatar" 
-              />
+            <div className="w-16 h-16 md:w-24 md:h-24 rounded-2xl md:rounded-3xl border-4 border-secondary/20 bg-secondary/10 flex items-center justify-center shrink-0">
+               <span className="text-secondary font-black text-2xl md:text-4xl italic">
+                 {userName.charAt(0).toUpperCase()}
+               </span>
             </div>
             <div className="space-y-1 md:space-y-2">
               <h1 className="text-3xl md:text-6xl font-black text-white italic tracking-tighter leading-none">YOU GOT THIS, {userName.split(' ')[0].toUpperCase()}.</h1>
@@ -90,7 +88,7 @@ export default function Home() {
               <span className="text-[9px] font-black text-slate-300 uppercase tracking-widest italic">SBR ACTIVE</span>
             </div>
             <div className="px-3 py-1.5 bg-secondary/10 rounded-lg border border-secondary/20 flex items-center gap-2">
-              <span className="text-[9px] font-black text-secondary uppercase tracking-widest italic">RANK #1</span>
+              <span className="text-[9px] font-black text-secondary uppercase tracking-widest italic">LEVEL {Math.floor(points / 500) + 1}</span>
             </div>
           </div>
         </section>

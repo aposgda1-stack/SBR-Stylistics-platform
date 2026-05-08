@@ -20,24 +20,20 @@ export default function RootLayout({ children }) {
     setMounted(true);
     // Initial fetch from "Cloud" (LocalStorage mockup)
     const updatePoints = () => {
-      const saved = JSON.parse(localStorage.getItem('stylistics_user_progress') || '{"totalPoints": 12450}');
-      setPoints(saved.totalPoints);
+      const saved = JSON.parse(localStorage.getItem('stylistics_user_progress') || '{"totalPoints": 0}');
+      setPoints(saved.totalPoints || 0);
       
-      // Auto-Sync to MongoDB
       let userId = localStorage.getItem('stylistics_user_id');
-      if (!userId) {
-        userId = 'user_' + Math.random().toString(36).substr(2, 9);
-        localStorage.setItem('stylistics_user_id', userId);
-      }
-
       const name = localStorage.getItem('stylistics_user_name') || 'Student';
       const activity = JSON.parse(localStorage.getItem('stylistics_activity') || '{}');
 
-      fetch('/api/user', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ userId, name, totalPoints: saved.totalPoints, activity })
-      }).catch(e => console.log('Sync offline'));
+      if (userId) {
+        fetch('/api/user', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ userId, name, totalPoints: saved.totalPoints || 0, activity })
+        }).catch(e => console.log('Sync offline'));
+      }
     };
 
     updatePoints();
@@ -84,8 +80,10 @@ export default function RootLayout({ children }) {
                 <span className="absolute top-2 right-2 w-2 h-2 bg-rose-500 rounded-full border-2 border-[#0a0a0b] animate-pulse" />
               </button>
               
-              <div className="w-9 h-9 md:w-10 md:h-10 rounded-full border-2 border-secondary/30 p-0.5 overflow-hidden shrink-0">
-                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiVohECAJJTmITVWBy-o-vwvNe1iUEy-ZoOm_FrSWb5XSs7THEZgyo0pRdhnb34KuivNALvf5X5SeqwXx7BXEMnZwQu2fu9B1JS87X9CO3bCvB-JSZVWYJy0R-cvsEtcHwPGbGZaxhM80gaiALLaYgHeytP7PnEWDOxYweWt5yX2hiN80UcFDk-sf_ujdBD-syRuph_e6UGslXVs2xo9x97kMHK7Vt6pIXNc-Avknm56PpIQryiRlLTuQVhJb0mRNXMkcQQwf-h3Y" className="w-full h-full rounded-full object-cover" alt="User" />
+              <div className="w-9 h-9 md:w-10 md:h-10 rounded-full border-2 border-secondary/30 bg-secondary/10 flex items-center justify-center overflow-hidden shrink-0">
+                <span className="text-secondary font-black text-xs md:text-sm uppercase tracking-tighter italic">
+                  {mounted ? (localStorage.getItem('stylistics_user_name') || 'S').charAt(0) : 'S'}
+                </span>
               </div>
             </div>
           </div>
