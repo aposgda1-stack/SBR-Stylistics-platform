@@ -54,7 +54,7 @@ export default function ReviewPage() {
           </div>
           <h3 className="text-2xl font-bold text-white">Flawless Record</h3>
           <p className="text-slate-500 max-w-xs mx-auto">You haven't committed any linguistic errors yet. Keep up the precision!</p>
-          <button onClick={() => router.push('/lab')} className="bg-secondary text-black px-8 py-3 rounded-xl font-bold mt-4">Start Assessment</button>
+          <button onClick={() => router.push('/training')} className="bg-secondary text-black px-8 py-3 rounded-xl font-bold mt-4">Start Assessment</button>
         </div>
       ) : (
         <div className="grid grid-cols-1 gap-6">

@@ -125,7 +125,7 @@ export default function Exams() {
                   ))}
                 </div>
                 <Link
-                  href="/lab"
+                  href="/training"
                   className="mt-8 w-full py-4 rounded-2xl bg-white/5 border border-white/10 text-white text-[10px] font-black text-center uppercase hover:bg-emerald-500 hover:text-black hover:border-emerald-500 transition-all tracking-widest block"
                 >
                   Study Materials
