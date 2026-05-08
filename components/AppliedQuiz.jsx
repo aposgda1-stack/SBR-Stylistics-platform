@@ -97,104 +97,117 @@ export default function AppliedQuiz({ questions, onComplete, mode }) {
   if (shuffledQuestions.length === 0) return null;
 
   return (
-    <div className="space-y-8 relative">
+    <div className="space-y-6 md:space-y-10 relative">
       {/* Floating Points */}
       {floatingPoints && (
         <div 
-          className="fixed pointer-events-none z-[200] text-emerald-500 font-bold text-2xl animate-bounce-up opacity-0"
+          className="fixed pointer-events-none z-[200] text-blue-400 font-black text-4xl animate-bounce-up opacity-0"
           style={{ left: floatingPoints.x, top: floatingPoints.y }}
         >
           {floatingPoints.value}
         </div>
       )}
 
-      {/* Progress */}
-      <div className="flex items-center gap-4">
-        <div className="flex-1 h-1.5 bg-white/5 rounded-full overflow-hidden">
-          <div 
-            className="h-full bg-secondary transition-all duration-500" 
-            style={{ width: `${((currentIndex + 1) / shuffledQuestions.length) * 100}%` }} 
-          />
-        </div>
-        <div className="flex items-center gap-3">
+      {/* Progress Section */}
+      <div className="flex flex-col gap-4">
+        <div className="flex justify-between items-end px-1">
+          <div className="space-y-1">
+            <span className="text-[10px] font-black text-slate-600 uppercase tracking-[0.2em] block">Training Progress</span>
+            <div className="text-xl font-black text-white italic">
+              {currentIndex + 1} <span className="text-slate-600 font-medium text-sm">/ {shuffledQuestions.length}</span>
+            </div>
+          </div>
           {mode === 'practice' && (
             <button 
               onClick={() => setIsResearchOpen(true)}
-              className="w-8 h-8 rounded-lg border border-white/10 flex items-center justify-center hover:bg-secondary/10 hover:border-secondary/30 transition-all group"
-              title="Quick Research"
+              className="px-4 py-2 rounded-xl bg-[#1a1a1c] border border-white/5 flex items-center gap-2 hover:border-blue-500/50 transition-all group"
             >
-              <span className="material-symbols-outlined text-sm text-slate-500 group-hover:text-secondary transition-colors">menu_book</span>
+              <span className="material-symbols-outlined text-sm text-slate-500 group-hover:text-blue-400 transition-colors">menu_book</span>
+              <span className="text-[10px] font-black text-slate-500 group-hover:text-blue-400 uppercase tracking-widest">Guide</span>
             </button>
           )}
-          <span className="text-xs font-bold text-slate-500">{currentIndex + 1} / {shuffledQuestions.length}</span>
+        </div>
+        <div className="h-1.5 bg-white/5 rounded-full overflow-hidden shadow-inner">
+          <div 
+            className="h-full bg-blue-500 transition-all duration-700 ease-out shadow-[0_0_15px_rgba(59,130,246,0.5)]" 
+            style={{ width: `${((currentIndex + 1) / shuffledQuestions.length) * 100}%` }} 
+          />
         </div>
       </div>
 
-      {/* Question Card */}
-      <div className="glass-card p-8 md:p-10 relative overflow-hidden">
+      {/* Question Card - Floating Style */}
+      <div className="bg-[#111113]/60 backdrop-blur-2xl border border-white/5 rounded-[40px] p-6 md:p-12 relative overflow-hidden shadow-[0_40px_100px_-20px_rgba(0,0,0,0.8)]">
         <div className="relative z-10">
           {currentQ.source && (
-            <div className="flex items-center gap-2 mb-4">
-              <span className="px-2 py-0.5 bg-secondary text-black text-[9px] font-black uppercase rounded-lg shadow-lg shadow-secondary/10">
+            <div className="flex items-center gap-3 mb-6 md:mb-10">
+              <span className="px-3 py-1 bg-white text-black text-[9px] font-black uppercase rounded-lg shadow-xl">
                 {currentQ.source}
               </span>
-              <span className="text-[9px] font-bold text-slate-500 uppercase tracking-widest italic">Verified Material</span>
+              <div className="h-[1px] flex-1 bg-white/5" />
             </div>
           )}
           
-          <div className="bg-black/40 border border-white/5 p-6 md:p-8 rounded-2xl mb-8">
-            <h3 className="text-xl md:text-2xl font-medium text-white leading-relaxed">
-              {currentQ.text}
+          <div className="bg-white/5 border border-white/5 p-6 md:p-10 rounded-[32px] mb-8 md:mb-12 shadow-inner">
+            <h3 className="text-lg md:text-2xl font-medium text-slate-200 leading-relaxed italic">
+              "{currentQ.text}"
             </h3>
           </div>
 
-          <p className="text-lg text-slate-300 mb-8 font-semibold">
-            {currentQ.question || 'Identify the correct answer:'}
-          </p>
+          <div className="flex flex-col gap-6 md:gap-8">
+            <p className="text-base md:text-xl text-white font-black uppercase tracking-tight">
+              {currentQ.question || 'Select the correct stylistic feature:'}
+            </p>
 
-          <div className="grid grid-cols-1 gap-3">
-            {currentQ.options.map((opt, i) => {
-              const isSelected = answers[currentIndex] === opt;
-              const isCorrect = opt === currentQ.correct;
-              
-              let style = 'bg-white/5 border-white/5 hover:border-secondary/40 hover:bg-white/[0.08] text-slate-200';
-              
-              if (mode === 'practice' && showExplanation) {
-                if (isCorrect) style = 'bg-emerald-500/20 border-emerald-500/40 text-emerald-400';
-                else if (isSelected) style = 'bg-rose-500/20 border-rose-500/40 text-rose-400 opacity-60';
-                else style = 'bg-white/5 border-white/5 opacity-30';
-              } else if (mode === 'exam' && isSelected) {
-                style = 'bg-secondary/20 border-secondary text-secondary';
-              }
+            <div className="grid grid-cols-1 gap-3 md:gap-4">
+              {currentQ.options.map((opt, i) => {
+                const isSelected = answers[currentIndex] === opt;
+                const isCorrect = opt === currentQ.correct;
+                
+                let style = 'bg-[#1a1a1c] border-white/5 text-slate-400 hover:border-blue-500/30 hover:bg-[#202022]';
+                
+                if (mode === 'practice' && showExplanation) {
+                  if (isCorrect) style = 'bg-emerald-500 text-white border-transparent shadow-[0_0_30px_rgba(16,185,129,0.2)]';
+                  else if (isSelected) style = 'bg-rose-500 text-white border-transparent opacity-60';
+                  else style = 'bg-[#1a1a1c] border-transparent opacity-20';
+                } else if (mode === 'exam' && isSelected) {
+                  style = 'bg-blue-600 text-white border-transparent shadow-[0_0_30px_rgba(37,99,235,0.3)]';
+                }
 
-              return (
-                <button 
-                  key={i}
-                  onClick={(e) => handleSelect(opt, e)}
-                  className={`p-5 rounded-xl border text-left transition-all duration-200 flex items-center justify-between group ${style}`}
-                >
-                  <span className="font-semibold">{opt}</span>
-                  {mode === 'practice' && showExplanation && isCorrect && <span className="material-symbols-outlined text-sm">check_circle</span>}
-                  {mode === 'practice' && showExplanation && isSelected && !isCorrect && <span className="material-symbols-outlined text-sm">cancel</span>}
-                </button>
-              );
-            })}
+                return (
+                  <button 
+                    key={i}
+                    disabled={showExplanation && mode === 'practice'}
+                    onClick={(e) => handleSelect(opt, e)}
+                    className={`group relative p-5 md:p-7 rounded-2xl md:rounded-[24px] border-2 text-left transition-all duration-300 flex items-center justify-between active:scale-95 ${style}`}
+                  >
+                    <span className="text-xs md:text-base font-black uppercase tracking-widest">{opt}</span>
+                    <div className="w-8 h-8 rounded-full border border-current/20 flex items-center justify-center">
+                       {mode === 'practice' && showExplanation && isCorrect ? <span className="material-symbols-outlined text-sm font-bold">check</span> : 
+                        mode === 'practice' && showExplanation && isSelected && !isCorrect ? <span className="material-symbols-outlined text-sm font-bold">close</span> : 
+                        <span className="text-[10px] font-black opacity-20 group-hover:opacity-100 transition-opacity">{String.fromCharCode(65 + i)}</span>}
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
           {mode === 'practice' && showExplanation && (
-            <div className="mt-8 p-6 bg-secondary/5 border-l-4 border-secondary rounded-r-xl animate-in fade-in slide-in-from-top-2">
-              <div className="flex items-center gap-2 mb-2">
-                <span className="material-symbols-outlined text-secondary text-sm">stars</span>
-                <span className="text-xs font-bold text-secondary uppercase tracking-wider">Expert Insight</span>
+            <div className="mt-10 md:mt-16 p-6 md:p-10 bg-blue-500/5 border-2 border-blue-500/20 rounded-[32px] animate-in fade-in slide-in-from-bottom-4 duration-500">
+              <div className="flex items-center gap-3 mb-4 md:mb-6">
+                <div className="w-8 h-8 rounded-xl bg-blue-500 flex items-center justify-center">
+                   <span className="material-symbols-outlined text-white text-xs font-bold">auto_awesome</span>
+                </div>
+                <span className="text-[10px] font-black text-blue-400 uppercase tracking-[0.2em]">Analysis Insight</span>
               </div>
-              <p className="text-slate-300 leading-relaxed text-sm">
-                {currentQ.explanation}
+              <p className="text-slate-400 leading-relaxed text-sm md:text-lg font-medium italic">
+                "{currentQ.explanation}"
               </p>
               <button 
-                onClick={nextQuestion}
-                className="mt-6 bg-secondary text-black px-8 py-3 rounded-lg font-bold text-sm hover:brightness-110 transition-all"
+                onClick={() => nextQuestion()}
+                className="mt-8 md:mt-12 w-full md:w-auto bg-white text-black px-12 py-5 rounded-2xl font-black text-xs uppercase tracking-[0.2em] hover:bg-blue-500 hover:text-white transition-all shadow-2xl"
               >
-                {currentIndex === shuffledQuestions.length - 1 ? 'See Final Results' : 'Next Question'}
+                {currentIndex === shuffledQuestions.length - 1 ? 'Show Mastery' : 'Next Drill'}
               </button>
             </div>
           )}
@@ -203,37 +216,41 @@ export default function AppliedQuiz({ questions, onComplete, mode }) {
 
       <style jsx global>{`
         @keyframes bounce-up {
-          0% { transform: translateY(0); opacity: 0; }
-          20% { opacity: 1; }
-          100% { transform: translateY(-100px); opacity: 0; }
+          0% { transform: translateY(0) scale(0.5); opacity: 0; }
+          20% { opacity: 1; scale: 1.2; }
+          100% { transform: translateY(-150px) scale(0.8); opacity: 0; }
         }
         .animate-bounce-up {
-          animation: bounce-up 1s ease-out forwards;
+          animation: bounce-up 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
         }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
       `}</style>
 
       {/* Research Modal */}
       {isResearchOpen && chapterMeta && (
-        <div className="fixed inset-0 z-[200] flex items-center justify-center p-6">
-          <div className="absolute inset-0 bg-black/80 backdrop-blur-md" onClick={() => setIsResearchOpen(false)} />
-          <div className="relative w-full max-w-lg bg-[#111113] border border-white/10 rounded-[32px] p-8 md:p-12 overflow-hidden animate-in zoom-in-95 duration-300">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/10 blur-3xl rounded-full -mr-16 -mt-16" />
+        <div className="fixed inset-0 z-[300] flex items-center justify-center p-4">
+          <div className="absolute inset-0 bg-black/90 backdrop-blur-xl" onClick={() => setIsResearchOpen(false)} />
+          <div className="relative w-full max-w-xl bg-[#0a0a0b] border border-white/10 rounded-[48px] p-8 md:p-14 overflow-hidden animate-in zoom-in-95 duration-500 shadow-[0_50px_100px_-20px_rgba(0,0,0,1)]">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 blur-[100px] rounded-full -mr-32 -mt-32" />
             
             <div className="relative z-10">
-              <div className="flex justify-between items-start mb-8">
-                <div>
-                  <h3 className="text-2xl font-bold text-white mb-2 italic">Linguistic Research</h3>
-                  <p className="text-xs font-black text-secondary uppercase tracking-[0.2em]">{chapterMeta.title}</p>
+              <div className="flex justify-between items-start mb-10 md:mb-14">
+                <div className="space-y-1">
+                   <span className="text-[10px] font-black text-blue-500 uppercase tracking-widest">Curriculum Guide</span>
+                  <h3 className="text-2xl md:text-3xl font-black text-white italic tracking-tighter uppercase">{chapterMeta.title}</h3>
                 </div>
-                <button onClick={() => setIsResearchOpen(false)} className="material-symbols-outlined text-slate-500 hover:text-white transition-colors">close</button>
+                <button onClick={() => setIsResearchOpen(false)} className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-500 hover:text-white transition-all">
+                   <span className="material-symbols-outlined text-sm">close</span>
+                </button>
               </div>
 
-              <div className="space-y-6">
+              <div className="space-y-8 md:space-y-12">
                 <div>
-                  <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest block mb-3">Key Concepts</span>
+                  <span className="text-[10px] font-black text-slate-600 uppercase tracking-widest block mb-4">Core Concepts</span>
                   <div className="flex flex-wrap gap-2">
                     {chapterMeta.topics.map((t, i) => (
-                      <span key={i} className="px-3 py-1.5 bg-white/5 border border-white/5 rounded-lg text-[10px] font-bold text-slate-300">
+                      <span key={i} className="px-4 py-2 bg-white/[0.03] border border-white/5 rounded-xl text-[10px] font-black text-slate-400 uppercase tracking-widest">
                         {t}
                       </span>
                     ))}
@@ -241,18 +258,18 @@ export default function AppliedQuiz({ questions, onComplete, mode }) {
                 </div>
 
                 <div>
-                  <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest block mb-3">Academic Abstract</span>
-                  <p className="text-sm text-slate-400 leading-relaxed italic border-l-2 border-secondary/20 pl-4 py-1">
+                  <span className="text-[10px] font-black text-slate-600 uppercase tracking-widest block mb-4">Methodology</span>
+                  <p className="text-sm md:text-base text-slate-400 leading-relaxed font-medium">
                     {chapterMeta.description}
                   </p>
                 </div>
 
-                <div className="pt-6 border-t border-white/5">
+                <div className="pt-8">
                   <button 
                     onClick={() => setIsResearchOpen(false)}
-                    className="w-full py-4 bg-white/5 border border-white/10 rounded-xl text-white text-[10px] font-black uppercase tracking-widest hover:bg-secondary hover:text-black hover:border-secondary transition-all"
+                    className="w-full py-5 bg-white text-black rounded-[24px] text-xs font-black uppercase tracking-[0.2em] hover:bg-blue-500 hover:text-white transition-all shadow-2xl"
                   >
-                    Return to Assessment
+                    Resume Training
                   </button>
                 </div>
               </div>

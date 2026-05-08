@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const navItems = [
   { label: 'Platform', icon: 'dashboard', path: '/platform' },
-  { label: 'Study', icon: 'menu_book', path: '/lab' },
+  { label: 'Training', icon: 'menu_book', path: '/training' },
   { label: 'Exams', icon: 'timer', path: '/exams' },
   { label: 'Dossier', icon: 'folder_managed', path: '/dashboard' },
   { label: 'Podium', icon: 'military_tech', path: '/leaderboard' },

@@ -93,7 +93,7 @@ export default function Home() {
   if (!mounted) return null;
 
   const navCards = [
-    { label: 'Study Pack', icon: 'menu_book', path: '/lab', color: 'bg-blue-500', desc: 'Chapter Practice.' },
+    { label: 'Training Center', icon: 'menu_book', path: '/training', color: 'bg-blue-500', desc: 'Chapter Practice.' },
     { label: 'Exam Prep', icon: 'timer', path: '/exams', color: 'bg-secondary', desc: 'Official Materials.' },
     { label: 'My Dossier', icon: 'folder_managed', path: '/dashboard', color: 'bg-rose-500', desc: 'Mistakes Archive.' },
     { label: 'The Podium', icon: 'military_tech', path: '/leaderboard', color: 'bg-emerald-500', desc: 'Class Ranks.' },
