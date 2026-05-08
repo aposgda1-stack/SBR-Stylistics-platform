@@ -38,14 +38,23 @@ export default function RootLayout({ children }) {
       setPoints(saved.totalPoints || 0);
     };
 
+    const forceUpdate = () => {
+      updatePoints();
+      // Also force re-read of avatar from localStorage
+      setMounted(prev => !prev); 
+      setMounted(true);
+    };
+
     updatePoints();
     window.addEventListener('storage', updatePoints);
     window.addEventListener('stylistics_points_updated', updatePoints);
+    window.addEventListener('avatarUpdate', forceUpdate);
     const interval = setInterval(updatePoints, 5000);
     
     return () => {
       window.removeEventListener('storage', updatePoints);
       window.removeEventListener('stylistics_points_updated', updatePoints);
+      window.removeEventListener('avatarUpdate', forceUpdate);
       clearInterval(interval);
     };
   }, []);
@@ -90,11 +99,15 @@ export default function RootLayout({ children }) {
                 )}
               </button>
               
-              <div className="w-9 h-9 md:w-10 md:h-10 rounded-full border-2 border-secondary/30 bg-secondary/10 flex items-center justify-center overflow-hidden shrink-0">
-                <span className="text-secondary font-black text-xs md:text-sm uppercase tracking-tighter italic">
-                  {mounted ? (localStorage.getItem('stylistics_user_name') || 'S').charAt(0) : 'S'}
-                </span>
-              </div>
+              <Link href="/profile" className="w-9 h-9 md:w-10 md:h-10 rounded-full border-2 border-secondary/30 bg-secondary/10 flex items-center justify-center overflow-hidden shrink-0 hover:border-secondary transition-all">
+                {mounted && localStorage.getItem('stylistics_user_avatar') ? (
+                  <img src={localStorage.getItem('stylistics_user_avatar')} alt="Profile" className="w-full h-full object-cover" />
+                ) : (
+                  <span className="text-secondary font-black text-xs md:text-sm uppercase tracking-tighter italic">
+                    {mounted ? (localStorage.getItem('stylistics_user_name') || 'S').charAt(0) : 'S'}
+                  </span>
+                )}
+              </Link>
             </div>
           </div>
         </header>

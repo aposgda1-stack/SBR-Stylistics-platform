@@ -68,16 +68,18 @@ export default function HistoryPage() {
                       </span>
                     </div>
                     <div>
-                      <h3 className="text-lg md:text-xl font-bold text-white italic capitalize tracking-tight">{activity.title.replace(/-/g, ' ')}</h3>
+                      <h3 className="text-lg md:text-xl font-bold text-white italic capitalize tracking-tight">
+                        {(activity.title || 'Analysis Session').replace(/-/g, ' ')}
+                      </h3>
                       <p className="text-slate-500 text-[10px] md:text-xs font-bold uppercase tracking-widest mt-1">
-                        {new Date(activity.timestamp).toLocaleDateString(undefined, { 
+                        {activity.timestamp ? new Date(activity.timestamp).toLocaleDateString(undefined, { 
                           weekday: 'long', 
                           year: 'numeric', 
                           month: 'long', 
                           day: 'numeric',
                           hour: '2-digit',
                           minute: '2-digit'
-                        })}
+                        }) : 'Date unavailable'}
                       </p>
                     </div>
                   </div>

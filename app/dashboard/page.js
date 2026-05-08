@@ -17,15 +17,22 @@ export default function Dossier() {
   const router = useRouter();
 
   useEffect(() => {
-    const savedMistakes = JSON.parse(localStorage.getItem('stylistics_mistakes') || '[]');
-    const savedActivity = JSON.parse(localStorage.getItem('stylistics_activity') || '{}');
-    setMistakes(savedMistakes);
-    setActivity(savedActivity);
+    try {
+      const savedMistakes = JSON.parse(localStorage.getItem('stylistics_mistakes') || '[]');
+      const savedActivity = JSON.parse(localStorage.getItem('stylistics_activity') || '{}');
+      setMistakes(Array.isArray(savedMistakes) ? savedMistakes : []);
+      setActivity(savedActivity || {});
 
-    setStats(prev => prev.map(s => {
-      const chapterMistakes = savedMistakes.filter(m => m.chapter === s.id).length;
-      return { ...s, value: Math.max(20, 100 - (chapterMistakes * 10)) };
-    }));
+      setStats(prev => {
+        if (!Array.isArray(prev)) return prev;
+        return prev.map(s => {
+          const chapterMistakes = Array.isArray(savedMistakes) ? savedMistakes.filter(m => m && m.chapter === s.id).length : 0;
+          return { ...s, value: Math.max(20, 100 - (chapterMistakes * 10)) };
+        });
+      });
+    } catch (e) {
+      console.error("Dossier load error", e);
+    }
   }, []);
 
   const size = 300;

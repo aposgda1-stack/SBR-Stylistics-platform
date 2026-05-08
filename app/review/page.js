@@ -7,8 +7,13 @@ export default function ReviewPage() {
   const router = useRouter();
 
   useEffect(() => {
-    const savedMistakes = JSON.parse(localStorage.getItem('stylistics_mistakes') || '[]');
-    setMistakes(savedMistakes);
+    try {
+      const savedMistakes = JSON.parse(localStorage.getItem('stylistics_mistakes') || '[]');
+      setMistakes(Array.isArray(savedMistakes) ? savedMistakes : []);
+    } catch (e) {
+      console.error("Review load error", e);
+      setMistakes([]);
+    }
   }, []);
 
   const clearMistakes = async () => {

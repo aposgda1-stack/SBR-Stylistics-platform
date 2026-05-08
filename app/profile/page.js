@@ -19,10 +19,14 @@ export default function Profile() {
       if (!userId) { setLoading(false); return; }
       try {
         const res = await fetch(`/api/user?userId=${userId}`);
+        if (!res.ok) throw new Error("Profile fetch failed");
         const data = await res.json();
-        if (data.user) {
+        if (data && data.user) {
           setUserData(data.user);
           setStats(data.stats);
+          if (data.user.avatar) {
+            localStorage.setItem('stylistics_user_avatar', data.user.avatar);
+          }
         }
       } catch (err) {
         console.error("Failed to fetch profile", err);
@@ -30,7 +34,12 @@ export default function Profile() {
         setLoading(false);
       }
     };
+
     fetchProfile();
+
+    const handleUpdate = () => fetchProfile();
+    window.addEventListener('avatarUpdate', handleUpdate);
+    return () => window.removeEventListener('avatarUpdate', handleUpdate);
   }, []);
 
   const saveName = async (newName) => {
@@ -91,10 +100,14 @@ export default function Profile() {
       <div className="glass-card p-8 md:p-10 flex flex-col items-center text-center relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-secondary/10 to-transparent" />
         
-        <div className="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-secondary/30 bg-secondary/10 flex items-center justify-center relative z-10 mb-6">
-          <span className="text-secondary font-black text-4xl md:text-5xl italic">
-            {userName.charAt(0).toUpperCase()}
-          </span>
+        <div className="w-24 h-24 md:w-32 md:h-32 rounded-[32px] md:rounded-[48px] border-4 border-secondary/30 bg-secondary/10 flex items-center justify-center relative z-10 mb-6 overflow-hidden">
+          {userData?.avatar ? (
+            <img src={userData.avatar} alt="Profile" className="w-full h-full object-cover" />
+          ) : (
+            <span className="text-secondary font-black text-4xl md:text-5xl italic">
+              {userName.charAt(0).toUpperCase()}
+            </span>
+          )}
         </div>
 
         <div className="flex flex-col items-center mb-1">

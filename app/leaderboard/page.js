@@ -137,7 +137,7 @@ export default function Leaderboard() {
 
       {/* Others List */}
       <div className="space-y-3">
-        {leaders.slice(3).map((player) => (
+        {Array.isArray(leaders) && leaders.slice(3).map((player) => (
           <div key={player.id} className="glass-card p-4 flex items-center justify-between group hover:bg-white/5 transition-all">
             <div className="flex items-center gap-4">
               <span className="text-sm font-bold text-slate-500 w-6">#{player.rank}</span>
@@ -147,8 +147,8 @@ export default function Leaderboard() {
             <div className="flex flex-col items-end">
               <span className="text-sm font-bold text-secondary">{player.points} pts</span>
               <div className="flex items-center gap-1 mt-1">
-                <span className={`material-symbols-outlined text-[10px] ${badgeConfig[player.badge].color}`}>{badgeConfig[player.badge].icon}</span>
-                <span className={`text-[8px] font-black uppercase ${badgeConfig[player.badge].color}`}>{badgeConfig[player.badge].label}</span>
+                <span className={`material-symbols-outlined text-[10px] ${badgeConfig[player.badge]?.color || 'text-slate-500'}`}>{badgeConfig[player.badge]?.icon || 'stars'}</span>
+                <span className={`text-[8px] font-black uppercase ${badgeConfig[player.badge]?.color || 'text-slate-500'}`}>{badgeConfig[player.badge]?.label || 'SBR'}</span>
               </div>
             </div>
           </div>

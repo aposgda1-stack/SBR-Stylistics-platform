@@ -35,13 +35,18 @@ export default function Home() {
 
       try {
         const res = await fetch(`/api/user?userId=${userId}`);
+        if (!res.ok) throw new Error("Failed to fetch user");
         const data = await res.json();
         
-        if (data.user) {
+        if (data && data.user) {
           setPoints(data.user.totalPoints || 0);
           setAccuracy(data.stats?.accuracy || 0);
           setProgress(data.stats?.progress || 0);
           setAvatar(data.user.avatar || null);
+          
+          if (data.user.avatar) {
+            localStorage.setItem('stylistics_user_avatar', data.user.avatar);
+          }
           
           if (data.user.mistakes) {
             localStorage.setItem('stylistics_mistakes', JSON.stringify(data.user.mistakes));
@@ -77,7 +82,13 @@ export default function Home() {
 
     fetchUserData();
     updateCountdown();
-    setMistakes(JSON.parse(localStorage.getItem('stylistics_mistakes') || '[]'));
+    
+    try {
+      setMistakes(JSON.parse(localStorage.getItem('stylistics_mistakes') || '[]'));
+      setAvatar(localStorage.getItem('stylistics_user_avatar') || null);
+    } catch(e) {
+      console.warn("Local data corrupted", e);
+    }
     
     const countdownInterval = setInterval(updateCountdown, 1000);
     return () => clearInterval(countdownInterval);
@@ -91,6 +102,7 @@ export default function Home() {
     reader.onloadend = async () => {
       const base64String = reader.result;
       setAvatar(base64String);
+      localStorage.setItem('stylistics_user_avatar', base64String);
 
       const userId = localStorage.getItem('stylistics_user_id');
       try {
@@ -99,6 +111,8 @@ export default function Home() {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ userId, avatar: base64String })
         });
+        // Dispatch event for other components
+        window.dispatchEvent(new Event('avatarUpdate'));
       } catch (err) {
         console.error("Failed to save avatar", err);
       }

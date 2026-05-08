@@ -91,19 +91,22 @@ export async function GET(req) {
     }
 
     // Calculate Stats for Dashboard
-    const totalQuizzes = user.quizScores.length;
+    const totalQuizzes = user.quizScores ? user.quizScores.length : 0;
     let totalCorrect = 0;
     let totalPossible = 0;
     
-    user.quizScores.forEach(q => {
-      totalCorrect += q.score;
-      totalPossible += q.totalQuestions;
-    });
+    if (user.quizScores) {
+      user.quizScores.forEach(q => {
+        totalCorrect += (q.score || 0);
+        totalPossible += (q.totalQuestions || 0);
+      });
+    }
 
     const accuracy = totalPossible > 0 ? Math.round((totalCorrect / totalPossible) * 100) : 0;
     
-    // Assume there are 12 chapters in total for progress calculation
-    const progress = Math.min(100, Math.round((user.chapterProgress.size / 12) * 100));
+    // Safety check for Map type
+    const progressCount = user.chapterProgress instanceof Map ? user.chapterProgress.size : Object.keys(user.chapterProgress || {}).length;
+    const progress = Math.min(100, Math.round((progressCount / 12) * 100));
 
     return NextResponse.json({ 
       user, 
@@ -111,10 +114,11 @@ export async function GET(req) {
         accuracy,
         progress,
         totalQuizzes,
-        rank: user.totalPoints > 10000 ? 'LEGEND' : user.totalPoints > 5000 ? 'VANGUARD' : user.totalPoints > 2000 ? 'SCHOLAR' : 'NOVICE'
+        rank: (user.totalPoints || 0) > 10000 ? 'LEGEND' : (user.totalPoints || 0) > 5000 ? 'VANGUARD' : (user.totalPoints || 0) > 2000 ? 'SCHOLAR' : 'NOVICE'
       }
     });
   } catch (err) {
+    console.error("API GET Error:", err);
     return NextResponse.json({ error: err.message }, { status: 500 });
   }
 }
