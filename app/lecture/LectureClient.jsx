@@ -45,7 +45,7 @@ export default function LectureClient({ chapterData }) {
             exit={{ opacity: 0, x: 20 }}
             className="space-y-12"
           >
-            {chapterData.content.map((block, i) => (
+            {chapterData.content?.map((block, i) => (
               <section key={i} className="glass-card p-10">
                 <h3 className="text-2xl font-black mb-6 text-sky-400">{block.title || block.term}</h3>
                 {block.definition && <p className="text-slate-300 text-lg mb-6 leading-relaxed">{block.definition}</p>}
@@ -107,7 +107,7 @@ export default function LectureClient({ chapterData }) {
               <h2 className="text-3xl font-black mb-2">Applied Analysis</h2>
               <p className="text-slate-400">Test your ability to apply stylistic concepts to literary extracts.</p>
             </div>
-            <AppliedQuiz questions={chapterData.questions} />
+            <AppliedQuiz questions={chapterData.questions || chapterData.applied || []} />
           </motion.div>
         )}
       </AnimatePresence>
