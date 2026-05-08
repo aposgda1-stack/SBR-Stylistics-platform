@@ -54,6 +54,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#818cf8" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <link rel="apple-touch-icon" href="/icon-192x192.png" />
       </head>
       <body className={`${inter.className} bg-[#0a0a0b] text-white antialiased min-h-screen flex flex-col`}>
         <header className={`px-4 md:px-6 py-4 md:py-6 border-b border-white/5 bg-[#0a0a0b]/80 backdrop-blur-xl sticky top-0 z-[110] ${hideNav ? 'hidden' : ''}`}>

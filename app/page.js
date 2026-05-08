@@ -42,8 +42,9 @@ export default function LandingPage() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-500 w-full sm:w-auto">
-            <Link href="/login" className="px-12 py-5 bg-secondary text-black font-black uppercase tracking-widest rounded-2xl hover:scale-105 transition-all flex items-center justify-center gap-3 shadow-xl shadow-secondary/10">
-              Start Solving <span className="material-symbols-outlined font-bold">edit_note</span>
+            <Link href="/login" className="px-12 py-5 bg-secondary text-black font-black uppercase tracking-widest rounded-2xl hover:scale-105 transition-all flex items-center justify-center gap-3 shadow-xl shadow-secondary/10 relative overflow-hidden group animate-float premium-glow">
+              <div className="absolute inset-0 animate-shimmer pointer-events-none" />
+              <span className="relative z-10">Start Solving</span> <span className="material-symbols-outlined font-bold relative z-10">edit_note</span>
             </Link>
             <Link href="/platform" className="px-12 py-5 bg-white/5 border border-white/10 text-white font-black uppercase tracking-widest rounded-2xl hover:bg-white/10 transition-all">
               Dashboard

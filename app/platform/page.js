@@ -118,7 +118,8 @@ export default function Home() {
   const navCards = [
     { label: 'Training Center', icon: 'menu_book', path: '/training', color: 'bg-blue-500', desc: 'Chapter Practice.' },
     { label: 'Exam Prep', icon: 'timer', path: '/exams', color: 'bg-secondary', desc: 'Official Materials.' },
-    { label: 'My Dossier', icon: 'folder_managed', path: '/dashboard', color: 'bg-rose-500', desc: 'Mistakes Archive.' },
+    { label: 'Smart Glossary', icon: 'dictionary', path: '/glossary', color: 'bg-orange-500', desc: 'Terms & Devices.' },
+    { label: 'My Dossier', icon: 'folder_managed', path: '/history', color: 'bg-rose-500', desc: 'Performance Archive.' },
     { label: 'The Podium', icon: 'military_tech', path: '/leaderboard', color: 'bg-emerald-500', desc: 'Class Ranks.' },
   ];
 
@@ -174,7 +175,7 @@ export default function Home() {
         </section>
 
         {/* Global Stats Card */}
-        <section className="lg:col-span-4 bg-gradient-to-br from-secondary/20 to-transparent rounded-[24px] md:rounded-[32px] border border-secondary/20 p-6 md:p-10 flex flex-col items-center justify-center text-center relative overflow-hidden group">
+        <section className="lg:col-span-4 bg-gradient-to-br from-secondary/20 to-transparent rounded-[24px] md:rounded-[32px] border border-secondary/20 p-6 md:p-10 flex flex-col items-center justify-center text-center relative overflow-hidden group animate-float premium-glow">
           <span className="text-[9px] font-black text-slate-500 uppercase tracking-[0.3em] mb-2 md:mb-4">Mastery Points</span>
           <div className="text-5xl md:text-7xl font-black text-white italic tracking-tighter group-hover:scale-110 transition-all">
             {loading ? '...' : points.toLocaleString()}
@@ -218,7 +219,7 @@ export default function Home() {
         </section>
 
         {/* Action Grid */}
-        <div className="lg:col-span-12 grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
+        <div className="lg:col-span-12 grid grid-cols-2 lg:grid-cols-5 gap-3 md:gap-6">
           {navCards.map((card, i) => (
             <Link key={i} href={card.path} className="glass-card p-5 md:p-8 group hover:border-white/20 transition-all flex flex-col items-center text-center gap-2 md:gap-4">
               <div className={`w-10 h-10 md:w-12 md:h-12 ${card.color} rounded-xl md:rounded-2xl flex items-center justify-center text-black shadow-xl group-hover:scale-110 transition-transform`}>
