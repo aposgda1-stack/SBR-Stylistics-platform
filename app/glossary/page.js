@@ -10,27 +10,11 @@ export default function Glossary() {
   useEffect(() => {
     const loadAllTerms = async () => {
       try {
-        // List of all lecture files
-        const files = [
-          'lecture-01', 'lecture-02', 'lecture-03', 
-          'lecture-04', 'lecture-05', 'lecture-06'
-        ];
-        
-        let allTerms = [];
-        for (const file of files) {
-          const res = await fetch(`/data/${file}.json`);
-          const data = await res.json();
-          if (data.theoretical) {
-            allTerms = [...allTerms, ...data.theoretical.map(t => ({ ...t, chapter: data.title }))];
-          }
+        const res = await fetch('/api/glossary');
+        const data = await res.json();
+        if (data.success) {
+          setTerms(data.terms);
         }
-        
-        // Remove duplicates and sort
-        const uniqueTerms = Array.from(new Set(allTerms.map(a => a.term)))
-          .map(term => allTerms.find(a => a.term === term))
-          .sort((a, b) => a.term.localeCompare(b.term));
-
-        setTerms(uniqueTerms);
       } catch (err) {
         console.error("Failed to load glossary", err);
       } finally {

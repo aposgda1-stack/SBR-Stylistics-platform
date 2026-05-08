@@ -21,6 +21,14 @@ function QuizContent({ paramsPromise }) {
   const [duration, setDuration] = useState('00:00');
   const [userName, setUserName] = useState('Researcher');
 
+  const handleMistake = (mistake) => {
+    const mistakes = JSON.parse(localStorage.getItem('stylistics_mistakes') || '[]');
+    if (!mistakes.some(m => m.text === mistake.text && m.question === mistake.question)) {
+      mistakes.push({ ...mistake, timestamp: new Date() });
+      localStorage.setItem('stylistics_mistakes', JSON.stringify(mistakes));
+    }
+  };
+
   useEffect(() => {
     setMounted(true);
     const saved = localStorage.getItem('stylistics_user_name');
@@ -54,14 +62,16 @@ function QuizContent({ paramsPromise }) {
   );
 
   const handleTheoreticalComplete = (score, total) => {
-    setScores(prev => ({ ...prev, theoretical: score }));
-    setTotals(prev => ({ ...prev, theoretical: total }));
+    const currentScores = { ...scores, theoretical: score };
+    const currentTotals = { ...totals, theoretical: total };
+    setScores(currentScores);
+    setTotals(currentTotals);
     
     if (data.applied || data.questions) {
       setSection('applied');
     } else {
       setSection('results');
-      syncProgress((scores.theoretical || 0) + score, (totals.theoretical || 0) + total);
+      syncProgress(score, total);
     }
   };
 
@@ -90,6 +100,7 @@ function QuizContent({ paramsPromise }) {
             mistakes
           })
         });
+        window.dispatchEvent(new Event('stylistics_points_updated'));
       } catch (err) {
         console.error("Cloud sync failed", err);
       }
@@ -101,11 +112,14 @@ function QuizContent({ paramsPromise }) {
     const diff = end - startTime;
     setDuration(formatTime(diff));
     
+    const finalScore = scores.theoretical + score;
+    const finalTotal = totals.theoretical + total;
+    
     setScores(prev => ({ ...prev, applied: score }));
     setTotals(prev => ({ ...prev, applied: total }));
     setSection('results');
 
-    syncProgress((scores.theoretical || 0) + score, (totals.theoretical || 0) + total);
+    syncProgress(finalScore, finalTotal);
   };
 
   const startQuiz = () => {
@@ -183,7 +197,12 @@ function QuizContent({ paramsPromise }) {
 
       {section === 'theoretical' && (
         <div className="animate-in fade-in slide-in-from-right-4 duration-300">
-          <WordBox terms={data.theoretical} mode={mode} onComplete={handleTheoreticalComplete} />
+          <WordBox 
+            terms={data.theoretical} 
+            mode={mode} 
+            onComplete={handleTheoreticalComplete} 
+            onError={handleMistake}
+          />
         </div>
       )}
 
@@ -193,6 +212,7 @@ function QuizContent({ paramsPromise }) {
             questions={(data.applied || data.questions || []).map(q => ({ ...q, chapter: chapterId }))} 
             mode={mode}
             onComplete={handleAppliedComplete} 
+            onError={handleMistake}
           />
         </div>
       )}

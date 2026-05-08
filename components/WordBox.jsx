@@ -3,7 +3,7 @@ import playSound from '@/lib/sounds';
 import { syncToCloud } from '@/lib/sync';
 import { useState, useEffect } from 'react';
 
-export default function WordBox({ terms, onComplete, mode }) {
+export default function WordBox({ terms, onComplete, mode, onError }) {
   const [placedWords, setPlacedWords] = useState({});
   const [shuffledTerms, setShuffledTerms] = useState([]);
   const [selectedTerm, setSelectedTerm] = useState(null);
@@ -29,18 +29,27 @@ export default function WordBox({ terms, onComplete, mode }) {
       playSound('click');
       const isCorrectMatch = selectedTerm === terms[index].term;
       
+      if (!isCorrectMatch) {
+        playSound('error');
+        if (onError) {
+          onError({
+            text: terms[index].definition,
+            question: `What is the correct term for: "${terms[index].definition}"?`,
+            correct: terms[index].term,
+            userAnswer: selectedTerm,
+            explanation: "Review the theoretical definitions for this chapter."
+          });
+        }
+      }
+
       if (mode === 'practice' && isCorrectMatch && !placedWords[index]) {
-        // Real-time points for practice mode
         playSound('success');
         const progress = JSON.parse(localStorage.getItem('stylistics_user_progress') || '{"totalPoints": 0}');
         progress.totalPoints += 10;
         localStorage.setItem('stylistics_user_progress', JSON.stringify(progress));
         window.dispatchEvent(new Event('stylistics_points_updated'));
         
-        // REAL-TIME CLOUD SYNC
         syncToCloud({ scoreUpdate: progress.totalPoints });
-      } else if (mode === 'practice' && !isCorrectMatch) {
-        playSound('error');
       }
 
       setPlacedWords(prev => ({
@@ -91,10 +100,10 @@ export default function WordBox({ terms, onComplete, mode }) {
           }
 
           return (
-            <div key={i} className={`flex flex-col gap-4 p-6 md:p-8 rounded-[32px] border transition-all ${bgStyle} ${borderStyle} ${elevation}`}>
+            <div key={i} className={`flex flex-col gap-3 p-5 md:p-8 rounded-[24px] md:rounded-[32px] border transition-all ${bgStyle} ${borderStyle} ${elevation}`}>
               <div 
                 onClick={() => handleSlotClick(i)}
-                className={`w-full min-h-[64px] md:min-h-[72px] rounded-2xl border-2 border-dashed flex items-center justify-center transition-all px-6 text-center cursor-pointer active:scale-95
+                className={`w-full min-h-[56px] md:min-h-[72px] rounded-xl md:rounded-2xl border-2 border-dashed flex items-center justify-center transition-all px-4 md:px-6 text-center cursor-pointer active:scale-95
                   ${placed ? 
                     (showResults && mode === 'practice' ? (correct ? 'bg-emerald-500 text-white border-transparent' : 'bg-rose-500 text-white border-transparent') : 'bg-white text-black font-black border-transparent shadow-lg') 
                     : 'border-white/10 text-slate-600 hover:border-white/20'}`}
@@ -104,7 +113,7 @@ export default function WordBox({ terms, onComplete, mode }) {
                 </span>
               </div>
               
-              <div className="text-sm md:text-lg text-slate-400 font-medium leading-relaxed px-1">
+              <div className="text-xs md:text-lg text-slate-400 font-medium leading-relaxed px-1">
                 <p>{t.definition}</p>
                 {showResults && !correct && (
                   <div className="mt-4 flex items-center gap-2">
