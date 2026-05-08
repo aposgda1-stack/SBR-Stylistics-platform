@@ -33,6 +33,8 @@ export default function AppliedQuiz({ questions, onComplete, mode }) {
 
   const currentQ = shuffledQuestions[currentIndex];
 
+  if (!currentQ) return null;
+
   const handleSelect = async (option, e) => {
     if (showExplanation && mode === 'practice') return;
     

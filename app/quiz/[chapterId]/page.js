@@ -12,6 +12,7 @@ export default function QuizPage() {
   
   const [data, setData] = useState(null);
   const [section, setSection] = useState('intro');
+  const [mounted, setMounted] = useState(false);
   const [scores, setScores] = useState({ theoretical: 0, applied: 0 });
   const [totals, setTotals] = useState({ theoretical: 0, applied: 0 });
   const [startTime, setStartTime] = useState(null);
@@ -19,6 +20,7 @@ export default function QuizPage() {
   const [userName, setUserName] = useState('Researcher');
 
   useEffect(() => {
+    setMounted(true);
     const saved = localStorage.getItem('stylistics_user_name');
     if (saved) setUserName(saved);
   }, []);
@@ -40,7 +42,7 @@ export default function QuizPage() {
     fetchData();
   }, [chapterId]);
 
-  if (!data) return (
+  if (!mounted || !data) return (
     <div className="flex items-center justify-center min-h-[60vh]">
       <div className="flex flex-col items-center gap-6">
         <div className="w-16 h-16 border-4 border-secondary/20 border-t-secondary rounded-full animate-spin" />

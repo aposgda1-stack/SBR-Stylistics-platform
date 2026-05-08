@@ -10,8 +10,12 @@ export default function WordBox({ terms, onComplete, mode }) {
   const [showResults, setShowResults] = useState(false);
 
   useEffect(() => {
-    setShuffledTerms([...terms].sort(() => Math.random() - 0.5));
+    if (terms && terms.length > 0) {
+      setShuffledTerms([...terms].sort(() => Math.random() - 0.5));
+    }
   }, [terms]);
+
+  if (!terms) return null;
 
   const handleTermClick = (term) => {
     if (showResults) return;
