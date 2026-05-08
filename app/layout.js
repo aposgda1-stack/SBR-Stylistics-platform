@@ -13,6 +13,7 @@ export default function RootLayout({ children }) {
   const [points, setPoints] = useState(0);
   const [mounted, setMounted] = useState(false);
   const [notifsOpen, setNotifsOpen] = useState(false);
+  const [hasUnreadNotifs, setHasUnreadNotifs] = useState(false);
   const pathname = usePathname();
   const isAuthPage = pathname === '/login' || pathname === '/signup';
   const isLanding = pathname === '/';
@@ -20,8 +21,18 @@ export default function RootLayout({ children }) {
   const isPublicPage = isLanding || isAuthPage;
   const hideNav = isPublicPage || isQuizPage;
 
+  const handleOpenNotifs = () => {
+    setNotifsOpen(true);
+    setHasUnreadNotifs(false);
+    localStorage.setItem('stylistics_last_read_notif', Date.now().toString());
+  };
+
   useEffect(() => {
     setMounted(true);
+    // Check for unread notifications
+    const lastRead = localStorage.getItem('stylistics_last_read_notif');
+    if (!lastRead) setHasUnreadNotifs(true);
+
     const updatePoints = () => {
       const saved = JSON.parse(localStorage.getItem('stylistics_user_progress') || '{"totalPoints": 0}');
       setPoints(saved.totalPoints || 0);
@@ -65,11 +76,13 @@ export default function RootLayout({ children }) {
               
               {/* Notification Bell */}
               <button 
-                onClick={() => setNotifsOpen(true)}
+                onClick={handleOpenNotifs}
                 className="relative w-9 h-9 md:w-10 md:h-10 rounded-xl border border-white/10 flex items-center justify-center hover:bg-white/5 transition-all group"
               >
                 <span className="material-symbols-outlined text-slate-400 group-hover:text-white transition-colors">notifications</span>
-                <span className="absolute top-2 right-2 w-2 h-2 bg-rose-500 rounded-full border-2 border-[#0a0a0b] animate-pulse" />
+                {hasUnreadNotifs && mounted && (
+                  <span className="absolute top-2 right-2 w-2 h-2 bg-rose-500 rounded-full border-2 border-[#0a0a0b] animate-pulse" />
+                )}
               </button>
               
               <div className="w-9 h-9 md:w-10 md:h-10 rounded-full border-2 border-secondary/30 bg-secondary/10 flex items-center justify-center overflow-hidden shrink-0">
