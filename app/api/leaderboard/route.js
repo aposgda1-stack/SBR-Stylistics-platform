@@ -6,7 +6,10 @@ export async function GET() {
   try {
     await dbConnect();
     
-    const leaders = await UserProgress.find({})
+    const leaders = await UserProgress.find({ 
+      name: { $nin: ['Student', 'Test User', 'student', 'test user'] },
+      totalPoints: { $gt: 1 } // Only show people who actually solved something
+    })
       .sort({ totalPoints: -1 })
       .limit(10)
       .select('name totalPoints badges avatar');

@@ -148,8 +148,10 @@ export default function Home() {
                       {userName.charAt(0).toUpperCase()}
                     </span>
                   )}
-                  <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <span className="material-symbols-outlined text-white text-xl">photo_camera</span>
+                  {/* Always visible edit overlay on mobile, hover on desktop */}
+                  <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span className="material-symbols-outlined text-white text-base md:text-xl">photo_camera</span>
+                    <span className="text-[7px] md:text-[9px] font-black text-white uppercase tracking-tighter">Edit</span>
                   </div>
                 </div>
               </label>
