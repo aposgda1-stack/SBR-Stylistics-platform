@@ -16,7 +16,9 @@ export default function RootLayout({ children }) {
   const pathname = usePathname();
   const isAuthPage = pathname === '/login' || pathname === '/signup';
   const isLanding = pathname === '/';
+  const isQuizPage = pathname?.startsWith('/quiz/');
   const isPublicPage = isLanding || isAuthPage;
+  const hideNav = isPublicPage || isQuizPage;
 
   useEffect(() => {
     setMounted(true);
@@ -41,7 +43,7 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
       </head>
       <body className={`${inter.className} bg-[#0a0a0b] text-white antialiased min-h-screen flex flex-col`}>
-        <header className={`px-4 md:px-6 py-4 md:py-6 border-b border-white/5 bg-[#0a0a0b]/80 backdrop-blur-xl sticky top-0 z-[110] ${isPublicPage ? 'hidden' : ''}`}>
+        <header className={`px-4 md:px-6 py-4 md:py-6 border-b border-white/5 bg-[#0a0a0b]/80 backdrop-blur-xl sticky top-0 z-[110] ${hideNav ? 'hidden' : ''}`}>
           <div className="max-w-7xl mx-auto flex justify-between items-center">
             <Link href="/" className="text-lg md:text-xl font-bold tracking-tight text-white italic">STYLISTICS <span className="text-secondary">SBR</span></Link>
             
@@ -81,7 +83,7 @@ export default function RootLayout({ children }) {
           {children}
         </main>
 
-        {!isPublicPage && (
+        {!hideNav && (
           <footer className="px-6 py-12 border-t border-white/5 bg-[#0a0a0b] text-center space-y-4">
             <p className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] max-w-3xl mx-auto leading-relaxed">
               SBR: Summarized By Ruby • Senior 2026 Edition<br/>
@@ -92,7 +94,7 @@ export default function RootLayout({ children }) {
           </footer>
         )}
         
-        {!isPublicPage && <BottomNav />}
+        {!hideNav && <BottomNav />}
         <NotificationCenter isOpen={notifsOpen} onClose={() => setNotifsOpen(false)} />
       </body>
     </html>

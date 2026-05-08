@@ -131,13 +131,24 @@ export default function QuizPage() {
   const feedback = getEncouragement(totalPercentage);
 
   return (
-    <div className="px-6 pt-10 pb-32 max-w-4xl mx-auto">
+    <div className="px-6 pt-10 pb-32 max-w-4xl mx-auto relative">
+      {/* Floating Exit Button */}
+      <div className="fixed top-6 left-6 z-[150]">
+        <Link 
+          href="/platform" 
+          className="w-12 h-12 bg-[#111113]/60 backdrop-blur-xl border border-white/10 rounded-2xl flex items-center justify-center text-slate-400 hover:text-white hover:border-white/20 transition-all shadow-2xl"
+          title="Exit Session"
+        >
+          <span className="material-symbols-outlined">close</span>
+        </Link>
+      </div>
+
       {/* Header Info */}
       <div className="mb-10 border-b border-white/5 pb-6 flex justify-between items-end">
         <div>
           <h2 className="text-3xl font-bold mb-1">{data.title}</h2>
           <p className="text-slate-500 text-xs font-bold uppercase tracking-widest">
-            {chapterId.includes('final') || chapterId.includes('exam') ? 'Official Examination' : 'Study Practice'} • <span className="text-secondary">{mode}</span>
+            {chapterId.includes('final') || chapterId.includes('exam') ? 'Official Examination' : 'Study Practice'} • <span className="text-blue-400">{mode}</span>
           </p>
         </div>
         <div className="text-right">
