@@ -31,14 +31,20 @@ export default function Glossary() {
   );
 
   return (
-    <div className="min-h-screen bg-[#0a0a0b] text-white pt-10 pb-32 px-6 max-w-4xl mx-auto">
-      <div className="flex items-center gap-4 mb-10">
-        <Link href="/platform" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 transition-all">
-          <span className="material-symbols-outlined text-sm">arrow_back</span>
-        </Link>
-        <div>
-          <h1 className="text-3xl font-black italic tracking-tighter uppercase">Smart Glossary</h1>
-          <p className="text-slate-500 text-xs font-bold uppercase tracking-widest">Master the terminology of Senior 2026</p>
+    <div className="min-h-screen bg-[#0a0a0b] text-white pt-10 pb-32 px-6 max-w-5xl mx-auto">
+      <div className="flex flex-col md:flex-row items-center gap-8 mb-12 md:mb-20">
+        <div className="relative group shrink-0">
+          <div className="absolute inset-0 bg-orange-500/20 blur-[60px] rounded-full group-hover:bg-orange-500/30 transition-all" />
+          <img src="/glossary-bg.png" alt="Glossary" className="relative z-10 w-32 h-32 md:w-48 md:h-48 object-contain" />
+        </div>
+        <div className="text-center md:text-left space-y-2">
+          <div className="flex items-center justify-center md:justify-start gap-4 mb-2">
+            <Link href="/platform" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 transition-all">
+              <span className="material-symbols-outlined text-sm">arrow_back</span>
+            </Link>
+            <h1 className="text-3xl md:text-5xl font-black italic tracking-tighter uppercase leading-none">Smart Glossary</h1>
+          </div>
+          <p className="text-slate-500 text-[10px] md:text-xs font-black uppercase tracking-[0.3em]">Comprehensive Repository of Linguistic Devices</p>
         </div>
       </div>
 

@@ -26,12 +26,18 @@ export default function LabPage() {
   }, []);
 
   return (
-    <div className="px-4 md:px-6 pt-6 md:pt-10 pb-40 max-w-7xl mx-auto">
-      <div className="mb-8 md:mb-16">
-        <h1 className="text-3xl md:text-6xl font-black text-white italic tracking-tighter mb-2 md:mb-4">TRAINING CENTER.</h1>
-        <p className="text-slate-500 text-sm md:text-lg max-w-2xl font-medium">
-          Choose a chapter to begin your drills. Every question solved brings you closer to the A+.
-        </p>
+    <div className="px-4 md:px-6 pt-6 md:pt-16 pb-40 max-w-7xl mx-auto">
+      <div className="flex flex-col md:flex-row items-center gap-8 mb-12 md:mb-24">
+        <div className="relative group shrink-0">
+          <div className="absolute inset-0 bg-blue-500/20 blur-[80px] rounded-full group-hover:bg-blue-500/30 transition-all" />
+          <img src="/training-bg.png" alt="Training" className="relative z-10 w-40 h-40 md:w-64 md:h-64 object-contain animate-float" />
+        </div>
+        <div className="text-center md:text-left space-y-4">
+          <h1 className="text-4xl md:text-8xl font-black text-white italic tracking-tighter leading-none">TRAINING CENTER.</h1>
+          <p className="text-slate-500 text-sm md:text-xl max-w-2xl font-medium leading-relaxed">
+            Choose a chapter to begin your drills. Every question solved brings you closer to linguistic mastery.
+          </p>
+        </div>
       </div>
 
       {loading ? (

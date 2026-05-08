@@ -20,35 +20,43 @@ export default function LandingPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative z-10 pt-16 md:pt-20 pb-20 md:pb-32 px-6">
-        <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 animate-in fade-in slide-in-from-top-4 duration-700">
-            <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-            <span className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">Senior 2026 • Student Resource</span>
-          </div>
-          
-          <h1 className="text-5xl md:text-8xl lg:text-9xl font-black italic tracking-tighter leading-[0.9] mb-8 animate-in fade-in slide-in-from-bottom-8 duration-1000">
-            PRACTICE <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary via-white to-secondary bg-[length:200%_auto] animate-gradient-flow">STYLISTICS.</span>
-          </h1>
+      <section className="relative z-10 pt-16 md:pt-40 pb-20 md:pb-32 px-6">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 md:gap-24 items-center">
+          <div className="space-y-8 md:space-y-12 text-center lg:text-left">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-2 animate-in fade-in slide-in-from-top-4 duration-700">
+              <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
+              <span className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">Senior 2026 • Practice Platform</span>
+            </div>
+            
+            <h1 className="text-5xl md:text-8xl lg:text-9xl font-black italic tracking-tighter leading-[0.9] animate-in fade-in slide-in-from-bottom-8 duration-1000">
+              PRACTICE <br/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary via-white to-secondary bg-[length:200%_auto] animate-gradient-flow">STYLISTICS.</span>
+            </h1>
 
-          <div className="max-w-2xl space-y-6 mb-12 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-200">
-            <p className="text-slate-400 text-base md:text-xl font-medium leading-relaxed">
-              A dedicated space for Senior 2026 students to practice linguistic analysis and master exam patterns through targeted drills.
-            </p>
-            <p className="text-blue-400/80 text-xs md:text-sm font-bold uppercase tracking-widest italic">
-              "This is our final exam season. Let's solve as much as we can and finish this journey strong."
-            </p>
+            <div className="max-w-2xl space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-200">
+              <p className="text-slate-400 text-base md:text-xl font-medium leading-relaxed">
+                A high-fidelity analytical environment designed for the senior cohort. Master linguistic devices through targeted drills and real-time cloud sync.
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-500 w-full sm:w-auto">
+              <Link href="/login" className="px-12 py-5 bg-secondary text-black font-black uppercase tracking-widest rounded-2xl hover:scale-105 transition-all flex items-center justify-center gap-3 shadow-xl shadow-secondary/10 relative overflow-hidden group animate-float premium-glow">
+                <div className="absolute inset-0 animate-shimmer pointer-events-none" />
+                <span className="relative z-10">Start Solving</span> <span className="material-symbols-outlined font-bold relative z-10">edit_note</span>
+              </Link>
+              <Link href="/platform" className="px-12 py-5 bg-white/5 border border-white/10 text-white font-black uppercase tracking-widest rounded-2xl hover:bg-white/10 transition-all">
+                Dashboard
+              </Link>
+            </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-500 w-full sm:w-auto">
-            <Link href="/login" className="px-12 py-5 bg-secondary text-black font-black uppercase tracking-widest rounded-2xl hover:scale-105 transition-all flex items-center justify-center gap-3 shadow-xl shadow-secondary/10 relative overflow-hidden group animate-float premium-glow">
-              <div className="absolute inset-0 animate-shimmer pointer-events-none" />
-              <span className="relative z-10">Start Solving</span> <span className="material-symbols-outlined font-bold relative z-10">edit_note</span>
-            </Link>
-            <Link href="/platform" className="px-12 py-5 bg-white/5 border border-white/10 text-white font-black uppercase tracking-widest rounded-2xl hover:bg-white/10 transition-all">
-              Dashboard
-            </Link>
+          <div className="relative group animate-in fade-in zoom-in duration-1000 hidden lg:block">
+            <div className="absolute inset-0 bg-secondary/20 blur-[150px] rounded-full group-hover:bg-secondary/30 transition-all" />
+            <img 
+              src="/hero-main.png" 
+              alt="Linguistics 3D" 
+              className="relative z-10 w-full transform group-hover:scale-105 transition-transform duration-1000"
+            />
           </div>
         </div>
       </section>

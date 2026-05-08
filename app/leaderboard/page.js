@@ -60,11 +60,18 @@ export default function Leaderboard() {
   };
 
   return (
-    <div className="px-6 pt-10 pb-32 max-w-4xl mx-auto">
-      {/* Header */}
-      <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold mb-3 tracking-tight">The Podium</h2>
-        <p className="text-slate-400 text-sm">Recognizing the top 10 vanguards of stylistic analysis.</p>
+    <div className="min-h-screen bg-[#0a0a0b] text-white pt-10 pb-40 px-4 md:px-6 max-w-5xl mx-auto">
+      <div className="flex flex-col items-center text-center mb-16 md:mb-24 space-y-6">
+        <div className="relative group">
+          <div className="absolute inset-0 bg-secondary/20 blur-[80px] rounded-full group-hover:bg-secondary/30 transition-all" />
+          <div className="relative z-10 w-32 h-32 md:w-48 md:h-48 rounded-[48px] bg-secondary/10 flex items-center justify-center border border-secondary/20 animate-float">
+             <span className="material-symbols-outlined text-secondary text-6xl md:text-8xl">military_tech</span>
+          </div>
+        </div>
+        <div>
+          <h1 className="text-4xl md:text-8xl font-black italic tracking-tighter uppercase leading-none">THE PODIUM.</h1>
+          <p className="text-slate-500 text-[10px] md:text-sm font-black uppercase tracking-[0.4em] mt-2">Recognizing the top 10 vanguards of stylistic analysis.</p>
+        </div>
       </div>
 
       {/* Top 3 Podium */}
