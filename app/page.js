@@ -52,18 +52,18 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
             
-            {/* Feature 1: Study Pack */}
+            {/* Feature 1: Smart Review */}
             <div className="md:col-span-8 glass-card p-12 flex flex-col justify-between min-h-[400px] group overflow-hidden relative">
               <div className="absolute top-0 right-0 p-12 opacity-5 group-hover:opacity-20 transition-opacity">
-                <span className="material-symbols-outlined text-[120px] rotate-12">menu_book</span>
+                <span className="material-symbols-outlined text-[120px] rotate-12">psychology</span>
               </div>
               <div>
-                <span className="text-secondary font-black uppercase tracking-widest text-[10px] mb-4 block">Comprehensive Materials</span>
-                <h3 className="text-4xl font-bold text-white italic tracking-tight mb-4">SBR Study Pack.</h3>
-                <p className="text-slate-400 text-lg max-w-md">Every chapter summarized with surgical precision. No fluff, just the concepts you need to dominate the exam.</p>
+                <span className="text-secondary font-black uppercase tracking-widest text-[10px] mb-4 block">Interactive Feedback</span>
+                <h3 className="text-4xl font-bold text-white italic tracking-tight mb-4">Smart Review Mode.</h3>
+                <p className="text-slate-400 text-lg max-w-md">Our engine analyzes your mistakes and provides surgical feedback. Don't just answer; understand the linguistic patterns behind every choice.</p>
               </div>
               <div className="flex gap-2">
-                {['Parallelism', 'Deviation', 'Maxims', 'Labov'].map((tag, i) => (
+                {['Analysis', 'Feedback', 'Progress', 'Mastery'].map((tag, i) => (
                   <span key={i} className="px-3 py-1 bg-white/5 rounded-full text-[9px] font-bold text-slate-500 uppercase">{tag}</span>
                 ))}
               </div>

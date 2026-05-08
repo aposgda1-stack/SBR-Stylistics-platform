@@ -56,10 +56,10 @@ export default function Home() {
   if (!mounted) return null;
 
   const navCards = [
-    { label: 'Study Pack', icon: 'menu_book', path: '/lab', color: 'bg-blue-500', desc: 'Summaries.' },
     { label: 'Final Prep', icon: 'timer', path: '/exams', color: 'bg-secondary', desc: 'Mock Exams.' },
     { label: 'My Dossier', icon: 'folder_managed', path: '/dashboard', color: 'bg-rose-500', desc: 'Mistakes Archive.' },
     { label: 'The Podium', icon: 'military_tech', path: '/leaderboard', color: 'bg-emerald-500', desc: 'Class Ranks.' },
+    { label: 'Academic Glossary', icon: 'menu_book', path: '/glossary', color: 'bg-blue-500', desc: 'Terms Hub.' },
   ];
 
   return (
@@ -115,8 +115,8 @@ export default function Home() {
               <span className="px-2 py-0.5 bg-white/20 rounded-full text-[8px] md:text-[10px] font-bold text-white uppercase tracking-widest mb-2 md:mb-4 inline-block italic">Ready for the exam?</span>
               <h2 className="text-2xl md:text-5xl font-black text-white uppercase tracking-tighter italic leading-tight">SMASH THE EXAM.</h2>
             </div>
-            <Link href="/lab" className="bg-white text-blue-900 px-6 py-3 md:px-10 md:py-4 rounded-xl md:rounded-2xl font-black uppercase tracking-widest flex items-center justify-center gap-2 w-full md:w-fit hover:scale-105 transition-all shadow-xl">
-              <span className="material-symbols-outlined text-sm md:text-base">play_arrow</span> Start Studying
+            <Link href="/exams" className="bg-white text-blue-900 px-6 py-3 md:px-10 md:py-4 rounded-xl md:rounded-2xl font-black uppercase tracking-widest flex items-center justify-center gap-2 w-full md:w-fit hover:scale-105 transition-all shadow-xl">
+              <span className="material-symbols-outlined text-sm md:text-base">play_arrow</span> Take Mock Exam
             </Link>
           </div>
 
