@@ -6,7 +6,7 @@ export async function POST(req) {
   try {
     await dbConnect();
     const data = await req.json();
-    const { userId, name, scoreUpdate, quizResult, mistakes } = data;
+    const { userId, name, scoreUpdate, quizResult, mistakes, activity } = data;
 
     if (!userId) {
       return NextResponse.json({ error: 'User ID required' }, { status: 400 });
@@ -21,6 +21,7 @@ export async function POST(req) {
     // Update basic info
     if (name) user.name = name;
     if (mistakes) user.mistakes = mistakes;
+    if (activity) user.activity = { ...user.activity, ...activity };
 
     // Handle Quiz Submission
     if (quizResult) {

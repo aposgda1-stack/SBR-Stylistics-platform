@@ -1,4 +1,5 @@
 import playSound from '@/lib/sounds';
+import { syncToCloud } from '@/lib/sync';
 import { useState, useEffect } from 'react';
 
 export default function WordBox({ terms, onComplete, mode }) {
@@ -30,6 +31,9 @@ export default function WordBox({ terms, onComplete, mode }) {
         progress.totalPoints += 10;
         localStorage.setItem('stylistics_user_progress', JSON.stringify(progress));
         window.dispatchEvent(new Event('stylistics_points_updated'));
+        
+        // REAL-TIME CLOUD SYNC
+        syncToCloud({ scoreUpdate: progress.totalPoints });
       } else if (mode === 'practice' && !isCorrectMatch) {
         playSound('error');
       }

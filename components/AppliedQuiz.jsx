@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import playSound from '@/lib/sounds';
+import { syncToCloud } from '@/lib/sync';
 
 export default function AppliedQuiz({ questions, onComplete, mode }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -32,7 +33,7 @@ export default function AppliedQuiz({ questions, onComplete, mode }) {
 
   const currentQ = shuffledQuestions[currentIndex];
 
-  const handleSelect = (option, e) => {
+  const handleSelect = async (option, e) => {
     if (showExplanation && mode === 'practice') return;
     
     const isCorrect = option === currentQ.correct;
@@ -52,6 +53,9 @@ export default function AppliedQuiz({ questions, onComplete, mode }) {
         localStorage.setItem('stylistics_user_progress', JSON.stringify(progress));
         window.dispatchEvent(new Event('stylistics_points_updated'));
         
+        // REAL-TIME CLOUD SYNC
+        syncToCloud({ scoreUpdate: progress.totalPoints });
+        
         setTimeout(() => setFloatingPoints(null), 1000);
       } else {
         playSound('error');
@@ -67,7 +71,11 @@ export default function AppliedQuiz({ questions, onComplete, mode }) {
         const currentMistakes = JSON.parse(localStorage.getItem('stylistics_mistakes') || '[]');
         // Avoid duplicates
         if (!currentMistakes.find(m => m.text === mistake.text)) {
-          localStorage.setItem('stylistics_mistakes', JSON.stringify([...currentMistakes, mistake]));
+          const updatedMistakes = [...currentMistakes, mistake];
+          localStorage.setItem('stylistics_mistakes', JSON.stringify(updatedMistakes));
+          
+          // REAL-TIME CLOUD SYNC MISTAKES
+          syncToCloud({ mistakes: updatedMistakes });
         }
       }
 
@@ -76,6 +84,9 @@ export default function AppliedQuiz({ questions, onComplete, mode }) {
       const activity = JSON.parse(localStorage.getItem('stylistics_activity') || '{}');
       activity[today] = (activity[today] || 0) + 1;
       localStorage.setItem('stylistics_activity', JSON.stringify(activity));
+      
+      // REAL-TIME CLOUD SYNC ACTIVITY
+      syncToCloud({ activity });
     } else {
       playSound('click');
       setTimeout(() => nextQuestion(newAnswers), 300);
