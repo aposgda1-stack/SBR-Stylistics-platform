@@ -46,10 +46,11 @@ export default function AppliedQuiz({ questions, onComplete, mode }) {
         playSound('success');
         setFloatingPoints({ x: e.clientX, y: e.clientY, value: '+10' });
         
-        // SYNC TO CLOUD (Progress Update)
+        // SYNC TO LOCAL & TRIGGER UI UPDATE
         const progress = JSON.parse(localStorage.getItem('stylistics_user_progress') || '{"totalPoints": 0}');
         progress.totalPoints += 10;
         localStorage.setItem('stylistics_user_progress', JSON.stringify(progress));
+        window.dispatchEvent(new Event('stylistics_points_updated'));
         
         setTimeout(() => setFloatingPoints(null), 1000);
       } else {

@@ -1,4 +1,4 @@
-'use client';
+import playSound from '@/lib/sounds';
 import { useState, useEffect } from 'react';
 
 export default function WordBox({ terms, onComplete, mode }) {
@@ -13,18 +13,34 @@ export default function WordBox({ terms, onComplete, mode }) {
 
   const handleTermClick = (term) => {
     if (showResults) return;
+    playSound('click');
     setSelectedTerm(term === selectedTerm ? null : term);
   };
 
   const handleSlotClick = (index) => {
     if (showResults) return;
     if (selectedTerm) {
+      playSound('click');
+      const isCorrectMatch = selectedTerm === terms[index].term;
+      
+      if (mode === 'practice' && isCorrectMatch && !placedWords[index]) {
+        // Real-time points for practice mode
+        playSound('success');
+        const progress = JSON.parse(localStorage.getItem('stylistics_user_progress') || '{"totalPoints": 0}');
+        progress.totalPoints += 10;
+        localStorage.setItem('stylistics_user_progress', JSON.stringify(progress));
+        window.dispatchEvent(new Event('stylistics_points_updated'));
+      } else if (mode === 'practice' && !isCorrectMatch) {
+        playSound('error');
+      }
+
       setPlacedWords(prev => ({
         ...prev,
         [index]: selectedTerm
       }));
       setSelectedTerm(null);
     } else if (placedWords[index]) {
+      playSound('click');
       const newPlaced = { ...placedWords };
       delete newPlaced[index];
       setPlacedWords(newPlaced);

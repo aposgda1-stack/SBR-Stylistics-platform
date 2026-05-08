@@ -29,10 +29,12 @@ export default function RootLayout({ children }) {
 
     updatePoints();
     window.addEventListener('storage', updatePoints);
+    window.addEventListener('stylistics_points_updated', updatePoints);
     const interval = setInterval(updatePoints, 5000);
     
     return () => {
       window.removeEventListener('storage', updatePoints);
+      window.removeEventListener('stylistics_points_updated', updatePoints);
       clearInterval(interval);
     };
   }, []);
