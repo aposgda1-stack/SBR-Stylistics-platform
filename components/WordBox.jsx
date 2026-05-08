@@ -1,3 +1,4 @@
+'use client';
 import playSound from '@/lib/sounds';
 import { syncToCloud } from '@/lib/sync';
 import { useState, useEffect } from 'react';
