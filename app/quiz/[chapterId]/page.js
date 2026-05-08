@@ -198,30 +198,65 @@ function QuizContent({ paramsPromise }) {
       )}
 
       {section === 'results' && (
-        <div className="glass-card p-12 text-center space-y-10 animate-in fade-in zoom-in-95 duration-300">
-          <div className="space-y-4">
-            <h3 className="text-7xl font-black text-white italic tracking-tighter">{totalPercentage}%</h3>
-            <div className="pt-4 max-w-lg mx-auto">
-              <h4 className="text-secondary font-black text-sm uppercase tracking-widest mb-2">{feedback.title}</h4>
-              <p className="text-slate-400 text-sm leading-relaxed">{feedback.msg}</p>
+        <div className="animate-in fade-in zoom-in-95 duration-500 relative">
+          {/* Decorative Backdrop */}
+          <div className="absolute -top-40 -left-40 w-80 h-80 bg-secondary/10 rounded-full blur-[120px]" />
+          <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-[120px]" />
+          
+          <div className="glass-card p-6 md:p-16 text-center space-y-10 md:space-y-16 relative z-10 border-white/10 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.8)] rounded-[40px] md:rounded-[64px]">
+            
+            {/* Score Visualization */}
+            <div className="space-y-6">
+              <div className="relative inline-flex flex-col items-center">
+                <div className="text-6xl md:text-8xl font-black text-white italic tracking-tighter leading-none mb-2">
+                  {totalPercentage}<span className="text-2xl md:text-4xl text-secondary">%</span>
+                </div>
+                <div className="px-4 py-1.5 bg-secondary/10 border border-secondary/20 rounded-full">
+                   <span className="text-[10px] font-black text-secondary uppercase tracking-[0.2em]">Mastery Level Achieved</span>
+                </div>
+              </div>
+              
+              <div className="space-y-3">
+                <h3 className="text-2xl md:text-5xl font-black text-white italic tracking-tighter uppercase leading-tight">{feedback.title}</h3>
+                <p className="text-slate-400 text-sm md:text-lg max-w-lg mx-auto leading-relaxed font-medium">
+                  {feedback.msg}
+                </p>
+              </div>
             </div>
-          </div>
 
-          <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto">
-            <div className="bg-black/40 border border-white/5 p-8 rounded-3xl">
-              <div className="text-2xl font-black text-white italic">{totalCorrect}/{totalQuestions}</div>
-            </div>
-            <div className="bg-secondary text-black p-8 rounded-3xl">
-              <div className="text-2xl font-black">+{pointsEarned}</div>
-            </div>
-            <div className="bg-black/40 border border-white/5 p-8 rounded-3xl">
-              <div className="text-2xl font-black text-white italic">{duration}</div>
-            </div>
-          </div>
+            {/* Performance Metrics */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6">
+              <div className="bg-[#111113]/40 border border-white/5 p-6 md:p-10 rounded-[32px] flex flex-col items-center gap-1 md:gap-2">
+                <span className="text-[10px] font-black text-slate-600 uppercase tracking-widest">Score Accuracy</span>
+                <div className="text-2xl md:text-3xl font-black text-white italic">{totalCorrect} <span className="text-slate-600 text-sm font-medium">/ {totalQuestions}</span></div>
+              </div>
+              
+              <div className="bg-secondary/10 border border-secondary/20 p-6 md:p-10 rounded-[32px] flex flex-col items-center gap-1 md:gap-2 shadow-xl shadow-secondary/5">
+                <span className="text-[10px] font-black text-secondary uppercase tracking-widest">Mastery Points</span>
+                <div className="text-2xl md:text-3xl font-black text-secondary italic">+{pointsEarned}</div>
+              </div>
 
-          <div className="flex flex-col md:flex-row justify-center gap-4 pt-8">
-            <button onClick={() => router.push('/platform')} className="bg-white/5 text-white px-10 py-4 rounded-2xl font-black uppercase tracking-widest border border-white/10 hover:bg-white/10">Back to Platform</button>
-            <button onClick={() => window.location.reload()} className="bg-secondary text-black px-12 py-4 rounded-2xl font-black uppercase tracking-widest hover:brightness-110 shadow-xl shadow-secondary/10">Re-attempt</button>
+              <div className="bg-[#111113]/40 border border-white/5 p-6 md:p-10 rounded-[32px] flex flex-col items-center gap-1 md:gap-2">
+                <span className="text-[10px] font-black text-slate-600 uppercase tracking-widest">Completion Time</span>
+                <div className="text-2xl md:text-3xl font-black text-white italic">{duration}</div>
+              </div>
+            </div>
+
+            {/* Post-Session Actions */}
+            <div className="flex flex-col md:flex-row justify-center items-center gap-4 pt-4">
+              <button 
+                onClick={() => router.push('/platform')} 
+                className="w-full md:w-auto px-10 py-5 rounded-2xl bg-white/5 text-white border border-white/10 font-black uppercase tracking-widest hover:bg-white/10 transition-all text-xs"
+              >
+                Back to Command
+              </button>
+              <button 
+                onClick={() => window.location.reload()} 
+                className="w-full md:w-auto px-14 py-5 rounded-2xl bg-secondary text-black font-black uppercase tracking-widest hover:brightness-110 transition-all shadow-2xl shadow-secondary/20 text-xs"
+              >
+                Restart Session
+              </button>
+            </div>
           </div>
         </div>
       )}

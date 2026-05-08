@@ -9,13 +9,14 @@ export async function GET() {
     const leaders = await UserProgress.find({})
       .sort({ totalPoints: -1 })
       .limit(10)
-      .select('name totalPoints badges');
+      .select('name totalPoints badges avatar');
 
     const formattedLeaders = leaders.map((u, i) => ({
       id: u._id,
       name: u.name,
       points: u.totalPoints,
       rank: i + 1,
+      avatar: u.avatar,
       badge: u.totalPoints >= 10000 ? 'vanguard'
            : u.totalPoints >= 5000  ? 'analyst'
            : u.totalPoints >= 2000  ? 'thinker'

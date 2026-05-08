@@ -43,14 +43,18 @@ export default function Leaderboard() {
     );
   }
 
-  const renderAvatar = (name, size = "md") => {
+  const renderAvatar = (name, avatar, size = "md") => {
     const initial = name?.charAt(0).toUpperCase() || 'S';
     const dimensions = size === "lg" ? "w-20 h-20" : size === "sm" ? "w-10 h-10" : "w-16 h-16";
     const textClasses = size === "lg" ? "text-3xl" : size === "sm" ? "text-sm" : "text-xl";
 
     return (
       <div className={`${dimensions} rounded-full border-2 border-white/10 bg-secondary/10 flex items-center justify-center overflow-hidden shrink-0`}>
-        <span className={`text-secondary font-black ${textClasses} italic`}>{initial}</span>
+        {avatar ? (
+          <img src={avatar} alt={name} className="w-full h-full object-cover" />
+        ) : (
+          <span className={`text-secondary font-black ${textClasses} italic`}>{initial}</span>
+        )}
       </div>
     );
   };
@@ -69,7 +73,7 @@ export default function Leaderboard() {
         {leaders[1] && (
           <div className="flex flex-col items-center group">
             <div className="relative mb-4">
-              {renderAvatar(leaders[1].name)}
+              {renderAvatar(leaders[1].name, leaders[1].avatar)}
               <div className="absolute -bottom-2 -right-2 w-6 h-6 bg-slate-400 text-black text-[10px] font-bold rounded-full flex items-center justify-center border-2 border-[#111113]">2</div>
             </div>
             <div className="w-20 h-28 bg-white/5 border border-white/10 rounded-t-xl flex flex-col items-center justify-center p-2 text-center">
@@ -88,7 +92,7 @@ export default function Leaderboard() {
           <div className="flex flex-col items-center group -mb-4">
             <div className="relative mb-4">
               <div className="rounded-full border-4 border-secondary shadow-[0_0_20px_rgba(129,140,248,0.2)]">
-                {renderAvatar(leaders[0].name, "lg")}
+                {renderAvatar(leaders[0].name, leaders[0].avatar, "lg")}
               </div>
               <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-secondary text-black text-[12px] font-bold rounded-full flex items-center justify-center border-2 border-[#111113]">
                 <span className="material-symbols-outlined text-sm">workspace_premium</span>
@@ -109,7 +113,7 @@ export default function Leaderboard() {
         {leaders[2] && (
           <div className="flex flex-col items-center group">
             <div className="relative mb-4">
-              {renderAvatar(leaders[2].name)}
+              {renderAvatar(leaders[2].name, leaders[2].avatar)}
               <div className="absolute -bottom-2 -right-2 w-6 h-6 bg-orange-400 text-black text-[10px] font-bold rounded-full flex items-center justify-center border-2 border-[#111113]">3</div>
             </div>
             <div className="w-20 h-24 bg-white/5 border border-white/10 rounded-t-xl flex flex-col items-center justify-center p-2 text-center">
@@ -130,7 +134,7 @@ export default function Leaderboard() {
           <div key={player.id} className="glass-card p-4 flex items-center justify-between group hover:bg-white/5 transition-all">
             <div className="flex items-center gap-4">
               <span className="text-sm font-bold text-slate-500 w-6">#{player.rank}</span>
-              {renderAvatar(player.name, "sm")}
+              {renderAvatar(player.name, player.avatar, "sm")}
               <span className="font-bold text-white">{player.name}</span>
             </div>
             <div className="flex flex-col items-end">

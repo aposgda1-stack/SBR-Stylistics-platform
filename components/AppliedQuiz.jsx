@@ -12,10 +12,15 @@ export default function AppliedQuiz({ questions, onComplete, mode }) {
   const [isResearchOpen, setIsResearchOpen] = useState(false);
   const [chapterMeta, setChapterMeta] = useState(null);
 
-  // Correct way to shuffle to avoid Hydration Mismatch in Next.js
+  // Correct way to shuffle questions AND options to avoid Hydration Mismatch in Next.js
   useEffect(() => {
     if (questions && questions.length > 0) {
-      const shuffled = [...questions].sort(() => Math.random() - 0.5);
+      const shuffled = [...questions].map(q => ({
+        ...q,
+        // Shuffle the options within each question
+        options: [...q.options].sort(() => Math.random() - 0.5)
+      })).sort(() => Math.random() - 0.5); // Then shuffle the questions themselves
+      
       setShuffledQuestions(shuffled);
       
       // Fetch chapter meta for research

@@ -11,6 +11,7 @@ export default function Home() {
   const [progress, setProgress] = useState(0);
   const [mistakes, setMistakes] = useState([]);
   const [countdown, setCountdown] = useState('');
+  const [avatar, setAvatar] = useState(null);
   const [userName, setUserName] = useState('Researcher');
   const [loading, setLoading] = useState(true);
 
@@ -40,14 +41,13 @@ export default function Home() {
           setPoints(data.user.totalPoints || 0);
           setAccuracy(data.stats?.accuracy || 0);
           setProgress(data.stats?.progress || 0);
+          setAvatar(data.user.avatar || null);
           
-          // Sync mistakes from DB to local for the Review section
           if (data.user.mistakes) {
             localStorage.setItem('stylistics_mistakes', JSON.stringify(data.user.mistakes));
             setMistakes(data.user.mistakes);
           }
 
-          // Sync localStorage for offline components
           localStorage.setItem('stylistics_user_progress', JSON.stringify({ totalPoints: data.user.totalPoints }));
         }
       } catch (err) {
@@ -83,6 +83,29 @@ export default function Home() {
     return () => clearInterval(countdownInterval);
   }, []);
 
+  const handleAvatarChange = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onloadend = async () => {
+      const base64String = reader.result;
+      setAvatar(base64String);
+
+      const userId = localStorage.getItem('stylistics_user_id');
+      try {
+        await fetch('/api/user', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ userId, avatar: base64String })
+        });
+      } catch (err) {
+        console.error("Failed to save avatar", err);
+      }
+    };
+    reader.readAsDataURL(file);
+  };
+
   const handleLogout = () => {
     localStorage.removeItem('stylistics_user_id');
     localStorage.removeItem('stylistics_user_name');
@@ -108,13 +131,31 @@ export default function Home() {
           <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/5 blur-[80px] rounded-full -mr-32 -mt-32" />
           
           <div className="relative z-10 flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6 text-center md:text-left">
-            <div className="w-16 h-16 md:w-24 md:h-24 rounded-2xl md:rounded-3xl border-4 border-secondary/20 bg-secondary/10 flex items-center justify-center shrink-0">
-               <span className="text-secondary font-black text-2xl md:text-4xl italic">
-                 {userName.charAt(0).toUpperCase()}
-               </span>
+            <div className="relative group cursor-pointer">
+              <input 
+                type="file" 
+                id="avatarUpload" 
+                className="hidden" 
+                accept="image/*" 
+                onChange={handleAvatarChange} 
+              />
+              <label htmlFor="avatarUpload" className="cursor-pointer block">
+                <div className="w-16 h-16 md:w-24 md:h-24 rounded-2xl md:rounded-3xl border-4 border-secondary/20 bg-secondary/10 flex items-center justify-center shrink-0 overflow-hidden relative">
+                  {avatar ? (
+                    <img src={avatar} alt="Avatar" className="w-full h-full object-cover" />
+                  ) : (
+                    <span className="text-secondary font-black text-2xl md:text-4xl italic">
+                      {userName.charAt(0).toUpperCase()}
+                    </span>
+                  )}
+                  <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span className="material-symbols-outlined text-white text-xl">photo_camera</span>
+                  </div>
+                </div>
+              </label>
             </div>
             <div className="space-y-1 md:space-y-2">
-              <h1 className="text-3xl md:text-6xl font-black text-white italic tracking-tighter leading-none">YOU GOT THIS, {userName.split(' ')[0].toUpperCase()}.</h1>
+              <h1 className="text-3xl md:text-6xl font-black text-white italic tracking-tighter leading-none uppercase">YOU GOT THIS, {userName.split(' ')[0].toUpperCase()}.</h1>
               <p className="text-secondary/60 text-[10px] md:text-sm font-bold uppercase tracking-widest">Senior 2026 • Summarized By Ruby</p>
             </div>
           </div>
