@@ -14,19 +14,18 @@ export default function RootLayout({ children }) {
   const [mounted, setMounted] = useState(false);
   const [notifsOpen, setNotifsOpen] = useState(false);
   const pathname = usePathname();
+  const isAuthPage = pathname === '/login' || pathname === '/signup';
   const isLanding = pathname === '/';
+  const isPublicPage = isLanding || isAuthPage;
 
   useEffect(() => {
     setMounted(true);
-    // Only read from localStorage for the header points display
-    // Actual DB sync happens in individual pages after quiz completion
     const updatePoints = () => {
       const saved = JSON.parse(localStorage.getItem('stylistics_user_progress') || '{"totalPoints": 0}');
       setPoints(saved.totalPoints || 0);
     };
 
     updatePoints();
-    // Listen for storage changes to sync across tabs/components
     window.addEventListener('storage', updatePoints);
     const interval = setInterval(updatePoints, 5000);
     
@@ -42,7 +41,7 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
       </head>
       <body className={`${inter.className} bg-[#0a0a0b] text-white antialiased min-h-screen flex flex-col`}>
-        <header className={`px-4 md:px-6 py-4 md:py-6 border-b border-white/5 bg-[#0a0a0b]/80 backdrop-blur-xl sticky top-0 z-[110] ${isLanding ? 'hidden' : ''}`}>
+        <header className={`px-4 md:px-6 py-4 md:py-6 border-b border-white/5 bg-[#0a0a0b]/80 backdrop-blur-xl sticky top-0 z-[110] ${isPublicPage ? 'hidden' : ''}`}>
           <div className="max-w-7xl mx-auto flex justify-between items-center">
             <Link href="/" className="text-lg md:text-xl font-bold tracking-tight text-white italic">STYLISTICS <span className="text-secondary">SBR</span></Link>
             
@@ -82,16 +81,18 @@ export default function RootLayout({ children }) {
           {children}
         </main>
 
-        <footer className="px-6 py-12 border-t border-white/5 bg-[#0a0a0b] text-center space-y-4">
-          <p className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] max-w-3xl mx-auto leading-relaxed">
-            SBR: Summarized By Ruby • Senior 2026 Edition<br/>
-            <span className="text-rose-500/70 font-bold italic block mt-2">
-              تنويه: منصة مجانية غير ربحية لمساعدة الزملاء، ولا تخضع لإشراف أي جهة رسمية أو أكاديمية.
-            </span>
-          </p>
-        </footer>
+        {!isPublicPage && (
+          <footer className="px-6 py-12 border-t border-white/5 bg-[#0a0a0b] text-center space-y-4">
+            <p className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] max-w-3xl mx-auto leading-relaxed">
+              SBR: Summarized By Ruby • Senior 2026 Edition<br/>
+              <span className="text-rose-500/70 font-bold italic block mt-2">
+                تنويه: منصة مجانية غير ربحية لمساعدة الزملاء، ولا تخضع لإشراف أي جهة رسمية أو أكاديمية.
+              </span>
+            </p>
+          </footer>
+        )}
         
-        {!isLanding && <BottomNav />}
+        {!isPublicPage && <BottomNav />}
         <NotificationCenter isOpen={notifsOpen} onClose={() => setNotifsOpen(false)} />
       </body>
     </html>
