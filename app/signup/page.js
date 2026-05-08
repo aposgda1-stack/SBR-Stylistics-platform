@@ -64,7 +64,7 @@ export default function Signup() {
                 className="w-full bg-[#1b1b1d] border-b border-white/10 focus:border-secondary focus:ring-0 text-white text-sm rounded-t-lg pl-12 pr-4 py-4 transition-all" 
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="Ex: Ruby Ahmed" 
+                placeholder="Ex: Mohamed Ruby" 
                 type="text"
               />
             </div>
