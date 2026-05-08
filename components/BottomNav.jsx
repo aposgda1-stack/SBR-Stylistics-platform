@@ -4,9 +4,10 @@ import Link from 'next/link';
 
 const navItems = [
   { label: 'Platform', icon: 'dashboard', path: '/platform' },
+  { label: 'Study', icon: 'menu_book', path: '/lab' },
   { label: 'Exams', icon: 'timer', path: '/exams' },
   { label: 'Progress', icon: 'folder_managed', path: '/dashboard' },
-  { label: 'Leaderboard', icon: 'military_tech', path: '/leaderboard' },
+  { label: 'Podium', icon: 'military_tech', path: '/leaderboard' },
 ];
 
 export default function BottomNav() {
