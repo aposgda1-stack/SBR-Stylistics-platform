@@ -1,0 +1,187 @@
+{
+  "examId": "final-a",
+  "title": "Stylistics Final Assessment - Model A (Official)",
+  "duration": 120,
+  "questions": [
+    {
+      "id": "q1",
+      "text": "'The Forgettle' (an electric kettle which switches itself off automatically).",
+      "question": "Identify the type of deviation in this brand name.",
+      "options": ["Syntactic Deviation", "Lexical Deviation (Blend/Neologism)", "Graphological Deviation", "Semantic Deviation"],
+      "correct": "Lexical Deviation (Blend/Neologism)",
+      "explanation": "It is a nonce-formation/blend combining 'forget' and 'kettle'.",
+      "chapter": "lecture-01"
+    },
+    {
+      "id": "q2",
+      "text": "Gerard Manley Hopkins: 'Pitched past pitch of grief, / More pangs will, schooled at forepangs, wilder wring.'",
+      "question": "What stylistic device is prominent here?",
+      "options": ["Graphological Deviation", "Phonological Foregrounding (Alliteration & Repetition)", "Syntactic Parallelism", "Exophoric Reference"],
+      "correct": "Phonological Foregrounding (Alliteration & Repetition)",
+      "explanation": "Hopkins uses heavy alliteration (pitched past pitch) to foreground the emotion.",
+      "chapter": "lecture-01"
+    },
+    {
+      "id": "q3",
+      "text": "A Martian Sends a Postcard Home: 'Caxtons are mechanical birds with many wings. Some ___ are treasured for their markings.'",
+      "question": "What cohesive device is used to link back to 'birds'?",
+      "options": ["Ellipsis", "Substitution (ones)", "Lexical Reiteration", "Conjunction"],
+      "correct": "Substitution (ones)",
+      "explanation": "The implied 'ones' acts as a substitute for 'Caxtons/birds'.",
+      "chapter": "lecture-03"
+    },
+    {
+      "id": "q4",
+      "text": "'Afghanistan is the land of Pashtuns. It always has been, always will be...'",
+      "question": "What does the modality 'always' indicate in this context?",
+      "options": ["Negative shading and uncertainty", "Categorical assertion of ideological prejudice", "Deontic obligation", "Politeness strategy"],
+      "correct": "Categorical assertion of ideological prejudice",
+      "explanation": "The usuality modality 'always' stresses an inescapable truth from a biased viewpoint.",
+      "chapter": "lecture-04"
+    },
+    {
+      "id": "q5",
+      "text": "Amir's description: 'the one who went to school.... the smart one' vs 'he couldn’t read a first-grade textbook'.",
+      "question": "What is the stylistic effect of this contrast?",
+      "options": ["Positive self-presentation vs negative presentation of the other", "Maxim of Quality flout", "Narrative resolution", "Graphological deviation"],
+      "correct": "Positive self-presentation vs negative presentation of the other",
+      "explanation": "Amir highlights his own intellect while stressing Hassan's illiteracy.",
+      "chapter": "lecture-04"
+    },
+    {
+      "id": "q6",
+      "text": "A narrative element that answer 'What happened first?' and reports the ordered events.",
+      "question": "This element is called:",
+      "options": ["Orientation", "Evaluation", "Complicating Action", "Resolution"],
+      "correct": "Complicating Action",
+      "explanation": "Complicating action is the core of the narrative sequence.",
+      "chapter": "lecture-05"
+    },
+    {
+      "id": "q7",
+      "text": "The desire to be free from imposition or coercion by others.",
+      "question": "In politeness theory, this is known as:",
+      "options": ["Positive Face", "Negative Face", "Off-record strategy", "Bald on-record"],
+      "correct": "Negative Face",
+      "explanation": "Negative face is the desire for autonomy and freedom from impedance.",
+      "chapter": "lecture-06"
+    },
+    {
+      "id": "q8",
+      "text": "A speaker says something manifestly untrue to create irony.",
+      "question": "Which Gricean maxim are they flouting?",
+      "options": ["Maxim of Quantity", "Maxim of Relation", "Maxim of Quality", "Maxim of Manner"],
+      "correct": "Maxim of Quality",
+      "explanation": "The maxim of Quality requires being truthful; flouting it creates irony.",
+      "chapter": "lecture-06"
+    },
+    {
+      "id": "q9",
+      "text": "In the sentence 'I don't believe we've met'.",
+      "question": "The phrase 'I don't believe' is an example of:",
+      "options": ["A literal cognitive report", "Metaphorized probability modality", "Deontic obligation", "Lexical cohesion"],
+      "correct": "Metaphorized probability modality",
+      "explanation": "It expresses probability rather than a literal belief.",
+      "chapter": "lecture-04"
+    },
+    {
+      "id": "q10",
+      "text": "Textual patterning involving identity of structure and contrast of lexical items.",
+      "question": "This is the definition of:",
+      "options": ["Repetition", "Parallelism", "Deviation", "Cohesion"],
+      "correct": "Parallelism",
+      "explanation": "Parallelism requires identity of form but contrast in content.",
+      "chapter": "lecture-01"
+    },
+    {
+      "id": "q11",
+      "text": "Hopkins: 'the achieve of... the mastery of'.",
+      "question": "Using 'achieve' as a noun is a:",
+      "options": ["Syntactic Re-sequencing", "Lexical Functional Conversion", "Phonological Syncope", "Semantic Paradox"],
+      "correct": "Lexical Functional Conversion",
+      "explanation": "It changes the word's grammatical class without changing its form.",
+      "chapter": "lecture-02"
+    },
+    {
+      "id": "q12",
+      "text": "Omission of medial sounds in a word, like 'o'er' instead of 'over'.",
+      "question": "This phonological deviation is called:",
+      "options": ["Aphesis", "Syncope", "Apocope", "Elision"],
+      "correct": "Syncope",
+      "explanation": "Syncope is the loss of sounds from the middle of a word.",
+      "chapter": "lecture-02"
+    },
+    {
+      "id": "q13",
+      "text": "Conjunctions like 'however', 'on the other hand', and 'on the contrary'.",
+      "question": "These belong to which category?",
+      "options": ["Additive", "Adversative", "Causal", "Temporal"],
+      "correct": "Adversative",
+      "explanation": "Adversative conjunctions signpost contrast or counter-expectation.",
+      "chapter": "lecture-03"
+    },
+    {
+      "id": "q14",
+      "text": "The familiar association between content words like 'rabbit' and 'hole'.",
+      "question": "This lexical cohesion type is:",
+      "options": ["Synonymy", "Superordination", "Collocation", "Substitution"],
+      "correct": "Collocation",
+      "explanation": "Collocation is the habitual co-occurrence of words.",
+      "chapter": "lecture-03"
+    },
+    {
+      "id": "q15",
+      "text": "'It is a truth universally acknowledged, that a single man... must be in want of a wife.'",
+      "question": "This is a/an:",
+      "options": ["Metaphorized Modality", "Generic Sentence", "Evaluative Adverb", "Specific Description"],
+      "correct": "Generic Sentence",
+      "explanation": "It asserts a timeless truth about a whole set of people.",
+      "chapter": "lecture-04"
+    },
+    {
+      "id": "q16",
+      "text": "A story element that bridges back to the present and may provide a moral.",
+      "question": "This is Labov's:",
+      "options": ["Abstract", "Resolution", "Coda", "Orientation"],
+      "correct": "Coda",
+      "explanation": "The coda relates the story back to the 'here and now'.",
+      "chapter": "lecture-05"
+    },
+    {
+      "id": "q17",
+      "text": "'While I was waiting for the bus, it started to rain.'",
+      "question": "Which type of internal evaluation is 'While I was waiting'?",
+      "options": ["Intensifying", "Comparator", "Correlative", "Explicative"],
+      "correct": "Correlative",
+      "explanation": "Correlatives report secondary activities happening during the main action.",
+      "chapter": "lecture-05"
+    },
+    {
+      "id": "q18",
+      "text": "Teacher: 'What is the capital of France?' Pupil: 'Paris.' Teacher: 'That's right.'",
+      "question": "The Teacher's second remark is which move?",
+      "options": ["Opening", "Supporting", "Follow-up / Feedback", "Challenging"],
+      "correct": "Follow-up / Feedback",
+      "explanation": "Feedback is the third move in a typical classroom exchange.",
+      "chapter": "lecture-06"
+    },
+    {
+      "id": "q19",
+      "text": "'I don't suppose you could give us a lift, could you?'",
+      "question": "Which negative politeness strategy is used?",
+      "options": ["Be pessimistic", "Indicate deference", "Minimise the imposition", "Use hedges"],
+      "correct": "Be pessimistic",
+      "explanation": "Expressing doubt about compliance is being pessimistic.",
+      "chapter": "lecture-06"
+    },
+    {
+      "id": "q20",
+      "text": "Deviation measured against the norms of the general language system.",
+      "question": "This is:",
+      "options": ["Internal Deviation", "External Deviation", "Phonological Deviation", "Semantic Deviation"],
+      "correct": "External Deviation",
+      "explanation": "External deviation uses the language system outside the text as its norm.",
+      "chapter": "lecture-01"
+    }
+  ]
+}

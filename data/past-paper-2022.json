@@ -1,0 +1,62 @@
+{
+  "chapterId": "exam-2022",
+  "title": "Official Exam: June 2022",
+  "applied": [
+    {
+      "text": "Identify the flouted maxim: A reference letter praising a student's 'smoking habits and dress sense' instead of academic ability.",
+      "question": "Maxim:",
+      "options": ["Quality", "Quantity (withholding)", "Relation", "Manner"],
+      "correct": "Quantity (withholding)",
+      "explanation": "The writer is flouting Quantity by providing irrelevant info and withholding the expected academic evaluation, implying the student is poor academically.",
+      "source": "Exam 2022"
+    },
+    {
+      "text": "Identify the flouted maxim: Mike: 'How come Mary’s all dressed up?' Annie: 'We’re going to the D-E-N-T-I-S-T.'",
+      "question": "Maxim:",
+      "options": ["Quality", "Quantity", "Relation", "Manner (Clarity)"],
+      "correct": "Manner (Clarity)",
+      "explanation": "Annie is flouting the maxim of Manner (avoiding clarity) by spelling out the word, likely to prevent a child from understanding.",
+      "source": "Exam 2022"
+    },
+    {
+      "text": "Politeness strategy: 'My pen isn’t working.' (Hoping someone offers one)",
+      "question": "Strategy:",
+      "options": ["Bald on-record", "Positive Politeness", "Negative Politeness", "Off-record (Hint)"],
+      "correct": "Off-record (Hint)",
+      "explanation": "This is a hint that avoids an explicit request, making it an off-record strategy.",
+      "source": "Exam 2022"
+    },
+    {
+      "text": "Politeness strategy: 'Bring me the vacuum cleaner.'",
+      "question": "Strategy:",
+      "options": ["Bald on-record", "Positive Politeness", "Negative Politeness", "Off-record"],
+      "correct": "Bald on-record",
+      "explanation": "A direct, unmitigated command is a bald on-record strategy.",
+      "source": "Exam 2022"
+    },
+    {
+      "text": "Politeness strategy: Husband to wife: 'Honey, I am wearing the last clean shirt I found in the closet!'",
+      "question": "Strategy:",
+      "options": ["Positive Politeness", "Negative Politeness", "Off-record (Hint)", "Bald on-record"],
+      "correct": "Off-record (Hint)",
+      "explanation": "The husband is hinting that more laundry needs to be done without explicitly asking.",
+      "source": "Exam 2022"
+    },
+    {
+      "text": "Identify the deviation: 'words can strangle this deaf moonlight'",
+      "question": "Type:",
+      "options": ["Lexical", "Syntactic", "Semantic", "Phonological"],
+      "correct": "Semantic",
+      "explanation": "Metaphorical and personified usage (words strangling, deaf moonlight) is semantic deviation.",
+      "source": "Exam 2022"
+    },
+    {
+      "text": "Identify the deviation: 'o’erflow'",
+      "question": "Type:",
+      "options": ["Phonological (Syncope)", "Syntactic", "Graphological", "Semantic"],
+      "correct": "Phonological (Syncope)",
+      "explanation": "The loss of a medial sound (the 'v' in overflow) is a phonological syncope.",
+      "source": "Exam 2022"
+    }
+  ]
+}

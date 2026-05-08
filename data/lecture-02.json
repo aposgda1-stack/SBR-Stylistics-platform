@@ -1,0 +1,189 @@
+{
+  "chapterId": "lecture-02",
+  "title": "Deviation: The Irregularity of Language",
+  "theoretical": [
+    { "term": "Internal Deviation", "definition": "A departure from a pattern established within the text itself." },
+    { "term": "External Deviation", "definition": "A departure from the norms of the general language system outside the text." },
+    { "term": "Lexical Deviation", "definition": "Achieved through neologisms, affixation, compounding, and functional conversion." },
+    { "term": "Syntactic Deviation", "definition": "Deviating from syntactic constraints, such as word order in noun phrases." },
+    { "term": "Phonological Deviation", "definition": "Oddities in pronunciation or stress (e.g., Elision, Aphesis, Syncope, Apocope)." },
+    { "term": "Graphological Deviation", "definition": "Typographic irregularities in layout, punctuation, and spelling." },
+    { "term": "Semantic Deviation", "definition": "Logically inconsistent or paradoxical meaning relations (e.g., Metaphor, Paradox)." }
+  ],
+  "applied": [
+    {
+      "text": "The poet invents 'manunkind' and 'foresuffer'.",
+      "question": "These words are examples of which type of lexical deviation?",
+      "options": ["Compounding", "Affixation", "Functional Conversion", "Neologism (General)"],
+      "correct": "Affixation",
+      "explanation": "Affixation is the prefixation or suffixation of items to create new words."
+    },
+    {
+      "text": "'widow-making unchilding unfathering'.",
+      "question": "This sequence by Hopkins uses which lexical deviation technique?",
+      "options": ["Affixation", "Compounding", "Functional Conversion", "Phonological Elision"],
+      "correct": "Compounding",
+      "explanation": "Compounding joins two or more items to make a single item."
+    },
+    {
+      "text": "'The just man justices.'",
+      "question": "Using the noun 'justice' as a verb is an example of:",
+      "options": ["Compounding", "Functional Conversion", "Affixation", "Syntactic Deviation"],
+      "correct": "Functional Conversion",
+      "explanation": "Functional conversion adapts an item to a new grammatical function without changing its form."
+    },
+    {
+      "text": "'the achieve of... the mastery of'.",
+      "question": "Why does Hopkins use 'achieve' as a noun instead of 'achievement'?",
+      "options": ["He didn't know the word achievement.", "To foreground physical energy and the bird's achievement.", "To save space on the page.", "To rhyme with 'mastery'."],
+      "correct": "To foreground physical energy and the bird's achievement.",
+      "explanation": "Deviation highlights specific meanings; here it emphasizes energy."
+    },
+    {
+      "text": "'Little enough I sought / But a word compassionate'.",
+      "question": "This deviation from the adjective-noun word order is categorized as:",
+      "options": ["Lexical Deviation", "Syntactic Deviation", "Phonological Deviation", "Semantic Deviation"],
+      "correct": "Syntactic Deviation",
+      "explanation": "Word order changes are syntactic deviations."
+    },
+    {
+      "text": "'Then spake King Arthur to Sir Bedivere'.",
+      "question": "The re-sequencing of phrases away from normal S-V-O order is typical of:",
+      "options": ["Lexical Deviation", "Syntactic Deviation", "Semantic Paradox", "Internal Deviation"],
+      "correct": "Syntactic Deviation",
+      "explanation": "Altering clause-level word order is a syntactic deviation."
+    },
+    {
+      "text": "The pronunciation of 'wind' as /waind/ to fit a rhyme.",
+      "question": "This is a form of:",
+      "options": ["Phonological Deviation", "Graphological Deviation", "Syntactic Deviation", "Lexical Deviation"],
+      "correct": "Phonological Deviation",
+      "explanation": "Oddities in pronunciation for rhyme are phonological deviations."
+    },
+    {
+      "text": "The gradual loss of the short unstressed vowel at the beginning of 'against' ('gainst).",
+      "question": "This is known as:",
+      "options": ["Syncope", "Apocope", "Aphesis", "Elision"],
+      "correct": "Aphesis",
+      "explanation": "Aphesis is the loss of the initial vowel."
+    },
+    {
+      "text": "The omission of medial sounds in 'o'er'.",
+      "question": "This is known as:",
+      "options": ["Aphesis", "Syncope", "Apocope", "Elision"],
+      "correct": "Syncope",
+      "explanation": "Syncope is the loss of medial sounds."
+    },
+    {
+      "text": "The loss of sounds from the end of a word (e.g., 'child' as 'chil').",
+      "question": "This is known as:",
+      "options": ["Aphesis", "Syncope", "Apocope", "Elision"],
+      "correct": "Apocope",
+      "explanation": "Apocope is the loss of sounds at the end of a word."
+    },
+    {
+      "text": "H-E-L-L split into separate syllables on separate lines.",
+      "question": "This deviation primarily concerns typography and layout, which is:",
+      "options": ["Phonological", "Syntactic", "Graphological", "Semantic"],
+      "correct": "Graphological",
+      "explanation": "Layout and typography are graphological concerns."
+    },
+    {
+      "text": "'The Forgettle'.",
+      "question": "According to Exercise 2, this brand name for a kettle is deviant because it is a:",
+      "options": ["Archaism", "Blend / Nonce-formation", "Functional Conversion", "Syncope"],
+      "correct": "Blend / Nonce-formation",
+      "explanation": "It's a new word (forget + kettle) made for a single occasion."
+    },
+    {
+      "text": "'Light breaks where no sun shines... file through the flesh where no flesh decks the bones.'",
+      "question": "These logically inconsistent meaning relations are:",
+      "options": ["Lexical Deviation", "Semantic Deviation", "Phonological Deviation", "Graphological Deviation"],
+      "correct": "Semantic Deviation",
+      "explanation": "Meaning inconsistencies are semantic deviations."
+    },
+    {
+      "text": "Eliot defines cold as 'heart's heat' and light as 'blindness'.",
+      "question": "This exploitation of paradoxical meaning is:",
+      "options": ["Simile", "Semantic Paradox", "Lexical Compounding", "Internal Deviation"],
+      "correct": "Semantic Paradox",
+      "explanation": "Paradoxes are logically inconsistent meaning relations."
+    },
+    {
+      "text": "Deviation disrupts or departs from readers' expectations.",
+      "question": "When deviation is measured against a norm *within* the poem, it is:",
+      "options": ["External", "Internal", "Syntactic", "Phonological"],
+      "correct": "Internal",
+      "explanation": "Internal deviation happens against the established pattern of the text."
+    },
+    {
+      "text": "A poet uses 't'assault' instead of 'to assault'.",
+      "question": "This phonological irregularity is called:",
+      "options": ["Apocope", "Syncope", "Elision", "Aphesis"],
+      "correct": "Elision",
+      "explanation": "Elision is the omission of a sound (like 'o' in 'to') for meter."
+    },
+    {
+      "text": "Ted Hughes uses capital letters: 'A final try,' said God. 'Now, LOVE.'",
+      "question": "This graphological deviation indicates:",
+      "options": ["A spelling error", "A special marked phonetic form (louder, slower)", "The poem is ending", "A paradox"],
+      "correct": "A special marked phonetic form (louder, slower)",
+      "explanation": "Graphological deviations (like capitals) often translate to phonological emphasis."
+    },
+    {
+      "text": "'pity this busy monster, manunkind'.",
+      "question": "Which specific word in this line represents a neologism through affixation?",
+      "options": ["busy", "monster", "manunkind", "pity"],
+      "correct": "manunkind",
+      "explanation": "Manunkind is a neologism combining mankind and unkind/un- prefix."
+    },
+    {
+      "text": "'into a mountainrange ; lenses extend unwish through curving wherewhen'",
+      "question": "The word 'wherewhen' is an example of which lexical deviation?",
+      "options": ["Affixation", "Compounding", "Functional Conversion", "Aphesis"],
+      "correct": "Compounding",
+      "explanation": "It joins two question words (where + when) into a single item."
+    },
+    },
+    {
+      "text": "Death feeds on his mute voice, and laughs at our despair.",
+      "question": "Identify the type of deviation used in this line.",
+      "options": ["Syntactic Deviation", "Semantic Deviation (Personification)", "Lexical Deviation", "Phonological Deviation"],
+      "correct": "Semantic Deviation (Personification)",
+      "explanation": "Giving human qualities (feeding, laughing) to an abstract concept (Death) is semantic deviation.",
+      "source": "Exam 2020"
+    },
+    {
+      "text": "Her Kindling buds as if she Autumn were.",
+      "question": "Which type of deviation is primarily used here?",
+      "options": ["Lexical Deviation", "Syntactic Deviation (Inversion)", "Semantic Deviation", "Graphological Deviation"],
+      "correct": "Syntactic Deviation (Inversion)",
+      "explanation": "The word order 'Autumn were' is a deviation from the standard 'were Autumn', which is syntactic inversion.",
+      "source": "Exam 2020"
+    },
+    {
+      "text": "Lost Echo sits amid voiceless mountains.",
+      "question": "This extract contains:",
+      "options": ["Internal Deviation", "Semantic Deviation", "Phonological Apocope", "Graphological Punctuation"],
+      "correct": "Semantic Deviation",
+      "explanation": "The personification of 'Echo' and the paradox of 'voiceless mountains' are semantic deviations.",
+      "source": "Exam 2020"
+    },
+    {
+      "text": "The passion-winged ministers of thought.",
+      "question": "The use of 'passion-winged' is an instance of:",
+      "options": ["Semantic Deviation (Metaphor)", "Syntactic Deviation", "Lexical Archaism", "Phonological Syncope"],
+      "correct": "Semantic Deviation (Metaphor)",
+      "explanation": "This metaphorical description is a semantic deviation from literal language.",
+      "source": "Exam 2020"
+    },
+    {
+      "text": "Thus ceased she, the mountain shepherds came.",
+      "question": "The structure 'Thus ceased she' is a/an:",
+      "options": ["Lexical Neologism", "Syntactic Deviation (Inversion)", "Internal Patterning", "Semantic Paradox"],
+      "correct": "Syntactic Deviation (Inversion)",
+      "explanation": "The inversion of subject and verb (ceased she) is a syntactic deviation.",
+      "source": "Exam 2020"
+    }
+  ]
+}

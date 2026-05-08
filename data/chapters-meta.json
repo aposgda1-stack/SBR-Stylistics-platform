@@ -1,0 +1,81 @@
+{
+  "chapters": [
+    {
+      "id": "lecture-01",
+      "title": "Introduction & Foregrounding",
+      "topics": ["Poetic Licence", "Levels of Language", "Foregrounding", "Parallelism", "Repetition"],
+      "description": "Understanding the basics of Stylistics and how authors make certain aspects of a text stand out.",
+      "category": "Phonology"
+    },
+    {
+      "id": "lecture-02",
+      "title": "Deviation",
+      "topics": ["Lexical Deviation", "Syntactic Deviation", "Phonological Deviation", "Graphological Deviation", "Semantic Deviation"],
+      "description": "How deviation works by disrupting expectations through structural patterns.",
+      "category": "Morphology"
+    },
+    {
+      "id": "lecture-03",
+      "title": "Cohesion",
+      "topics": ["Reference", "Ellipsis", "Conjunction", "Lexical Cohesion"],
+      "description": "Linguistic means by which sentences are woven together to make texts.",
+      "category": "Syntax"
+    },
+    {
+      "id": "lecture-04",
+      "title": "Modality and Attitude",
+      "topics": ["Modal Verbs", "Modal Adverbs", "Generic Sentences", "Evaluative Devices"],
+      "description": "Expressing opinion, attitude, and commitment in language.",
+      "category": "Semantics"
+    },
+    {
+      "id": "lecture-05",
+      "title": "Narrative Structure",
+      "topics": ["Labov's Schema", "Abstract", "Orientation", "Complicating Action", "Evaluation", "Resolution", "Coda"],
+      "description": "The logical and social requirements of a narrative.",
+      "category": "Syntax"
+    },
+    {
+      "id": "lecture-06",
+      "title": "Dialogue and Drama",
+      "topics": ["Discourse Structure", "Birmingham Model", "Grice's Maxims", "Politeness Theory"],
+      "description": "Analyzing talk and social interaction in texts.",
+      "category": "Pragmatics"
+    },
+    {
+      "id": "past-paper-2020",
+      "title": "Official Exam: July 2020",
+      "topics": ["Maxims", "Politeness", "Deviation", "Cohesion"],
+      "description": "Standardized past paper model for stylistic analysis practice.",
+      "category": "Past Papers"
+    },
+    {
+      "id": "past-paper-2021",
+      "title": "Official Exam: May 2021",
+      "topics": ["Maxims", "Politeness", "Modality", "Reference"],
+      "description": "Historical assessment covering dialogue and modality parameters.",
+      "category": "Past Papers"
+    },
+    {
+      "id": "past-paper-2022",
+      "title": "Official Exam: June 2022",
+      "topics": ["Maxims", "Politeness", "Deviation"],
+      "description": "Practice model focusing on deviation and politeness strategies.",
+      "category": "Past Papers"
+    },
+    {
+      "id": "past-paper-2024",
+      "title": "Official Exam: June 2024",
+      "topics": ["Maxims", "Modality", "Narrative", "Politeness"],
+      "description": "Official previous year paper focusing on modern curriculum topics.",
+      "category": "Past Papers"
+    },
+    {
+      "id": "past-paper-2025",
+      "title": "Official Exam: 2025 (Last Year)",
+      "topics": ["Foregrounding", "Narrative", "Politeness", "Modality"],
+      "description": "The most recent past paper before the current 2026 cycle.",
+      "category": "Past Papers"
+    }
+  ]
+}

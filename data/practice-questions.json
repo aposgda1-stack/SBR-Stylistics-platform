@@ -1,0 +1,40 @@
+{
+  "practice_sets": [
+    {
+      "id": "set-01",
+      "title": "Evaluative Devices & Character Analysis",
+      "questions": [
+        {
+          "id": "p1",
+          "text": "Analyze the feelings of Ila towards Nanda using the verbs 'screwing up', 'stepping', 'flung', 'pecked' and 'crying'.",
+          "explanation": "Evaluative devices like 'delight', 'love', 'eagerly' and 'hideous' depict joy and admiration. Repetition of 'delight' stresses the feeling.",
+          "topic": "Modality and Attitude"
+        },
+        {
+          "id": "p2",
+          "text": "Analyze Amir's perception of Hassan. How is the phrase 'open book' and the parallel structure 'the one who went to school... the smart one' used?",
+          "explanation": "Positive self-presentation via parallel structure vs. negative presentation of Hassan's illiteracy. Contrast between 'unsettling' and 'comfortable' shows contradictory character.",
+          "topic": "Dialogue and Drama / Characterization"
+        }
+      ]
+    },
+    {
+      "id": "set-02",
+      "title": "Identity & Political Discourse",
+      "questions": [
+        {
+          "id": "p3",
+          "text": "Analyze the categorical assertion 'is/are' and the usuality modality 'always' in the Pashtun pride extract.",
+          "explanation": "Categorical assertions present belief as inescapable truth. Evaluative adjectives 'true' and 'pure' show pride and self-conceit.",
+          "topic": "Modality and Attitude"
+        },
+        {
+          "id": "p4",
+          "text": "Analyze the Taliban member's description of the Mazar-i-Sharif massacre using 'guilt', 'remorse', 'virtuous', 'good', 'decent' and 'breathtaking'.",
+          "explanation": "Positive presentation of genocide as 'liberation'. 'Breathtaking' and 'God's work' show insensibility and manipulation.",
+          "topic": "Modality and Attitude"
+        }
+      ]
+    }
+  ]
+}

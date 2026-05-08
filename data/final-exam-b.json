@@ -1,0 +1,187 @@
+{
+  "examId": "final-b",
+  "title": "Stylistics Final Assessment - Model B (Official)",
+  "duration": 120,
+  "questions": [
+    {
+      "id": "q1",
+      "text": "'pity this busy monster, manunkind'.",
+      "question": "The word 'manunkind' is an example of:",
+      "options": ["Syntactic deviation", "Lexical deviation (Affixation)", "Graphological deviation", "Phonological deviation"],
+      "correct": "Lexical deviation (Affixation)",
+      "explanation": "It uses the prefix 'un-' in an irregular way within the word 'mankind'.",
+      "chapter": "lecture-01"
+    },
+    {
+      "id": "q2",
+      "text": "The Taliban speaker says: 'free of guilt and remorse. Knowing you are virtuous, good and decent.'",
+      "question": "What is the stylistic function of these adjectives?",
+      "options": ["Negative shading", "Evaluative devices used to maintain 'nobility'", "Deontic obligation", "Lexical substitution"],
+      "correct": "Evaluative devices used to maintain 'nobility'",
+      "explanation": "Evaluative adjectives are used here to moralize and justify the speaker's actions.",
+      "chapter": "lecture-04"
+    },
+    {
+      "id": "q3",
+      "text": "Welsh is known to disappear abroad... But it's happening now.",
+      "question": "The word 'it' refers back to 'disappearing abroad'. This is:",
+      "options": ["Anaphoric Reference", "Exophoric Reference", "Ellipsis", "Lexical collocation"],
+      "correct": "Anaphoric Reference",
+      "explanation": "Anaphora is the use of a word referring back to another word used earlier in a text.",
+      "chapter": "lecture-03"
+    },
+    {
+      "id": "q4",
+      "text": "Narrative requires a significant change from a 'before' state to an 'after' state.",
+      "question": "How does this differ from 'Description'?",
+      "options": ["Narratives use more words", "Description tells 'the way things are' (statically)", "Narratives are always fictional", "There is no difference"],
+      "correct": "Description tells 'the way things are' (statically)",
+      "explanation": "Description is static; narrative reports sequential change.",
+      "chapter": "lecture-05"
+    },
+    {
+      "id": "q5",
+      "text": "A: 'You've failed your exam.' B: 'Terrific!'",
+      "question": "Which Gricean maxim is flouted here?",
+      "options": ["Maxim of Quantity", "Maxim of Relation", "Maxim of Quality", "Maxim of Manner"],
+      "correct": "Maxim of Quality",
+      "explanation": "B is saying something false (Quality) to express sarcasm.",
+      "chapter": "lecture-06"
+    },
+    {
+      "id": "q6",
+      "text": "'She watched, hungrily, a pair of trembling, blue-veined hands... crumble the corner of a crust.'",
+      "question": "The links between 'hungrily', 'crumble', and 'crust' are:",
+      "options": ["Conjunctions", "Lexical Cohesion (Collocation)", "Ellipsis", "Comparative Reference"],
+      "correct": "Lexical Cohesion (Collocation)",
+      "explanation": "These words naturally go together in the semantic field of eating.",
+      "chapter": "lecture-03"
+    },
+    {
+      "id": "q7",
+      "text": "A hint like 'Goodness me, it's hot in here!' instead of a direct request.",
+      "question": "This is which politeness strategy?",
+      "options": ["Off-record", "Positive Politeness", "Negative Politeness", "Bald on-record"],
+      "correct": "Off-record",
+      "explanation": "Off-record strategies use hints to avoid a direct Face Threatening Act.",
+      "chapter": "lecture-06"
+    },
+    {
+      "id": "q8",
+      "text": "'The English are a nation of shopkeepers.'",
+      "question": "This generic sentence occupies the endpoint of which modality scale?",
+      "options": ["Probability", "Obligation", "Willingness", "Usuality"],
+      "correct": "Usuality",
+      "explanation": "Generic sentences represent what is 'always the case' (extreme usuality).",
+      "chapter": "lecture-04"
+    },
+    {
+      "id": "q9",
+      "text": "The narrative element that answers 'So what?' or 'Why was this told?'",
+      "question": "This is Labov's:",
+      "options": ["Abstract", "Evaluation", "Resolution", "Coda"],
+      "correct": "Evaluation",
+      "explanation": "Evaluation highlights the point and interest of the story.",
+      "chapter": "lecture-05"
+    },
+    {
+      "id": "q10",
+      "text": "Breaking a pattern established *within* the text itself.",
+      "question": "This is known as:",
+      "options": ["External Deviation", "Internal Deviation", "Lexical Deviation", "Syntactic Deviation"],
+      "correct": "Internal Deviation",
+      "explanation": "Internal deviation happens against the background of the text's own established norms.",
+      "chapter": "lecture-01"
+    },
+    {
+      "id": "q11",
+      "text": "The loss of a sound at the end of a word (e.g., 'child' as 'chil').",
+      "question": "This phonological deviation is:",
+      "options": ["Aphesis", "Syncope", "Apocope", "Elision"],
+      "correct": "Apocope",
+      "explanation": "Apocope is the loss of the final sound.",
+      "chapter": "lecture-02"
+    },
+    {
+      "id": "q12",
+      "text": "'widow-making unchilding unfathering'.",
+      "question": "This Hopkins line uses which lexical deviation?",
+      "options": ["Affixation", "Compounding", "Functional Conversion", "Syncope"],
+      "correct": "Compounding",
+      "explanation": "It joins words to make single items (widow + making).",
+      "chapter": "lecture-02"
+    },
+    {
+      "id": "q13",
+      "text": "A: 'Who is at the door?' B: 'That'll be John.'",
+      "question": "The use of 'will' here expresses:",
+      "options": ["Willingness", "Probability", "Unmodalized Futurity", "Obligation"],
+      "correct": "Probability",
+      "explanation": "B is making a probable assessment, not a future prediction.",
+      "chapter": "lecture-04"
+    },
+    {
+      "id": "q14",
+      "text": "A classroom exchange structure: Teacher > Pupil > Teacher.",
+      "question": "This hierarchical discourse model is the:",
+      "options": ["Labov Model", "Birmingham Model", "Gricean Model", "Politeness Model"],
+      "correct": "Birmingham Model",
+      "explanation": "The Birmingham Model (Sinclair & Coulthard) analyzes discourse hierarchy.",
+      "chapter": "lecture-06"
+    },
+    {
+      "id": "q15",
+      "text": "'I don't believe we've met.'",
+      "question": "This is a/an:",
+      "options": ["Modal Auxiliary", "Metaphorized Modality", "Generic Sentence", "Evaluative Verb"],
+      "correct": "Metaphorized Modality",
+      "explanation": "It uses a cognitive verb metaphorically to express probability.",
+      "chapter": "lecture-04"
+    },
+    {
+      "id": "q16",
+      "text": "A story summary at the beginning that whets the audience's appetite.",
+      "question": "This is Labov's:",
+      "options": ["Abstract", "Orientation", "Evaluation", "Coda"],
+      "correct": "Abstract",
+      "explanation": "The abstract is a one-sentence summary of the story.",
+      "chapter": "lecture-05"
+    },
+    {
+      "id": "q17",
+      "text": "'He didn't run, he walked slowly.'",
+      "question": "Which internal evaluation type is 'He didn't run'?",
+      "options": ["Intensifying", "Comparator", "Correlative", "Explicative"],
+      "correct": "Comparator",
+      "explanation": "Comparators show what didn't happen to highlight what did.",
+      "chapter": "lecture-05"
+    },
+    {
+      "id": "q18",
+      "text": "The psychological effect of textual patterning making parts of a text prominent.",
+      "question": "This is the definition of:",
+      "options": ["Cohesion", "Foregrounding", "Modality", "Deixis"],
+      "correct": "Foregrounding",
+      "explanation": "Foregrounding is a psychological effect described by Gibbons & Whiteley.",
+      "chapter": "lecture-01"
+    },
+    {
+      "id": "q19",
+      "text": "Words like 'now', 'well', 'anyway' that help dialogue flow.",
+      "question": "These are which type of conjunction?",
+      "options": ["Additive", "Temporal", "Continuative", "Adversative"],
+      "correct": "Continuative",
+      "explanation": "Continuatives help the flow of talk without strong logical links.",
+      "chapter": "lecture-03"
+    },
+    {
+      "id": "q20",
+      "text": "Reference involving words like 'different', 'same', or 'similar'.",
+      "question": "This is:",
+      "options": ["Personal Reference", "Demonstrative Reference", "Comparative Reference", "Lexical Reference"],
+      "correct": "Comparative Reference",
+      "explanation": "Comparative reference links items through comparison.",
+      "chapter": "lecture-03"
+    }
+  ]
+}

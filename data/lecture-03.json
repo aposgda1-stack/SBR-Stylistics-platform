@@ -1,0 +1,155 @@
+{
+  "chapterId": "lecture-03",
+  "title": "Cohesion: Making Texts",
+  "theoretical": [
+    { "term": "Cohesion", "definition": "The linguistic means by which sentences are woven together to make texts." },
+    { "term": "Reference Cohesion", "definition": "Using a grammatical word in one sentence in association with a word/phrase in another sentence (Personal, Demonstrative, Comparative)." },
+    { "term": "Ellipsis", "definition": "Making a mental connection to adjacent text where material is left out (Partial/Substitution or Full)." },
+    { "term": "Conjunction Cohesion", "definition": "Using words/phrases to clarify semantic/logical relationships (Additive, Adversative, Causal, Temporal, Continuative)." },
+    { "term": "Lexical Cohesion", "definition": "Recurrent uses of the same or related content words (Repetition, Synonymy, Superordination, Collocation)." },
+    { "term": "Collocation", "definition": "The tendency of words to naturally go together (e.g., 'rabbit' and 'hole')." },
+    { "term": "Deixis", "definition": "Pointing to a person, place, or time in the situation, rather than linking to previous text." }
+  ],
+  "applied": [
+    {
+      "text": "Kim collapsed into the chair. She was exhausted.",
+      "question": "The link between 'Kim' and 'She' is an example of:",
+      "options": ["Sentence Grammar", "Deixis", "Cohesion (Reference)", "Lexical Collocation"],
+      "correct": "Cohesion (Reference)",
+      "explanation": "Because the link crosses a sentence boundary, it is intersentential cohesion."
+    },
+    {
+      "text": "Mary was surprised. She had expected it to rain. She was cooking lasagne.",
+      "question": "The sequence 'Mary... she... she' is technically called a:",
+      "options": ["Cohesive Chain", "Conjunction", "Ellipsis", "Superordinate"],
+      "correct": "Cohesive Chain",
+      "explanation": "Recurrent reference to the same individual creates a cohesive chain."
+    },
+    {
+      "text": "'A fine day' vs. 'rain'.",
+      "question": "These words go together because they are about the same topic (weather). This is:",
+      "options": ["Reference Cohesion", "Lexical Cohesion", "Ellipsis", "Substitution"],
+      "correct": "Lexical Cohesion",
+      "explanation": "Lexical cohesion involves content words that naturally keep company with each other."
+    },
+    {
+      "text": "Iqbal is Muslim. Anil's own religion is different.",
+      "question": "The word 'different' connects back to 'Muslim' via which reference type?",
+      "options": ["Personal", "Demonstrative", "Comparative", "Lexical"],
+      "correct": "Comparative",
+      "explanation": "Comparative reference uses items like 'different', 'same', 'similar', or 'more'."
+    },
+    {
+      "text": "A: Smith is a superb ballroom dancer. B: I know that.",
+      "question": "In this example, the demonstrative 'that' associates with:",
+      "options": ["A single word (dancer)", "An entire clause (Smith is a superb dancer)", "A physical object", "Nothing"],
+      "correct": "An entire clause (Smith is a superb dancer)",
+      "explanation": "Demonstratives like 'this' and 'that' are versatile and can refer to entire propositions."
+    },
+    {
+      "text": "A: Did you see the movie? B: No, but I want to.",
+      "question": "What is the omitted material in speaker B's response?",
+      "options": ["Nominal (movie)", "Verbal (see the movie)", "Clausal (I want to see the movie)", "Nothing"],
+      "correct": "Verbal (see the movie)",
+      "explanation": "This is verbal ellipsis/substitution where the verb phrase is understood."
+    },
+    {
+      "text": "'A: Will it rain? B: I hope so.'",
+      "question": "The word 'so' is an example of:",
+      "options": ["Partial Ellipsis (Clausal Substitution)", "Full Ellipsis", "Lexical Cohesion", "Personal Reference"],
+      "correct": "Partial Ellipsis (Clausal Substitution)",
+      "explanation": "'So' substitutes for the entire clause 'it will rain'."
+    },
+    {
+      "text": "'A few [people] had to [train], but most [people] were excused.'",
+      "question": "The gaps after 'A few' and 'most' are examples of:",
+      "options": ["Partial Ellipsis", "Full Ellipsis", "Comparative Reference", "Collocation"],
+      "correct": "Full Ellipsis",
+      "explanation": "Full ellipsis is where re-statement is replaced by a perceptible gap."
+    },
+    {
+      "text": "A: Give me your wallet! B: Why?",
+      "question": "According to the text, why can B's response lead to ambiguity?",
+      "options": ["B is being rude.", "It's unclear if B means 'Why [should I]?' or 'Why [do you want it]?'", "B doesn't have a wallet.", "The word 'Why' is a reference."],
+      "correct": "It's unclear if B means 'Why [should I]?' or 'Why [do you want it]?'",
+      "explanation": "In view of how reduced responses are, the ellipted material can be interpreted in multiple ways."
+    },
+    {
+      "text": "I saw Jan eat three whole pizzas. As a result, she was very ill.",
+      "question": "'As a result' belongs to which cluster of cohesive conjunctions?",
+      "options": ["Additive", "Adversative", "Causal", "Temporal"],
+      "correct": "Causal",
+      "explanation": "Causal conjunctions (so, therefore, as a result) signpost cause or result."
+    },
+    {
+      "text": "'On the contrary, they played well above their usual standard.'",
+      "question": "Why is this sentence strange if used at the very beginning of a conversation?",
+      "options": ["It's grammatically wrong.", "Conjunctions serve to connect to previous material which is missing here.", "The word 'contrary' is too formal.", "It's a deixis."],
+      "correct": "Conjunctions serve to connect to previous material which is missing here.",
+      "explanation": "Conjunctions have a 'semantic signposting' function relating following text to previous text."
+    },
+    {
+      "text": "Identify the conjunction type: furthermore, in other words, and.",
+      "question": "These are:",
+      "options": ["Causal", "Temporal", "Additive", "Adversative"],
+      "correct": "Additive",
+      "explanation": "Additive conjunctions add more information or rephrase it."
+    },
+    {
+      "text": "Identify the conjunction type: first, meanwhile, finally.",
+      "question": "These are:",
+      "options": ["Causal", "Temporal", "Continuative", "Adversative"],
+      "correct": "Temporal",
+      "explanation": "Temporal conjunctions signpost time or sequence."
+    },
+    {
+      "text": "Identify the conjunction type: now, of course, well, anyway.",
+      "question": "These are:",
+      "options": ["Continuative", "Additive", "Temporal", "Adversative"],
+      "correct": "Continuative",
+      "explanation": "Continuatives like 'now' or 'well' help the flow without strong logical links."
+    },
+    {
+      "text": "A dictionary would tell us that 'rabbit' and 'hole' go together.",
+      "question": "This familiar association between words is called:",
+      "options": ["Synonymy", "Substitution", "Collocation", "Reference"],
+      "correct": "Collocation",
+      "explanation": "Collocation is the tendency of content words to habitually co-occur."
+    },
+    {
+      "text": "Referring to a pet rabbit as 'the animal'.",
+      "question": "This is lexical cohesion through use of a/an:",
+      "options": ["Synonym", "Superordinate / General Term", "Subordinate Term", "Collocation"],
+      "correct": "Superordinate / General Term",
+      "explanation": "'Animal' is a more general (superordinate) category that includes 'rabbit'."
+    },
+    {
+      "text": "A speaker says 'I have your winnings here for you to collect by tomorrow.'",
+      "question": "Without knowing the speaker's location and time, 'here' and 'tomorrow' cannot be interpreted. This is:",
+      "options": ["Cohesion", "Deixis", "Anaphora", "Collocation"],
+      "correct": "Deixis",
+      "explanation": "Deictic terms are situation-dependent and point to person, place, or time."
+    },
+    {
+      "text": "In Craig Raine's poem, 'Caxtons' are mechanical birds.",
+      "question": "The subsequent use of 'they' and 'one' linking back to 'Caxtons' is:",
+      "options": ["Deixis", "Cohesion", "Substitution", "Continuative"],
+      "correct": "Cohesion",
+      "explanation": "The pronouns link back to the named entity 'Caxtons' in the text."
+    },
+    {
+      "text": "'Ever since I lost mine in a road accident... I have had my eye on other people's parents.'",
+      "question": "In this Ian McEwan opening, what type of cohesion is 'mine'?",
+      "options": ["Reference", "Ellipsis", "Conjunction", "Lexical"],
+      "correct": "Reference",
+      "explanation": "It's a referentially cohesive pronoun (though deliberately ambiguous here)."
+    },
+    {
+      "text": "Linguists use this term for pro-forms (like 'do' and 'so') within sentences.",
+      "question": "What is this term which overlaps with cohesion?",
+      "options": ["Deixis", "Anaphora", "Pragmatics", "Metaphor"],
+      "correct": "Anaphora",
+      "explanation": "Anaphora involves pro-forms; cohesion is broader but focuses on intersentential links."
+    }
+  ]
+}

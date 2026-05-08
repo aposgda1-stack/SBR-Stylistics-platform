@@ -1,0 +1,155 @@
+{
+  "chapterId": "lecture-01",
+  "title": "Introduction & Foregrounding",
+  "theoretical": [
+    { "term": "Poetic Licence", "definition": "The poet's right to ignore rules and conventions generally observed by users of the language." },
+    { "term": "Levels of Language", "definition": "The levels of realization (Phonology/Graphology), form (Lexicon/Grammar), and meaning (Semantics)." },
+    { "term": "Foregrounding", "definition": "The psychological effect of certain textual devices that make aspects of a text stand out or appear prominent." },
+    { "term": "Parallelism", "definition": "A means of creating textual patterns involving an element of identity and an element of contrast." },
+    { "term": "Deviation", "definition": "Disrupting or departing from readers' expectations or from a pattern established by the text." },
+    { "term": "Internal Deviation", "definition": "Deviation that takes place against the background of the poem/text itself." },
+    { "term": "External Deviation", "definition": "Deviation explicated against some norm which lies outside the limits of the text." }
+  ],
+  "applied": [
+    {
+      "text": "Stylistics tells us about the rules, and it often explores texts where rules are bent.",
+      "question": "What is the recognized 'right' of a poet to bend these linguistic rules?",
+      "options": ["Stylistic Freedom", "Poetic Licence", "Linguistic Anarchy", "Grammatical Error"],
+      "correct": "Poetic Licence",
+      "explanation": "Poetic Licence is the poet's right to ignore standard language conventions."
+    },
+    {
+      "text": "Language is realized through sounds and marks on paper.",
+      "question": "Which level of language is specifically concerned with 'marks on paper'?",
+      "options": ["Phonology", "Lexicon", "Grammar", "Graphology"],
+      "correct": "Graphology",
+      "explanation": "Graphology deals with the visual realization of language on the page."
+    },
+    {
+      "text": "Gibbons & Whiteley (2018) describe foregrounding as a 'psychological effect'.",
+      "question": "What is the primary function of foregrounding in literary interpretation?",
+      "options": ["To make the text harder to read", "To control readers' attention and signal crucial parts", "To confuse the reader's memory", "To follow all linguistic rules"],
+      "correct": "To control readers' attention and signal crucial parts",
+      "explanation": "Foregrounding signals parts of the text that are crucial to our understanding."
+    },
+    {
+      "text": "'Where wealth accumulates and men decay.'",
+      "question": "This sentence is an example of parallelism. What is the element of contrast here?",
+      "options": ["The syntactic structure", "The lexical items (wealth/men and accumulates/decay)", "The number of words", "The rhyme scheme"],
+      "correct": "The lexical items (wealth/men and accumulates/decay)",
+      "explanation": "Parallelism requires identity of structure but contrast in lexical items."
+    },
+    {
+      "text": "'But he was wounded for our transgressions, he was bruised for our iniquities.'",
+      "question": "Parallel structures like this invite the reader to do what?",
+      "options": ["Ignore the second clause", "Search for meaning connections between the parallel parts", "Focus only on the differences", "Find grammatical errors"],
+      "correct": "Search for meaning connections between the parallel parts",
+      "explanation": "Parallelism invites the reader to link the varied parts (e.g., wounded and bruised) semantically."
+    },
+    {
+      "text": "Deviation can be categorized based on whether the norm is inside or outside the text.",
+      "question": "Which type of deviation is explicated against a norm lying *outside* the limits of the poem?",
+      "options": ["Internal Deviation", "External Deviation", "Functional Deviation", "Repetitive Deviation"],
+      "correct": "External Deviation",
+      "explanation": "External deviation is measured against the general language system outside the text."
+    },
+    {
+      "text": "A poet invents the verb 'foresuffer' by prefixing 'fore-' to 'suffer'.",
+      "question": "This is an example of which type of Lexical Deviation?",
+      "options": ["Compounding", "Affixation", "Functional Conversion", "Alliteration"],
+      "correct": "Affixation",
+      "explanation": "Affixation involves adding prefixes or suffixes to create new words (neologisms)."
+    },
+    {
+      "text": "Hopkins uses 'achieve' as a noun in 'the achieve of... the mastery of'.",
+      "question": "This process of adapting an item to a new grammatical function is called:",
+      "options": ["Functional Conversion", "Lexical Compounding", "Phonological Elision", "Graphological Layout"],
+      "correct": "Functional Conversion",
+      "explanation": "Functional conversion changes the grammatical class of a word without changing its form."
+    },
+    {
+      "text": "'Little enough I sought / But a word compassionate'.",
+      "question": "The placement of the adjective 'compassionate' after the noun is an example of:",
+      "options": ["Lexical Deviation", "Syntactic Deviation", "Semantic Paradox", "Phonological Apocope"],
+      "correct": "Syntactic Deviation",
+      "explanation": "Syntactic deviation involves departing from normal word order constraints."
+    },
+    {
+      "text": "In poetry, 'wind' might be pronounced as /waind/ to fit a rhyme scheme.",
+      "question": "This oddity of pronunciation/stress is known as:",
+      "options": ["Graphological Deviation", "Phonological Deviation", "Semantic Mismatch", "Syntactic Re-ordering"],
+      "correct": "Phonological Deviation",
+      "explanation": "Phonological deviation occurs when words are pronounced or stressed oddly."
+    },
+    {
+      "text": "The gradual loss of a short unstressed vowel at the beginning of a word (e.g., 'gainst).",
+      "question": "This specific phonological irregularity is called:",
+      "options": ["Elision", "Apocope", "Syncope", "Aphesis"],
+      "correct": "Aphesis",
+      "explanation": "Aphesis is the loss of the initial unstressed vowel."
+    },
+    {
+      "text": "The omission of medial sounds in a word, such as in 'o'er'.",
+      "question": "This is technically known as:",
+      "options": ["Aphesis", "Syncope", "Apocope", "Elision"],
+      "correct": "Syncope",
+      "explanation": "Syncope is the loss of sounds from the middle of a word."
+    },
+    {
+      "text": "Horovitz splits the word HELL into separate lines (H-E-L-L).",
+      "question": "This forces a phonetic interpretation through which level of deviation?",
+      "options": ["Graphological Deviation", "Lexical Deviation", "Syntactic Deviation", "Semantic Deviation"],
+      "correct": "Graphological Deviation",
+      "explanation": "Graphological deviation involves typography, layout, and spelling."
+    },
+    {
+      "text": "Light breaks where no sun shines, / Where no sea runs...",
+      "question": "These logically inconsistent or paradoxical meaning relations are examples of:",
+      "options": ["Lexical Deviation", "Semantic Deviation", "Phonological Deviation", "Syntactic Deviation"],
+      "correct": "Semantic Deviation",
+      "explanation": "Semantic deviation emerges from meaning relations that are paradoxical or inconsistent."
+    },
+    {
+      "text": "T.S. Eliot describes cold as 'heart's heat' and intense light as 'blindness'.",
+      "question": "These meaning relations are a specific type of semantic deviation called:",
+      "options": ["Simile", "Metaphor", "Paradox", "Functional Conversion"],
+      "correct": "Paradox",
+      "explanation": "A paradox is a mismatch between normal sets of things that seems logically inconsistent."
+    },
+    {
+      "text": "'Blow, blow, thou winter wind'.",
+      "question": "According to the text, what does the repetition of 'blow' stand for?",
+      "options": ["A spelling error", "Greater, more prolonged force of the wind", "The speaker is bored", "The wind is dying down"],
+      "correct": "Greater, more prolonged force of the wind",
+      "explanation": "Repetition emphasizes and intensifies the quality of the action or state."
+    },
+    {
+      "text": "Lexical deviation achieved through the invention of new words.",
+      "question": "What is the term for these new words, especially those made up for a single occasion?",
+      "options": ["Archaisms", "Neologisms / Nonce-formations", "Collocations", "Dialects"],
+      "correct": "Neologisms / Nonce-formations",
+      "explanation": "Neologisms are new words; nonce-formations are those created for a specific one-off use."
+    },
+    {
+      "text": "Identify the level: Words combined into sentences.",
+      "question": "In the levels of language 'Form', this is:",
+      "options": ["Lexicon", "Grammar", "Semantics", "Phonology"],
+      "correct": "Grammar",
+      "explanation": "Grammar is the level concerned with how words are combined into sentences."
+    },
+    {
+      "text": "In 'The Cherry Tree', the verb 'froze' is repeated four times.",
+      "question": "What is the effect of this repetition in the two opening lines?",
+      "options": ["It shows the poet is lazy.", "It emphasizes the severity of the frost.", "It creates a rhyme scheme.", "It is a syntactic deviation."],
+      "correct": "It emphasizes the severity of the frost.",
+      "explanation": "Repetition is a method of foregrounding that emphasizes a specific quality."
+    },
+    {
+      "text": "Identify the technique: 'pity this busy monster, manunkind'.",
+      "question": "The word 'manunkind' is an example of lexical deviation via:",
+      "options": ["Compounding", "Affixation", "Functional Conversion", "Syncope"],
+      "correct": "Affixation",
+      "explanation": "It uses the prefix 'un-' in an irregular way within the word 'mankind'."
+    }
+  ]
+}

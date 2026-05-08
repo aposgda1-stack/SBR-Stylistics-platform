@@ -1,0 +1,86 @@
+{
+  "chapterId": "exam-2021",
+  "title": "Official Exam: May 2021",
+  "applied": [
+    {
+      "text": "Identify the flouted maxim: A: 'How many potatoes did you peel?' B: 'Millions!'",
+      "question": "Maxim:",
+      "options": ["Quality (Hyperbole)", "Quantity", "Relation", "Manner"],
+      "correct": "Quality (Hyperbole)",
+      "explanation": "B is saying something obviously untrue for effect, which is hyperbole, a flouting of the maxim of Quality.",
+      "source": "Exam 2021"
+    },
+    {
+      "text": "Identify the flouted maxim: A: 'Don’t you think that Bill is a pain in the neck?' B: 'I like your tie.'",
+      "question": "Maxim:",
+      "options": ["Quality", "Quantity", "Relation", "Manner"],
+      "correct": "Relation",
+      "explanation": "B's response is irrelevant to the question, which implies they want to avoid the topic or disagree silently.",
+      "source": "Exam 2021"
+    },
+    {
+      "text": "Identify the flouted maxim: Son: 'Can I have a piece of candy?' Mother: 'Dinner's almost ready!'",
+      "question": "Maxim:",
+      "options": ["Quality", "Quantity", "Relation", "Manner"],
+      "correct": "Relation",
+      "explanation": "The mother's response is an indirect 'No' that relies on relevance to the situation.",
+      "source": "Exam 2021"
+    },
+    {
+      "text": "Identify the flouted maxim: 'You are the sunshine of my life.'",
+      "question": "Maxim:",
+      "options": ["Quality (Metaphor)", "Quantity", "Relation", "Manner"],
+      "correct": "Quality (Metaphor)",
+      "explanation": "Metaphors are literally false, thus they flout the maxim of Quality.",
+      "source": "Exam 2021"
+    },
+    {
+      "text": "Identify the flouted maxim: A: 'Hey, Kenny! What are you reading?' B: 'A book.'",
+      "question": "Maxim:",
+      "options": ["Quality", "Quantity", "Relation", "Manner"],
+      "correct": "Quantity",
+      "explanation": "B provides less information than is required in the context, flouting Quantity.",
+      "source": "Exam 2021"
+    },
+    {
+      "text": "Politeness strategy: 'I’m really sorry to trouble you, but could you lend me ten pounds?'",
+      "question": "Type:",
+      "options": ["Positive Politeness", "Negative Politeness"],
+      "correct": "Negative Politeness",
+      "explanation": "Apologizing for the trouble and using indirectness are Negative Politeness strategies.",
+      "source": "Exam 2021"
+    },
+    {
+      "text": "Politeness strategy: 'How beautiful you look today!'",
+      "question": "Type:",
+      "options": ["Positive Politeness", "Negative Politeness"],
+      "correct": "Positive Politeness",
+      "explanation": "Admiring the hearer's appearance is a Positive Politeness strategy.",
+      "source": "Exam 2021"
+    },
+    {
+      "text": "Politeness strategy: 'You couldn’t find your way to lending me a thousand dollars, could you?'",
+      "question": "Type:",
+      "options": ["Positive Politeness", "Negative Politeness"],
+      "correct": "Negative Politeness",
+      "explanation": "Being pessimistic (You couldn't...) is a Negative Politeness strategy.",
+      "source": "Exam 2021"
+    },
+    {
+      "text": "Reference cohesion that refers back to something already mentioned is:",
+      "question": "Type:",
+      "options": ["Anaphoric", "Cataphoric", "Elliptical", "Conjunctive"],
+      "correct": "Anaphoric",
+      "explanation": "Anaphoric reference points backward in the text.",
+      "source": "Exam 2021"
+    },
+    {
+      "text": "The four parameters of Modality are Probability, Usuality, Obligation and:",
+      "question": "Fourth Parameter:",
+      "options": ["Desirability", "Certainty", "Solidarity", "Foregrounding"],
+      "correct": "Desirability",
+      "explanation": "Simpson's model includes Probability, Usuality, Obligation, and Desirability.",
+      "source": "Exam 2021"
+    }
+  ]
+}

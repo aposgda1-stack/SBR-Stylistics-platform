@@ -1,0 +1,150 @@
+{
+  "chapterId": "lecture-05",
+  "title": "Narrative Structure",
+  "theoretical": [
+    { "term": "Narrative", "definition": "A text in which the reader perceives a significant change from one state of affairs to a different one, often causally related." },
+    { "term": "Complicating Action", "definition": "The core element of a narrative reporting the ordered events ('What happened first?')." },
+    { "term": "Orientation", "definition": "The element that answers 'Who? When? Where?' by describing participants and setting." },
+    { "term": "Evaluation", "definition": "The element that highlights why the story is interesting or relevant (External or Internal)." },
+    { "term": "Resolution", "definition": "The element that reports what finally happened, providing 'closure' to the complicating action." },
+    { "term": "Coda", "definition": "A bridge back to the present situation, often providing a moral or lesson." },
+    { "term": "Abstract", "definition": "A one-sentence summary of the story that whets the audience's appetite." }
+  ],
+  "applied": [
+    {
+      "text": "It is possible to look at the Mona Lisa for hours and perceive no change.",
+      "question": "Why is the Mona Lisa (as an object) generally considered non-narrative?",
+      "options": ["It is not beautiful enough.", "It lacks a perceived 'before' and 'after' state change.", "It is too old.", "It has no characters."],
+      "correct": "Lacks a perceived 'before' and 'after' state change.",
+      "explanation": "Narrative requires a perceived significant change over time."
+    },
+    {
+      "text": "Identify the distinction: Telling 'the way things are' vs. telling 'what has happened'.",
+      "question": "This is the difference between:",
+      "options": ["Narrative and Description", "Orientation and Action", "Poetry and Prose", "Abstract and Coda"],
+      "correct": "Narrative and Description",
+      "explanation": "Description tells the way things are; Narrative tells what happened."
+    },
+    {
+      "text": "What is the 'social requirement' of a narrative mentioned in the text?",
+      "question": "A narrative must be:",
+      "options": ["Scientifically accurate", "Interestingly told and interesting to the audience", "Written in the past tense", "Longer than three sentences"],
+      "correct": "Interestingly told and interesting to the audience",
+      "explanation": "Narrative has a social requirement to be worth the telling."
+    },
+    {
+      "text": "Labov's six elements: Abstract, Orientation, Complicating Action, Evaluation, Resolution, Coda.",
+      "question": "Which of these is the 'absolutely required' element for a text to count as a narrative?",
+      "options": ["Abstract", "Orientation", "Complicating Action", "Coda"],
+      "correct": "Complicating Action",
+      "explanation": "Without complicating action (the events), there is no narrative."
+    },
+    {
+      "text": "Answering 'Who was involved? When and where was this?' is the function of:",
+      "options": ["The Abstract", "The Orientation", "The Evaluation", "The Resolution"],
+      "correct": "The Orientation",
+      "explanation": "Orientation sets the scene and introduces participants."
+    },
+    {
+      "text": "What is the function of the Coda in a narrative?",
+      "options": ["To summarize the events", "To bridge the gap between the story world and the present situation", "To introduce the main character", "To resolve the conflict"],
+      "correct": "To bridge the gap between the story world and the present situation",
+      "explanation": "The coda relates the story back to the 'here and now'."
+    },
+    {
+      "text": "Evaluation can be 'External' or 'Internal'.",
+      "question": "An external evaluation is:",
+      "options": ["Woven into the action sentences", "A commentary outside the complicating action (e.g., 'This is an incredible story')", "The resolution of the plot", "The introduction of the setting"],
+      "correct": "A commentary outside the complicating action (e.g., 'This is an incredible story')",
+      "explanation": "External evaluation is a direct comment or reaction outside the event sequence."
+    },
+    {
+      "text": "Labov identifies four types of 'Internal' evaluation.",
+      "question": "Which type reports secondary activities happening at the same time as the main events?",
+      "options": ["Intensifying", "Comparator", "Correlative", "Explicative"],
+      "correct": "Correlative",
+      "explanation": "Correlatives (e.g., 'While X was happening, Y happened') link secondary activities."
+    },
+    {
+      "text": "Which type of internal evaluation sketches alternative developments that *didn't* happen?",
+      "options": ["Intensifying", "Comparator", "Correlative", "Explicative"],
+      "correct": "Comparator",
+      "explanation": "Comparators use negative or modal sentences to show what didn't happen (e.g., 'He didn't run, he walked')."
+    },
+    {
+      "text": "Which type of internal evaluation provides background reasons and causes for events?",
+      "options": ["Intensifying", "Comparator", "Correlative", "Explicative"],
+      "correct": "Explicative",
+      "explanation": "Explicatives explain the 'why' behind the narrative actions."
+    },
+    {
+      "text": "Which type of internal evaluation uses gestures, repetitions, and dramatic sounds?",
+      "options": ["Intensifying", "Comparator", "Correlative", "Explicative"],
+      "correct": "Intensifying",
+      "explanation": "Intensifying evaluations add vividness and drama to the telling."
+    },
+    {
+      "text": "The text says we often listen to narratives for their 'Evaluation' rather than 'Action'.",
+      "question": "Why is evaluation often more important to the audience?",
+      "options": ["It is structurally required.", "It provides the specific information and personal significance of the events.", "It is always placed at the beginning.", "It resolves the story."],
+      "correct": "It provides the specific information and personal significance of the events.",
+      "explanation": "Evaluation makes the story interesting and worth hearing."
+    },
+    {
+      "text": "Identify the element: 'I finally got rid of my trusty old Honda.'",
+      "question": "In the car story exercise, this sentence is the:",
+      "options": ["Abstract", "Orientation", "Resolution", "Coda"],
+      "correct": "Abstract",
+      "explanation": "It's a one-sentence summary that whets the appetite."
+    },
+    {
+      "text": "Identify the element: 'Now I'm on the look-out for a two- or three-year-old Mondeo.'",
+      "question": "In the car story exercise, this sentence is the:",
+      "options": ["Abstract", "Orientation", "Resolution", "Coda"],
+      "correct": "Coda",
+      "explanation": "It's a bridge to the speaker's present state after the story ends."
+    },
+    {
+      "text": "In sophisticated fictions, Labov's elements might not occur in the 'default' order.",
+      "question": "Which of these is a likely departure in a complex novel?",
+      "options": ["Lacking any complicating action", "Withholding orientation (Who/Where) until later in the text", "Having no words", "Only having a coda"],
+      "correct": "Withholding orientation (Who/Where) until later in the text",
+      "explanation": "Sophisticated narratives often delay orientation for stylistic effect."
+    },
+    {
+      "text": "'Elvis thundered down the street, bddoinf!g.'",
+      "question": "This is an example of which internal evaluation type?",
+      "options": ["Intensifying", "Comparator", "Correlative", "Explicative"],
+      "correct": "Intensifying",
+      "explanation": "The dramatic sound 'bddoinf!g' intensifies the action."
+    },
+    {
+      "text": "'Elvis didn't repair any windows, he just kept breaking them.'",
+      "question": "This is an example of which internal evaluation type?",
+      "options": ["Intensifying", "Comparator", "Correlative", "Explicative"],
+      "correct": "Comparator",
+      "explanation": "It compares what happened to what *didn't* happen (repairing windows)."
+    },
+    {
+      "text": "'I remember this bothering me, as if it were an old relative whose health was failing.'",
+      "question": "In the car story, this is a/an:",
+      "options": ["Internal Evaluation", "External Evaluation", "Orientation", "Resolution"],
+      "correct": "External Evaluation",
+      "explanation": "It is a commentary reflecting how the protagonist felt, outside the sequence of event clauses."
+    },
+    {
+      "text": "'So I put a 'for sale' ad in the newspaper, since this seemed the best way...' ",
+      "question": "The 'since...' part is which internal evaluation type?",
+      "options": ["Intensifying", "Comparator", "Correlative", "Explicative"],
+      "correct": "Explicative",
+      "explanation": "It provides the reason/cause for the action of putting the ad."
+    },
+    {
+      "text": "A narrative jump where the story moves back to a previous time.",
+      "question": "The text mentions this in the Martian poem context, but more generally it is:",
+      "options": ["Analepsis (Flashback)", "Prolepsis (Flashforward)", "Orientation", "Resolution"],
+      "correct": "Analepsis (Flashback)",
+      "explanation": "Analepsis is the technical term for a narrative flashback."
+    }
+  ]
+}

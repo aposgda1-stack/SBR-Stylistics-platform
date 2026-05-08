@@ -1,0 +1,154 @@
+{
+  "chapterId": "lecture-04",
+  "title": "Modality and Attitude",
+  "theoretical": [
+    { "term": "Modality", "definition": "The ways available to a speaker for expressing opinion or attitude, specifically qualifying claims of probability, obligation, willingness, or usuality." },
+    { "term": "Modal Auxiliaries", "definition": "A small set of verbs (can, could, may, might, must, should, will, would, ought to) that support and modify main verbs." },
+    { "term": "Metaphorized Modality", "definition": "Using verbs like 'think', 'believe', 'guess' or phrases like 'it seems' to express subjective assessment." },
+    { "term": "Evaluative Devices", "definition": "Means by which a speaker's stance is revealed, including evaluative verbs, adjectives/adverbs, and generic sentences." },
+    { "term": "Generic Sentences", "definition": "Sentences asserting something to be a general, timeless truth about a whole set of things (e.g., 'The panda's preferred diet is bamboo')." },
+    { "term": "Modal Shading", "definition": "The overall effect created by modality: Positive (strong stance), Negative (uncertainty/doubt), or Neutral (absolute/factual)." }
+  ],
+  "applied": [
+    {
+      "text": "'She certainly is an interesting person.'",
+      "question": "The underlined word expresses which modality parameter?",
+      "options": ["Probability", "Obligation", "Willingness", "Usuality"],
+      "correct": "Probability",
+      "explanation": "Words like 'certainly', 'possibly', and 'must' (in its epistemic sense) express probability."
+    },
+    {
+      "text": "'I need to think of some really fun activity to invite her to.'",
+      "question": "The word 'need' expresses which modality parameter?",
+      "options": ["Probability", "Obligation", "Willingness", "Usuality"],
+      "correct": "Obligation",
+      "explanation": "Obligation modality denotes requirements, needs, and duties."
+    },
+    {
+      "text": "'I rarely meet people I feel this good about.'",
+      "question": "The word 'rarely' expresses which modality parameter?",
+      "options": ["Probability", "Obligation", "Willingness", "Usuality"],
+      "correct": "Usuality",
+      "explanation": "Usuality modality concerns how often an event or state occurs (rarely, always, often)."
+    },
+    {
+      "text": "Identify the modal verb use: 'You really should see a doctor.'",
+      "question": "In this context, 'should' expresses:",
+      "options": ["Probability", "Obligation", "Willingness", "Usuality"],
+      "correct": "Obligation",
+      "explanation": "Here, 'should' is used to express a requirement or advice (it is required that you see a doctor)."
+    },
+    {
+      "text": "Identify the modal verb use: 'They should have reached their hotel by now.'",
+      "question": "In this context, 'should' expresses:",
+      "options": ["Probability", "Obligation", "Willingness", "Usuality"],
+      "correct": "Probability",
+      "explanation": "Here, 'should' expresses an assessment of probability (it is probable that they have reached the hotel)."
+    },
+    {
+      "text": "Order the modals by increasing probability intensity: may, must, might.",
+      "question": "The correct scale from weak to strong is:",
+      "options": ["might < may < must", "must < may < might", "may < might < must", "might < must < may"],
+      "correct": "might < may < must",
+      "explanation": "Might is the weakest possibility; Must expresses near-certainty."
+    },
+    {
+      "text": "'Tomorrow will be dry, with temperatures reaching the low seventies.'",
+      "question": "In this weather forecast, the use of 'will' is categorized as:",
+      "options": ["Probability", "Willingness", "Unmodalized Futurity", "Obligation"],
+      "correct": "Unmodalized Futurity",
+      "explanation": "When an event is presented as non-negotiable or ordained, 'will' is an unmodalized marker of future time."
+    },
+    {
+      "text": "A: 'Who is at the door?' B: 'That'll be John.'",
+      "question": "In this case, 'will' ('ll) expresses:",
+      "options": ["Willingness", "Probability", "Unmodalized Futurity", "Obligation"],
+      "correct": "Probability",
+      "explanation": "B is making a probable assessment of who is at the door."
+    },
+    {
+      "text": "'Will you have some Yogi tea?'",
+      "question": "In this invitation, 'will' expresses:",
+      "options": ["Probability", "Willingness", "Futurity", "Usuality"],
+      "correct": "Willingness",
+      "explanation": "Here, 'will' asks about the addressee's willingness to act."
+    },
+    {
+      "text": "Identify the technique: 'I think it's going to rain.'",
+      "question": "The use of 'I think' instead of 'It will probably' is known as:",
+      "options": ["Direct Modality", "Metaphorized / Advanced Modality", "Unmodalized Factualism", "Generic Assertion"],
+      "correct": "Metaphorized / Advanced Modality",
+      "explanation": "Subjective assessive verbs like 'think' or 'believe' are metaphorical ways of expressing probability."
+    },
+    {
+      "text": "'It seems increasingly likely that I will undertake the expedition.'",
+      "question": "This opening line from Stevens (Ishiguro) is an example of:",
+      "options": ["Direct Obligation", "Metaphorized / Advanced Modality", "Unmodalized Future", "Generic Sentence"],
+      "correct": "Metaphorized / Advanced Modality",
+      "explanation": "Phrases like 'It seems likely' are metaphorized expressions of the speaker's subjective assessment."
+    },
+    {
+      "text": "Identify the evaluative device: 'I deplore the lack of respect shown to the monarchy.'",
+      "question": "The word 'deplore' is a/an:",
+      "options": ["Modal Auxiliary", "Evaluative Verb", "Generic Predicate", "Usuality Adverb"],
+      "correct": "Evaluative Verb",
+      "explanation": "Evaluative verbs (deplore, regret, welcome) carry a clear presupposition of the speaker's stance."
+    },
+    {
+      "text": "'The first casualty of war is truth.'",
+      "question": "This statement, which asserts a timeless truth about a whole set of things, is a:",
+      "options": ["Metaphorized Modality", "Generic Sentence", "Modal Auxiliary", "Specific Description"],
+      "correct": "Generic Sentence",
+      "explanation": "Generic sentences assert general truths in the simple present tense."
+    },
+    {
+      "text": "'Pandas' preferred diet is bamboo shoots.'",
+      "question": "This is a generic sentence. Which modality parameter does it occupy the endpoint of?",
+      "options": ["Probability", "Obligation", "Willingness", "Usuality"],
+      "correct": "Usuality",
+      "explanation": "Generic sentences represent what is 'always the case', the extreme of usuality."
+    },
+    {
+      "text": "'It is a truth universally acknowledged, that a single man... must be in want of a wife.'",
+      "question": "How does the text describe the use of this generic sentence by Austen's narrator?",
+      "options": ["As a scientific fact", "As an ironic exploitation of the generic form", "As a specific description of one man", "As a modal error"],
+      "correct": "As an ironic exploitation of the generic form",
+      "explanation": "Austen uses the generic form ironically to mock social prejudices."
+    },
+    {
+      "text": "'Four and three should be seven.'",
+      "question": "According to the text, why does adding modality to an absolute truth (like 4+3=7) feel strange?",
+      "options": ["It's ungrammatical.", "It discloses less-than-total commitment to a fact that should be absolute.", "Numbers don't have modality.", "It's too formal."],
+      "correct": "It discloses less-than-total commitment to a fact that should be absolute.",
+      "explanation": "Modality always introduces a degree of doubt or opinion away from the absolute positive/negative."
+    },
+    {
+      "text": "In 'Living in Sin', the girl thought the studio 'would keep itself'.",
+      "question": "This use of 'would' expresses which parameter?",
+      "options": ["Willingness / Habitual Usuality", "Obligation", "Probability", "Futurity"],
+      "correct": "Willingness / Habitual Usuality",
+      "explanation": "In narratives, 'would' often signals habitual usuality or willingness."
+    },
+    {
+      "text": "'Unfortunately he turned out to be gay.'",
+      "question": "The word 'Unfortunately' reveals the speaker's attitude. It is a/an:",
+      "options": ["Modal Auxiliary", "Evaluative Adverb", "Generic Assertion", "Lexical Cohesion"],
+      "correct": "Evaluative Adverb",
+      "explanation": "Evaluative adverbs (unfortunately, surprisingly) signal the speaker's stance towards the proposition."
+    },
+    {
+      "text": "'Light breaks where no sun shines...'",
+      "question": "T.S. Eliot (and Dylan Thomas) use paradoxes. Paradox is described in the text as a mismatch between:",
+      "options": ["Words and sounds", "Normal sets of things and meaning", "A speaker and a listener", "Past and future"],
+      "correct": "Normal sets of things and meaning",
+      "explanation": "Semantic deviation (paradox) involves a mismatch in logically consistent meaning relations."
+    },
+    {
+      "text": "Identify the modality: 'Why should I?'",
+      "question": "This question asks for a/an:",
+      "options": ["Reason for obligation", "Proof of probability", "Statement of usuality", "Expression of willingness"],
+      "correct": "Reason for obligation",
+      "explanation": "'Should' in this context is querying the necessity or duty (obligation)."
+    }
+  ]
+}

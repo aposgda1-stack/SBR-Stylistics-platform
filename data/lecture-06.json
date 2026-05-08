@@ -1,0 +1,181 @@
+{
+  "chapterId": "lecture-06",
+  "title": "Dialogue and Drama",
+  "theoretical": [
+    { "term": "Birmingham Model", "definition": "A hierarchical model of discourse structure: Exchange > Move > Act." },
+    { "term": "Opening Move", "definition": "A move that introduces a topic that is recognizably 'new'." },
+    { "term": "Supporting Move", "definition": "A move that concurs with the initiatory move it follows." },
+    { "term": "Challenging Move", "definition": "A move that holds up the progress of a topic by withholding the anticipated response." },
+    { "term": "Grice's Maxims", "definition": "Four conversational principles: Quality (truth), Quantity (informativeness), Relation (relevance), and Manner (clarity)." },
+    { "term": "Implicature", "definition": "A covert meaning inferred when a speaker deliberately 'flouts' a maxim." },
+    { "term": "Face", "definition": "An individual's self-esteem, divided into Positive Face (wish to be liked) and Negative Face (wish not to be coerced)." },
+    { "term": "FTA", "definition": "Face Threatening Act; any utterance that threatens an aspect of the interlocutor's face." },
+    { "term": "Politeness Strategies", "definition": "Tactics for performing FTAs: Bald on-record, Positive Politeness, Negative Politeness, and Off-record." }
+  ],
+  "applied": [
+    {
+      "text": "A classroom exchange: Teacher asks a question, Pupil answers, Teacher gives feedback.",
+      "question": "The feedback 'Yes, Paris. That's right' is which move in the Birmingham model?",
+      "options": ["Opening Move", "Supporting Move", "Follow-up / Feedback Move", "Challenging Move"],
+      "correct": "Follow-up / Feedback Move",
+      "explanation": "In classroom discourse, the third part of the exchange is the feedback move."
+    },
+    {
+      "text": "In the hierarchy of discourse, what is the 'bottom-most' unit which has no structure?",
+      "options": ["Exchange", "Move", "Act", "Collocation"],
+      "correct": "Act",
+      "explanation": "Acts are the smallest particles that make up moves."
+    },
+    {
+      "text": "A: 'John! Have you got the time?' B: 'Four o'clock.'",
+      "question": "Speaker A's move is a/an:",
+      "options": ["Opening Move", "Supporting Move", "Challenging Move", "Feedback Move"],
+      "correct": "Opening Move",
+      "explanation": "It introduces a new topic (request for time)."
+    },
+    {
+      "text": "In the move 'er... you have to go to head office... please', what is 'er' technically?",
+      "options": ["A root act", "A marker (bound act)", "A prompt (bound act)", "A challenging move"],
+      "correct": "A marker (bound act)",
+      "explanation": "Markers signal that a more substantial act is about to follow."
+    },
+    {
+      "text": "A: 'What's the time?' B: 'Why are you asking?'",
+      "question": "Speaker B's response is a/an:",
+      "options": ["Supporting Move", "Challenging Move", "Opening Move", "Feedback Move"],
+      "correct": "Challenging Move",
+      "explanation": "Challenging moves withhold the anticipated response (the answer) and hold up the progress."
+    },
+    {
+      "text": "A: 'Did John go to the party?' B: 'Yes, and don't let anyone tell you anything different.'",
+      "question": "Speaker B is flouting which Gricean maxim?",
+      "options": ["Quality", "Quantity", "Relation", "Manner"],
+      "correct": "Quantity",
+      "explanation": "B is providing more information than is required (over-informative)."
+    },
+    {
+      "text": "A: 'You've failed your exam.' B: 'Terrific!'",
+      "question": "Speaker B is flouting which Gricean maxim?",
+      "options": ["Quality", "Quantity", "Relation", "Manner"],
+      "correct": "Quality",
+      "explanation": "B is saying something manifestly untrue in the context (sarcasm/irony)."
+    },
+    {
+      "text": "A: 'So should we do the transitivity stuff?' B: 'Mary's just come into the room with a big plate of supper...'",
+      "question": "Speaker B is flouting the maxim of Relation. What is the likely implicature?",
+      "options": ["B is hungry.", "B wants to terminate the conversation.", "B likes Mary's cooking.", "B has forgotten the topic."],
+      "correct": "B wants to terminate the conversation.",
+      "explanation": "A non-sequitur (irrelevant remark) is often used as a signal to end the talk."
+    },
+    {
+      "text": "The principle that speakers normally intend to accomplish purposeful communication is called:",
+      "options": ["Politeness Principle", "Co-operative Principle (CP)", "Relevance Theory", "Face Saving"],
+      "correct": "Co-operative Principle (CP)",
+      "explanation": "Grice's CP is the assumption that interlocutors are being cooperative."
+    },
+    {
+      "text": "'Could you possibly, if it's not too much trouble, help me with this?'",
+      "question": "This extremely indirect request is a/an:",
+      "options": ["Bald on-record strategy", "Positive Politeness strategy", "Negative Politeness strategy", "Off-record strategy"],
+      "correct": "Negative Politeness strategy",
+      "explanation": "Using hedges and indirectness is typical of negative politeness (avoidance of imposition)."
+    },
+    {
+      "text": "A: 'I'm out of petrol.' B: 'There's a garage around the corner.'",
+      "question": "According to Relevance Theory, communication is successful when:",
+      "options": ["A understands the literal meaning.", "A infers B's meaning (that the garage sells petrol).", "A ignores the remark.", "B fills the tank."],
+      "correct": "A infers B's meaning (that the garage sells petrol).",
+      "explanation": "Relevance theory focuses on inferencing meaning beyond the literal words."
+    },
+    {
+      "text": "The desire to be liked and have your interests approved of is your:",
+      "options": ["Positive Face", "Negative Face", "Off-record strategy", "FTA"],
+      "correct": "Positive Face",
+      "explanation": "Positive face is your desire for approval and solidarity."
+    },
+    {
+      "text": "The desire to be free from imposition and not be coerced is your:",
+      "options": ["Positive Face", "Negative Face", "On-record strategy", "Politeness"],
+      "correct": "Negative Face",
+      "explanation": "Negative face is the desire for autonomy and freedom from impedance."
+    },
+    {
+      "text": "A direct command like 'Open the window!' is which strategy?",
+      "options": ["Off-record", "Positive Politeness", "Negative Politeness", "Bald on-record"],
+      "correct": "Bald on-record",
+      "explanation": "Bald on-record is direct, clear, and unmitigated."
+    },
+    {
+      "text": "A hint like 'Goodness me, it's hot in here!' is which strategy?",
+      "options": ["Off-record", "Positive Politeness", "Negative Politeness", "Bald on-record"],
+      "correct": "Off-record",
+      "explanation": "Off-record strategies avoid explicit mention of the request (hints)."
+    },
+    {
+      "text": "'Could I borrow a tiny little bit of paper?'",
+      "question": "Which negative politeness strategy is used here?",
+      "options": ["Be pessimistic", "Indicate deference", "Minimise the imposition", "Use hedges"],
+      "correct": "Minimise the imposition",
+      "explanation": "Suggesting the request is minor ('tiny little bit') minimizes the threat to face."
+    },
+    {
+      "text": "Hedges like 'sort of', 'er...', and 'by any chance' are typical of:",
+      "options": ["Bald on-record", "Negative Politeness", "Positive Politeness", "Maxim of Quality"],
+      "correct": "Negative Politeness",
+      "explanation": "Hedges soften the impact of an FTA in negative politeness."
+    },
+    {
+      "text": "'I don't suppose you could give us a lift?'",
+      "question": "Which negative politeness strategy is used here?",
+      "options": ["Be pessimistic", "Indicate deference", "Minimise the imposition", "Off-record hint"],
+      "correct": "Be pessimistic",
+      "explanation": "Expressing doubt about the chance of success is being pessimistic."
+    },
+    {
+      "text": "Addressing someone as 'Sir' or 'Madam' is which strategy?",
+      "options": ["Positive Politeness", "Indicate deference (Negative Politeness)", "Bald on-record", "Off-record"],
+      "correct": "Indicate deference (Negative Politeness)",
+      "explanation": "Accordance of social status to the interlocutor is indicating deference."
+    },
+    {
+      "text": "What a fantastic garden you have.",
+      "question": "Which politeness strategy is used here?",
+      "options": ["Negative Politeness", "Positive Politeness", "Bald on-record", "Off-record"],
+      "correct": "Positive Politeness",
+      "explanation": "Admiring or paying a compliment to the interlocutor's interests/possessions is a positive politeness strategy.",
+      "source": "Exam 2020"
+    },
+    {
+      "text": "Could you find me a computer so I can check my e-mail?",
+      "question": "Identify the politeness strategy:",
+      "options": ["Positive Politeness", "Negative Politeness", "Bald on-record", "Off-record"],
+      "correct": "Negative Politeness",
+      "explanation": "This is an indirect request that seeks to minimize the imposition on the hearer.",
+      "source": "Exam 2020"
+    },
+    {
+      "text": "A: What’s the weather prediction? B: Bring your coat.",
+      "question": "Which maxim is flouted by Speaker B?",
+      "options": ["Quality", "Quantity", "Relation", "Manner"],
+      "correct": "Relation",
+      "explanation": "B's response isn't a direct answer about the weather, but it's relevant via an implicature that it will be cold/rainy.",
+      "source": "Exam 2020"
+    },
+    {
+      "text": "Lord Polonius: What do you read? Hamlet: Words, words, words",
+      "question": "Which maxim does Hamlet flout here?",
+      "options": ["Quality", "Quantity", "Relation", "Manner"],
+      "correct": "Quantity",
+      "explanation": "Hamlet provides a response that is clearly under-informative, flouting the maxim of Quantity.",
+      "source": "Exam 2020"
+    },
+    {
+      "text": "A: What do you intend to do today? B: I have a terrible headache.",
+      "question": "Which maxim is flouted by Speaker B?",
+      "options": ["Quality", "Quantity", "Relation", "Manner"],
+      "correct": "Relation",
+      "explanation": "The response is not directly about intentions but implies that B cannot do anything due to the headache.",
+      "source": "Exam 2020"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "chapterId": "exam-2025",
+  "title": "Official Exam: 2025",
+  "applied": [
+    {
+      "text": "Identify the type of foregrounding: 'I kissed thee ere I killed thee'",
+      "question": "Type:",
+      "options": ["Parallelism (Phonological/Syntactic)", "Lexical Deviation", "Semantic Paradox", "Graphological Deviation"],
+      "correct": "Parallelism (Phonological/Syntactic)",
+      "explanation": "The balanced structure and repetition of the subject-verb-object pattern creates parallelism.",
+      "source": "Exam 2025"
+    },
+    {
+      "text": "Identify the type of foregrounding: 'Don't father me.'",
+      "question": "Type:",
+      "options": ["Lexical Deviation (Functional Conversion)", "Syntactic Deviation", "Phonological Syncope", "Semantic Metaphor"],
+      "correct": "Lexical Deviation (Functional Conversion)",
+      "explanation": "Using the noun 'father' as a verb is a functional conversion, which is a form of lexical deviation.",
+      "source": "Exam 2025"
+    },
+    {
+      "text": "Identify the type of foregrounding: 'Till a' the seas gang dry, my dear / And the rocks melt wi' the sun.'",
+      "question": "Type:",
+      "options": ["Semantic Deviation (Hyperbole)", "Syntactic Inversion", "Lexical Neologism", "Phonological Aphesis"],
+      "correct": "Semantic Deviation (Hyperbole)",
+      "explanation": "This extreme exaggeration of time/events is a hyperbole, a form of semantic deviation.",
+      "source": "Exam 2025"
+    },
+    {
+      "text": "Identify the type of foregrounding: 'Beauty is truth, truth beauty.'",
+      "question": "Type:",
+      "options": ["Syntactic Parallelism (Chiasmus)", "Lexical Deviation", "Phonological Deviation", "Graphological Deviation"],
+      "correct": "Syntactic Parallelism (Chiasmus)",
+      "explanation": "The reversal of grammatical structures in successive phrases is a form of parallelism.",
+      "source": "Exam 2025"
+    },
+    {
+      "text": "True or False: 'An abstract includes the participants, the place and time of the narrative.'",
+      "question": "Result:",
+      "options": ["True", "False"],
+      "correct": "False",
+      "explanation": "The Abstract is a summary; the participants, place, and time are part of the Orientation.",
+      "source": "Exam 2025"
+    },
+    {
+      "text": "True or False: 'Typical external evaluation sentences are like \"This is an incredible story\".'",
+      "question": "Result:",
+      "options": ["True", "False"],
+      "correct": "True",
+      "explanation": "External evaluation involves the narrator stepping out of the story to comment on it directly.",
+      "source": "Exam 2025"
+    },
+    {
+      "text": "Politeness strategy: 'You did a fantastic job on that presentation! Can you share your insights on the project?'",
+      "question": "Type:",
+      "options": ["Positive Politeness", "Negative Politeness"],
+      "correct": "Positive Politeness",
+      "explanation": "Complimenting the hearer and showing interest in their work are positive politeness strategies.",
+      "source": "Exam 2025"
+    },
+    {
+      "text": "Politeness strategy: 'Can you pick these things up for me at the store? There are only a few bits. I promise it won't take you long!'",
+      "question": "Type:",
+      "options": ["Positive Politeness", "Negative Politeness"],
+      "correct": "Negative Politeness",
+      "explanation": "Minimizing the imposition ('only a few bits', 'won't take long') is a Negative Politeness strategy.",
+      "source": "Exam 2025"
+    },
+    {
+      "text": "Generic sentence is one of the types of:",
+      "question": "Category:",
+      "options": ["Evaluative devices", "Cohesion types", "Deviation types", "Speech acts"],
+      "correct": "Evaluative devices",
+      "explanation": "Generic sentences, along with evaluative adjectives and verbs, are evaluative devices in modality.",
+      "source": "Exam 2025"
+    },
+    {
+      "text": "Indicating pessimism is one of the ____________ strategies.",
+      "question": "Type:",
+      "options": ["Positive Politeness", "Negative Politeness", "Bald on-record", "Off-record"],
+      "correct": "Negative Politeness",
+      "explanation": "Expressing doubt about success is a hallmark of Negative Politeness.",
+      "source": "Exam 2025"
+    }
+  ]
+}

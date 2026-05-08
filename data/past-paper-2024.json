@@ -1,0 +1,86 @@
+{
+  "chapterId": "exam-2024",
+  "title": "Official Exam: June 2024",
+  "applied": [
+    {
+      "text": "Identify the flouted maxim: Meredith: 'Thanks, that really takes the pressure off.' (Said when told many people are depending on her)",
+      "question": "Maxim:",
+      "options": ["Quality (Sarcasm)", "Quantity", "Relation", "Manner"],
+      "correct": "Quality (Sarcasm)",
+      "explanation": "Meredith is saying the opposite of what is true to express the increased pressure, which is a flouting of Quality via sarcasm.",
+      "source": "Exam 2024"
+    },
+    {
+      "text": "Identify the flouted maxim: A: 'Did you meet Jake’s parents?' B: 'I met his mother.'",
+      "question": "Maxim:",
+      "options": ["Quality", "Quantity", "Relation", "Manner"],
+      "correct": "Quantity",
+      "explanation": "B is providing less information than requested (only mentioning the mother), implying they did not meet the father.",
+      "source": "Exam 2024"
+    },
+    {
+      "text": "Identify the flouted maxim: Student: 'I’m dead.' (After a long day)",
+      "question": "Maxim:",
+      "options": ["Quality (Hyperbole)", "Quantity", "Relation", "Manner"],
+      "correct": "Quality (Hyperbole)",
+      "explanation": "The student is not literally dead; they are using hyperbole (overstatement) to express exhaustion, flouting Quality.",
+      "source": "Exam 2024"
+    },
+    {
+      "text": "Identify the flouted maxim: A person locked out in the freezing cold says: 'No, I really want to stand out here with no clothes on.'",
+      "question": "Maxim:",
+      "options": ["Quality (Irony)", "Quantity", "Relation", "Manner"],
+      "correct": "Quality (Irony)",
+      "explanation": "The speaker is using irony/sarcasm to express the opposite of their actual desire, flouting Quality.",
+      "source": "Exam 2024"
+    },
+    {
+      "text": "Identify the foregrounding type: 'Every day steeling ourselves against it. / Every day coaxing it back into coils.'",
+      "question": "Type:",
+      "options": ["Lexical Deviation", "Parallelism (Repetition)", "Phonological Deviation", "Semantic Paradox"],
+      "correct": "Parallelism (Repetition)",
+      "explanation": "The repetition of the structure 'Every day [verb]-ing' creates parallelism, a form of foregrounding.",
+      "source": "Exam 2024"
+    },
+    {
+      "text": "Identify the foregrounding type: 'Seven boys and girls are we;'",
+      "question": "Type:",
+      "options": ["Syntactic Deviation (Inversion)", "Semantic Deviation", "Phonological Syncope", "Graphological Layout"],
+      "correct": "Syntactic Deviation (Inversion)",
+      "explanation": "The word order is inverted from the standard 'We are seven...', which is a syntactic deviation.",
+      "source": "Exam 2024"
+    },
+    {
+      "text": "Identify the foregrounding type: 'o’er-brimm’d'",
+      "question": "Type:",
+      "options": ["Aphesis", "Syncope", "Apocope", "Metaphor"],
+      "correct": "Syncope",
+      "explanation": "The omission of the medial 'v' in 'over' is a phonological deviation called syncope.",
+      "source": "Exam 2024"
+    },
+    {
+      "text": "True or False: 'Indicating pessimism is one of the positive politeness strategies.'",
+      "question": "Result:",
+      "options": ["True", "False"],
+      "correct": "False",
+      "explanation": "Indicating pessimism (e.g., 'I don't suppose you could...') is a Negative Politeness strategy.",
+      "source": "Exam 2024"
+    },
+    {
+      "text": "In the extract: 'Afghanistan is the land of Pashtuns. It always has been, always will be.'",
+      "question": "The use of 'always' is an example of:",
+      "options": ["Usuality Modality", "Probability Modality", "Obligation Modality", "Generic Predicate"],
+      "correct": "Usuality Modality",
+      "explanation": "Words that describe how frequently or consistently something occurs (always, never, often) belong to Usuality Modality.",
+      "source": "Exam 2024"
+    },
+    {
+      "text": "In Labov's schema, the one-sentence summary of what transpired in a narrative is the:",
+      "question": "Term:",
+      "options": ["Abstract", "Orientation", "Evaluation", "Coda"],
+      "correct": "Abstract",
+      "explanation": "The Abstract is a short summary of the story, often answering 'What was the story about?'.",
+      "source": "Exam 2024"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "chapterId": "exam-2020",
+  "title": "Official Exam: July 2020",
+  "applied": [
+    {
+      "text": "Identify and determine the type of the politeness strategy: 'What a fantastic garden you have.'",
+      "question": "Type:",
+      "options": ["Positive Politeness", "Negative Politeness"],
+      "correct": "Positive Politeness",
+      "explanation": "Complimenting and showing interest in the hearer's belongings is a Positive Politeness strategy.",
+      "source": "Exam 2020"
+    },
+    {
+      "text": "Identify and determine the type of the politeness strategy: 'Could you find me a computer so I can check my e-mail?'",
+      "question": "Type:",
+      "options": ["Positive Politeness", "Negative Politeness"],
+      "correct": "Negative Politeness",
+      "explanation": "Using a conventional indirect request is a Negative Politeness strategy.",
+      "source": "Exam 2020"
+    },
+    {
+      "text": "Identify and determine the type of the politeness strategy: 'I don’t suppose you could give us a lift.'",
+      "question": "Type:",
+      "options": ["Positive Politeness", "Negative Politeness"],
+      "correct": "Negative Politeness",
+      "explanation": "Being pessimistic (I don't suppose) is a hallmark of Negative Politeness.",
+      "source": "Exam 2020"
+    },
+    {
+      "text": "Which is the flouted maxim by the second speaker? A: What’s the weather prediction? B: Bring your coat.",
+      "question": "Maxim:",
+      "options": ["Quality", "Quantity", "Relation", "Manner"],
+      "correct": "Relation",
+      "explanation": "B provides an indirect answer that is relevant via implicature, flouting Relation.",
+      "source": "Exam 2020"
+    },
+    {
+      "text": "Which is the flouted maxim? Lord Polonius: What do you read, my lord? Hamlet: Words, words, words",
+      "question": "Maxim:",
+      "options": ["Quality", "Quantity", "Relation", "Manner"],
+      "correct": "Quantity",
+      "explanation": "Providing obviously insufficient information flouts the maxim of Quantity.",
+      "source": "Exam 2020"
+    },
+    {
+      "text": "Which is the flouted maxim? A: What do you intend to do today? B: I have a terrible headache.",
+      "question": "Maxim:",
+      "options": ["Quality", "Quantity", "Relation", "Manner"],
+      "correct": "Relation",
+      "explanation": "The response about a headache is not a direct answer to the question about intentions, flouting Relation.",
+      "source": "Exam 2020"
+    },
+    {
+      "text": "Identify the deviation: 'Death feeds on his mute voice, and laughs at our despair.'",
+      "question": "Type:",
+      "options": ["Semantic Deviation", "Syntactic Deviation", "Lexical Deviation"],
+      "correct": "Semantic Deviation",
+      "explanation": "Personification of 'Death' is a semantic deviation.",
+      "source": "Exam 2020"
+    },
+    {
+      "text": "Identify the deviation: 'Her Kindling buds as if she Autumn were.'",
+      "question": "Type:",
+      "options": ["Semantic Deviation", "Syntactic Deviation", "Lexical Deviation"],
+      "correct": "Syntactic Deviation",
+      "explanation": "The word order 'Autumn were' is inverted, making it a syntactic deviation.",
+      "source": "Exam 2020"
+    },
+    {
+      "text": "Identify the deviation: 'Lost Echo sits amid voiceless mountains.'",
+      "question": "Type:",
+      "options": ["Semantic Deviation", "Syntactic Deviation", "Lexical Deviation"],
+      "correct": "Semantic Deviation",
+      "explanation": "The personified 'Echo' and paradoxical 'voiceless mountains' are semantic deviations.",
+      "source": "Exam 2020"
+    },
+    {
+      "text": "Identify the deviation: 'Thus ceased she, the mountain shepherds came.'",
+      "question": "Type:",
+      "options": ["Semantic Deviation", "Syntactic Deviation", "Lexical Deviation"],
+      "correct": "Syntactic Deviation",
+      "explanation": "The subject-verb inversion 'ceased she' is a syntactic deviation.",
+      "source": "Exam 2020"
+    }
+  ]
+}
