@@ -11,113 +11,124 @@
   ],
   "applied": [
     {
-      "text": "The stylistic concept of 'Modality' is best defined as:",
-      "question": "Choose the most accurate theoretical definition:",
+      "text": "What is the primary function of Modality in Stylistics?",
+      "question": "Definition Check:",
       "options": [
-        "The grammatical system of tense and aspect",
-        "The speaker's expression of opinion, attitude, or commitment toward a proposition",
-        "The use of metaphors to describe physical movement",
-        "The repetition of consonant sounds at the end of words"
+        "To report events objectively without any personal bias",
+        "To express the speaker's opinion, attitude, or commitment toward a proposition",
+        "To provide a chronological timeline of narrative events",
+        "To create rhyming patterns in poetic texts"
       ],
-      "correct": "The speaker's expression of opinion, attitude, or commitment toward a proposition",
-      "explanation": "Modality is fundamentally about the 'shading' of a message with human attitude or judgment."
+      "correct": "To express the speaker's opinion, attitude, or commitment toward a proposition",
+      "explanation": "Modality is the linguistic mechanism for encoding human subjectivity."
     },
     {
-      "text": "Which modality parameter is concerned with the speaker's assessment of how likely an event is to be true?",
-      "question": "Parameter Identification:",
-      "options": ["Willingness", "Obligation", "Probability", "Usuality"],
-      "correct": "Probability",
-      "explanation": "Probability measures the speaker's degree of certainty or doubt about a claim."
+      "text": "Which of the following best describes the 'Probability' parameter?",
+      "question": "Parameter Definition:",
+      "options": [
+        "The speaker's assessment of how likely a proposition is to be true",
+        "The speaker's desire or intention to perform an action",
+        "The frequency with which a certain event occurs",
+        "The degree of obligation or duty imposed on the hearer"
+      ],
+      "correct": "The speaker's assessment of how likely a proposition is to be true",
+      "explanation": "Probability concerns the truth-value commitment of the speaker."
     },
     {
-      "text": "The modality parameter that deals with requirements, duties, and advice is known as:",
-      "question": "Parameter Identification:",
-      "options": ["Probability", "Obligation", "Willingness", "Usuality"],
-      "correct": "Obligation",
-      "explanation": "Obligation (also known as deontic modality) concerns what should or must be done."
+      "text": "The parameter of 'Obligation' (Deontic Modality) is concerned with:",
+      "question": "Parameter Definition:",
+      "options": [
+        "The physical possibility of an event happening",
+        "The frequency and habituality of an action",
+        "Requirements, duties, and social or moral necessity",
+        "The speaker's literal belief in a statement"
+      ],
+      "correct": "Requirements, duties, and social or moral necessity",
+      "explanation": "Obligation deals with what 'must' or 'should' be done."
     },
     {
-      "text": "In Stylistics, the parameter of 'Usuality' refers to:",
+      "text": "In the context of Modality, 'Usuality' is the parameter that measures:",
+      "question": "Parameter Definition:",
+      "options": [
+        "The certainty of the speaker regarding a future event",
+        "How frequently or habitually a state or action occurs",
+        "The level of politeness between two speakers",
+        "The grammatical correctness of a modal verb"
+      ],
+      "correct": "How frequently or habitually a state or action occurs",
+      "explanation": "Usuality is about frequency (always, often, rarely)."
+    },
+    {
+      "text": "What is the definition of 'Willingness' (Boulomaic Modality)?",
+      "question": "Parameter Definition:",
+      "options": [
+        "The speaker's degree of knowledge about a topic",
+        "The speaker's desires, intentions, or readiness to act",
+        "The level of doubt expressed in a sentence",
+        "The use of metaphors in a dialogue"
+      ],
+      "correct": "The speaker's desires, intentions, or readiness to act",
+      "explanation": "Willingness is related to volition and desire."
+    },
+    {
+      "text": "How is 'Metaphorized Modality' distinguished from Direct Modalization?",
+      "question": "Concept Distinction:",
+      "options": [
+        "It uses modal verbs like 'must' and 'can'",
+        "It uses introductory mental-process verbs like 'think' or 'believe' to project an assessment",
+        "It completely avoids the use of any evaluative language",
+        "It is only used in scientific and technical writing"
+      ],
+      "correct": "It uses introductory mental-process verbs like 'think' or 'believe' to project an assessment",
+      "explanation": "Metaphorized modality shifts the modality into a separate mental-process clause."
+    },
+    {
+      "text": "Which statement best describes a 'Generic Sentence' as an evaluative device?",
       "question": "Concept Definition:",
       "options": [
-        "How often or frequently an event or state occurs",
-        "The speaker's physical ability to perform an action",
-        "The use of archaic words in a modern text",
-        "The social status of the interlocutors"
+        "A sentence that describes a specific individual's current state",
+        "A sentence asserting a timeless truth about a whole class or category of things",
+        "A question that asks for the hearer's opinion",
+        "A direct command given by a character in a story"
       ],
-      "correct": "How often or frequently an event or state occurs",
-      "explanation": "Usuality measures frequency (always, often, rarely, never)."
+      "correct": "A sentence asserting a timeless truth about a whole class or category of things",
+      "explanation": "Generic sentences present subjective views as if they were universal truths."
     },
     {
-      "text": "Which modality parameter concerns the speaker's intentions, desires, or readiness to act?",
-      "question": "Parameter Identification:",
-      "options": ["Probability", "Obligation", "Willingness", "Usuality"],
-      "correct": "Willingness",
-      "explanation": "Willingness (boulomaic modality) expresses desire or intention."
-    },
-    {
-      "text": "What characterizes 'Metaphorized Modality' (also known as Advanced Modality)?",
-      "question": "Theory Check:",
+      "text": "What is the core characteristic of 'Evaluative Verbs' in Stylistics?",
+      "question": "Term Definition:",
       "options": [
-        "The use of modal auxiliaries like 'must' or 'can'",
-        "The use of cognitive verbs like 'think', 'believe', or 'guess' to express assessment",
-        "The complete absence of all evaluative devices",
-        "The use of rhyming patterns to hide meaning"
+        "They carry a clear presupposition of the speaker's stance (e.g., regret, welcome)",
+        "They are used to describe physical actions without any judgment",
+        "They only appear in the past tense to describe completed events",
+        "They are words that link two different sentences together"
       ],
-      "correct": "The use of cognitive verbs like 'think', 'believe', or 'guess' to express assessment",
-      "explanation": "Metaphorized modality uses mental-process verbs to project a subjective assessment."
+      "correct": "They carry a clear presupposition of the speaker's stance (e.g., regret, welcome)",
+      "explanation": "Evaluative verbs show the speaker's judgment of the proposition."
     },
     {
-      "text": "According to Paul Simpson, 'Generic Sentences' represent the extreme endpoint of which parameter?",
-      "question": "Curriculum Detail:",
-      "options": ["Probability", "Obligation", "Usuality", "Willingness"],
-      "correct": "Usuality",
-      "explanation": "Generic sentences assert what is 'always the case', placing them at the end of the Usuality scale."
-    },
-    {
-      "text": "Which of the following is considered an 'Evaluative Verb' in the context of modality and attitude?",
-      "question": "Terminology Check:",
-      "options": ["Run", "Deplore", "Sleep", "Write"],
-      "correct": "Deplore",
-      "explanation": "Evaluative verbs like 'deplore', 'regret', or 'welcome' explicitly signal the speaker's stance."
-    },
-    {
-      "text": "When a text is described as having 'Positive Modal Shading', it generally implies:",
+      "text": "What does the term 'Positive Modal Shading' refer to in a text?",
       "question": "Stylistic Effect:",
       "options": [
-        "A high degree of uncertainty and doubt",
-        "A strong, assertive stance with clear commitment to the proposition",
-        "A purely factual and objective description with no modality",
-        "The use of slang and informal language"
+        "A narrative filled with uncertainty, doubt, and low probability",
+        "A strong, assertive stance with clear commitment to propositions",
+        "A text that contains no modality or evaluative language at all",
+        "A text that focuses entirely on describing nature"
       ],
-      "correct": "A strong, assertive stance with clear commitment to the proposition",
-      "explanation": "Positive shading uses strong modals and evaluative adjectives to show confidence."
+      "correct": "A strong, assertive stance with clear commitment to propositions",
+      "explanation": "Positive shading uses assertive modals and evaluative adjectives."
     },
     {
-      "text": "'Negative Modal Shading' is characterized by:",
+      "text": "How is 'Negative Modal Shading' stylistically characterized?",
       "question": "Stylistic Effect:",
       "options": [
-        "Absolute certainty and factualism",
-        "Widespread use of markers of doubt, hesitation, and low probability",
-        "Excessive use of direct commands",
-        "The use of metaphors related to nature"
+        "By absolute certainty and unmodalized factualism",
+        "By widespread use of markers of doubt, hesitation, and low probability",
+        "By frequent use of direct commands and imperatives",
+        "By the absence of any first-person pronouns"
       ],
-      "correct": "Widespread use of markers of doubt, hesitation, and low probability",
-      "explanation": "Negative shading creates an atmosphere of uncertainty or alienation."
-    },
-    {
-      "text": "Which modal auxiliary is typically associated with 'Obligation'?",
-      "question": "Direct Modalization:",
-      "options": ["Might", "Should", "Could", "May"],
-      "correct": "Should",
-      "explanation": "Should, Must, and Ought to are primary markers of obligation."
-    },
-    {
-      "text": "Identify the 'Theoretical' category for the use of phrases like 'It seems likely':",
-      "question": "Classification:",
-      "options": ["Direct Modalization", "Metaphorized Modality", "Generic Assertion", "Unmodalized Factualism"],
-      "correct": "Metaphorized Modality",
-      "explanation": "Introductory phrases like 'It seems' or 'It appears' are metaphorized ways of expressing assessment."
+      "correct": "By widespread use of markers of doubt, hesitation, and low probability",
+      "explanation": "Negative shading creates an atmosphere of estrangement or uncertainty."
     }
   ]
 }
