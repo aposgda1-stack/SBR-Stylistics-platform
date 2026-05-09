@@ -102,6 +102,9 @@ export default function Login() {
         </form>
 
         <div className="flex flex-col items-center gap-4 border-t border-white/5 pt-6">
+          <p className="text-xs font-bold text-secondary uppercase tracking-widest bg-secondary/5 px-4 py-2 rounded-lg border border-secondary/10 mb-2">
+            لو أول مرة تسجل.. دوس على "Join Academy"
+          </p>
           <p className="text-sm text-slate-400">
             Don't have an account? 
             <Link className="text-secondary font-bold ml-2 border-b border-secondary/30 hover:border-secondary transition-all pb-0.5" href="/signup">Join Academy</Link>

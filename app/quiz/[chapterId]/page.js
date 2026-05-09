@@ -13,6 +13,7 @@ function QuizContent({ paramsPromise }) {
   const mode = searchParams.get('mode') || 'exam';
   
   const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
   const [section, setSection] = useState('intro');
   const [mounted, setMounted] = useState(false);
   const [scores, setScores] = useState({ theoretical: 0, applied: 0 });
@@ -40,6 +41,12 @@ function QuizContent({ paramsPromise }) {
       try {
         const res = await fetch(`/api/lecture?id=${chapterId}`);
         const json = await res.json();
+        
+        if (json.error) {
+          setError(json.error);
+          return;
+        }
+        
         setData(json);
         
         if (json.questions && !json.theoretical) {
@@ -47,17 +54,31 @@ function QuizContent({ paramsPromise }) {
         }
       } catch (err) {
         console.error("Failed to fetch quiz data", err);
+        setError("Could not connect to the academy server.");
       }
     }
     if (chapterId) fetchData();
   }, [chapterId]);
 
-  if (!mounted || !data) return (
+  if (!mounted || (!data && !error)) return (
     <div className="flex items-center justify-center min-h-[60vh]">
       <div className="flex flex-col items-center gap-6">
         <div className="w-16 h-16 border-4 border-secondary/20 border-t-secondary rounded-full animate-spin" />
         <span className="text-xs font-bold text-slate-500 uppercase tracking-[0.3em] animate-pulse">Initializing Stylistics Academy...</span>
       </div>
+    </div>
+  );
+
+  if (error) return (
+    <div className="flex flex-col items-center justify-center min-h-[60vh] px-6 text-center">
+      <div className="w-20 h-20 bg-rose-500/10 rounded-3xl flex items-center justify-center mb-8">
+        <span className="material-symbols-outlined text-rose-500 text-4xl">error</span>
+      </div>
+      <h2 className="text-3xl font-bold text-white mb-4">Chapter Unavailable</h2>
+      <p className="text-slate-400 max-w-md mb-8">{error}</p>
+      <Link href="/platform" className="px-10 py-4 bg-white/5 border border-white/10 text-white rounded-xl font-bold uppercase text-xs tracking-widest hover:bg-white/10 transition-all">
+        Back to Platform
+      </Link>
     </div>
   );
 

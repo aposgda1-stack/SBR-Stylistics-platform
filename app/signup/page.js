@@ -94,10 +94,13 @@ export default function Signup() {
                 className="w-full bg-[#1b1b1d] border-b border-white/10 focus:border-secondary focus:ring-0 text-white text-sm rounded-t-lg pl-12 pr-4 py-4 transition-all" 
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="Any password you like" 
+                placeholder="Password" 
                 type="password"
               />
             </div>
+            <p className="text-[10px] font-medium text-slate-500 italic pl-1">
+              نصيحة: استخدم كلمة سر سهلة التذكر (مثلاً: من 1 إلى 9)
+            </p>
           </div>
 
           <button 
