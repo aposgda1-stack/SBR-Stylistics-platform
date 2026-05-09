@@ -15,6 +15,14 @@
       "date": "2026-05-08",
       "type": "update",
       "unread": true
+    },
+    {
+      "id": "curriculum-cleanup",
+      "title": "Curriculum Cleanup",
+      "msg": "We've reorganized Lecture 01 & 02 for better clarity. Detailed deviation questions have been moved to Lecture 02 to match the syllabus. Happy studying!",
+      "date": "2026-05-09",
+      "type": "update",
+      "unread": true
     }
   ]
 }

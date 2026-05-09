@@ -54,69 +54,6 @@
       "explanation": "External deviation is measured against the general language system outside the text."
     },
     {
-      "text": "A poet invents the verb 'foresuffer' by prefixing 'fore-' to 'suffer'.",
-      "question": "This is an example of which type of Lexical Deviation?",
-      "options": ["Compounding", "Affixation", "Functional Conversion", "Alliteration"],
-      "correct": "Affixation",
-      "explanation": "Affixation involves adding prefixes or suffixes to create new words (neologisms)."
-    },
-    {
-      "text": "Hopkins uses 'achieve' as a noun in 'the achieve of... the mastery of'.",
-      "question": "This process of adapting an item to a new grammatical function is called:",
-      "options": ["Functional Conversion", "Lexical Compounding", "Phonological Elision", "Graphological Layout"],
-      "correct": "Functional Conversion",
-      "explanation": "Functional conversion changes the grammatical class of a word without changing its form."
-    },
-    {
-      "text": "'Little enough I sought / But a word compassionate'.",
-      "question": "The placement of the adjective 'compassionate' after the noun is an example of:",
-      "options": ["Lexical Deviation", "Syntactic Deviation", "Semantic Paradox", "Phonological Apocope"],
-      "correct": "Syntactic Deviation",
-      "explanation": "Syntactic deviation involves departing from normal word order constraints."
-    },
-    {
-      "text": "In poetry, 'wind' might be pronounced as /waind/ to fit a rhyme scheme.",
-      "question": "This oddity of pronunciation/stress is known as:",
-      "options": ["Graphological Deviation", "Phonological Deviation", "Semantic Mismatch", "Syntactic Re-ordering"],
-      "correct": "Phonological Deviation",
-      "explanation": "Phonological deviation occurs when words are pronounced or stressed oddly."
-    },
-    {
-      "text": "The gradual loss of a short unstressed vowel at the beginning of a word (e.g., 'gainst).",
-      "question": "This specific phonological irregularity is called:",
-      "options": ["Elision", "Apocope", "Syncope", "Aphesis"],
-      "correct": "Aphesis",
-      "explanation": "Aphesis is the loss of the initial unstressed vowel."
-    },
-    {
-      "text": "The omission of medial sounds in a word, such as in 'o'er'.",
-      "question": "This is technically known as:",
-      "options": ["Aphesis", "Syncope", "Apocope", "Elision"],
-      "correct": "Syncope",
-      "explanation": "Syncope is the loss of sounds from the middle of a word."
-    },
-    {
-      "text": "Horovitz splits the word HELL into separate lines (H-E-L-L).",
-      "question": "This forces a phonetic interpretation through which level of deviation?",
-      "options": ["Graphological Deviation", "Lexical Deviation", "Syntactic Deviation", "Semantic Deviation"],
-      "correct": "Graphological Deviation",
-      "explanation": "Graphological deviation involves typography, layout, and spelling."
-    },
-    {
-      "text": "Light breaks where no sun shines, / Where no sea runs...",
-      "question": "These logically inconsistent or paradoxical meaning relations are examples of:",
-      "options": ["Lexical Deviation", "Semantic Deviation", "Phonological Deviation", "Syntactic Deviation"],
-      "correct": "Semantic Deviation",
-      "explanation": "Semantic deviation emerges from meaning relations that are paradoxical or inconsistent."
-    },
-    {
-      "text": "T.S. Eliot describes cold as 'heart's heat' and intense light as 'blindness'.",
-      "question": "These meaning relations are a specific type of semantic deviation called:",
-      "options": ["Simile", "Metaphor", "Paradox", "Functional Conversion"],
-      "correct": "Paradox",
-      "explanation": "A paradox is a mismatch between normal sets of things that seems logically inconsistent."
-    },
-    {
       "text": "'Blow, blow, thou winter wind'.",
       "question": "According to the text, what does the repetition of 'blow' stand for?",
       "options": ["A spelling error", "Greater, more prolonged force of the wind", "The speaker is bored", "The wind is dying down"],
@@ -143,29 +80,6 @@
       "options": ["It shows the poet is lazy.", "It emphasizes the severity of the frost.", "It creates a rhyme scheme.", "It is a syntactic deviation."],
       "correct": "It emphasizes the severity of the frost.",
       "explanation": "Repetition is a method of foregrounding that emphasizes a specific quality."
-    },
-    {
-      "text": "Identify the technique: 'pity this busy monster, manunkind'.",
-      "question": "The word 'manunkind' is an example of lexical deviation via:",
-      "options": ["Compounding", "Affixation", "Functional Conversion", "Syncope"],
-      "correct": "Affixation",
-      "explanation": "It uses the prefix 'un-' in an irregular way within the word 'mankind'."
-    },
-    {
-      "text": "Identify the foregrounding type: 'Seven boys and girls are we;'",
-      "question": "Type:",
-      "options": ["Syntactic Deviation (Inversion)", "Semantic Deviation", "Phonological Syncope", "Graphological Layout"],
-      "correct": "Syntactic Deviation (Inversion)",
-      "explanation": "The word order is inverted from the standard 'We are seven...', which is a syntactic deviation.",
-      "source": "Exam June 2024"
-    },
-    {
-      "text": "Identify the foregrounding type: 'o’er-brimm’d'",
-      "question": "Type:",
-      "options": ["Aphesis", "Syncope", "Apocope", "Metaphor"],
-      "correct": "Syncope",
-      "explanation": "The omission of the medial 'v' in 'over' is a phonological deviation called syncope.",
-      "source": "Exam June 2024"
     },
     {
       "text": "From T.S. Eliot's 'The Hollow Men': 'We are the hollow men / We are the stuffed men' / 'Shape without form, shade without colour, / Paralysed force, gesture without motion.'",

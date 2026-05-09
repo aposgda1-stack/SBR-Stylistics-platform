@@ -213,6 +213,14 @@
       "correct": "Syncope",
       "explanation": "The omission of the medial 'v' in 'over' is a phonological deviation called syncope.",
       "source": "Exam June 2024"
+    },
+    {
+      "text": "Identify the foregrounding type: 'Seven boys and girls are we;'",
+      "question": "Type:",
+      "options": ["Syntactic Deviation (Inversion)", "Semantic Deviation", "Phonological Syncope", "Graphological Layout"],
+      "correct": "Syntactic Deviation (Inversion)",
+      "explanation": "The word order is inverted from the standard 'We are seven...', which is a syntactic deviation.",
+      "source": "Exam June 2024"
     }
   ]
 }
