@@ -86,10 +86,12 @@ export default function Leaderboard() {
             <div className="w-20 h-28 bg-white/5 border border-white/10 rounded-t-xl flex flex-col items-center justify-center p-2 text-center">
               <span className="text-[10px] font-bold text-white truncate w-full px-1 mb-1">{leaders[1].name.split(' ')[0]}</span>
               <span className="text-xs text-slate-500 mb-2">{leaders[1].points}</span>
-              <div className={`px-1.5 py-0.5 rounded-full ${badgeConfig[leaders[1].badge].bg} flex items-center gap-1`}>
-                <span className={`material-symbols-outlined text-[8px] ${badgeConfig[leaders[1].badge].color}`}>{badgeConfig[leaders[1].badge].icon}</span>
-                <span className={`text-[6px] font-black uppercase ${badgeConfig[leaders[1].badge].color}`}>{badgeConfig[leaders[1].badge].label}</span>
-              </div>
+              {badgeConfig[leaders[1].badge] && (
+                <div className={`px-1.5 py-0.5 rounded-full ${badgeConfig[leaders[1].badge].bg} flex items-center gap-1`}>
+                  <span className={`material-symbols-outlined text-[8px] ${badgeConfig[leaders[1].badge].color}`}>{badgeConfig[leaders[1].badge].icon}</span>
+                  <span className={`text-[6px] font-black uppercase ${badgeConfig[leaders[1].badge].color}`}>{badgeConfig[leaders[1].badge].label}</span>
+                </div>
+              )}
             </div>
           </div>
         )}
@@ -126,10 +128,12 @@ export default function Leaderboard() {
             <div className="w-20 h-24 bg-white/5 border border-white/10 rounded-t-xl flex flex-col items-center justify-center p-2 text-center">
               <span className="text-[10px] font-bold text-white truncate w-full px-1 mb-1">{leaders[2].name.split(' ')[0]}</span>
               <span className="text-xs text-slate-500 mb-2">{leaders[2].points}</span>
-              <div className={`px-1.5 py-0.5 rounded-full ${badgeConfig[leaders[2].badge].bg} flex items-center gap-1`}>
-                <span className={`material-symbols-outlined text-[8px] ${badgeConfig[leaders[2].badge].color}`}>{badgeConfig[leaders[2].badge].icon}</span>
-                <span className={`text-[6px] font-black uppercase ${badgeConfig[leaders[2].badge].color}`}>{badgeConfig[leaders[2].badge].label}</span>
-              </div>
+              {badgeConfig[leaders[2].badge] && (
+                <div className={`px-1.5 py-0.5 rounded-full ${badgeConfig[leaders[2].badge].bg} flex items-center gap-1`}>
+                  <span className={`material-symbols-outlined text-[8px] ${badgeConfig[leaders[2].badge].color}`}>{badgeConfig[leaders[2].badge].icon}</span>
+                  <span className={`text-[6px] font-black uppercase ${badgeConfig[leaders[2].badge].color}`}>{badgeConfig[leaders[2].badge].label}</span>
+                </div>
+              )}
             </div>
           </div>
         )}

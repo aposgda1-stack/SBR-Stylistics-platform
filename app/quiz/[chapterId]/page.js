@@ -48,10 +48,8 @@ function QuizContent({ paramsPromise }) {
         }
         
         setData(json);
-        
-        if (json.questions && !json.theoretical) {
-          setSection('intro');
-        }
+        // Always start from intro screen regardless of data structure
+        setSection('intro');
       } catch (err) {
         console.error("Failed to fetch quiz data", err);
         setError("Could not connect to the academy server.");
@@ -145,10 +143,13 @@ function QuizContent({ paramsPromise }) {
 
   const startQuiz = () => {
     setStartTime(Date.now());
-    if (data.theoretical) {
+    // Prefer theoretical first; fall back to applied (or questions for legacy format)
+    if (data.theoretical && data.theoretical.length > 0) {
       setSection('theoretical');
-    } else {
+    } else if (data.applied || data.questions) {
       setSection('applied');
+    } else {
+      setError('This chapter has no content yet.');
     }
   };
 

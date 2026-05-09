@@ -50,10 +50,31 @@ export default function Dossier() {
     return d.toISOString().split('T')[0];
   });
 
-  const clearArchive = () => {
-    if (confirm('Wipe all intelligence data?')) {
+  const [clearing, setClearing] = useState(false);
+
+  const clearArchive = async () => {
+    if (!confirm('Wipe all intelligence data?') || clearing) return;
+    setClearing(true);
+    try {
+      const userId = localStorage.getItem('stylistics_user_id');
+      if (userId) {
+        await fetch('/api/user', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ userId, mistakes: [] })
+        });
+      }
       localStorage.removeItem('stylistics_mistakes');
       setMistakes([]);
+      // Reset stats to default
+      setStats(prev => prev.map(s => ({ ...s, value: 100 })));
+    } catch (e) {
+      console.error('Clear archive error', e);
+      // Still clear locally
+      localStorage.removeItem('stylistics_mistakes');
+      setMistakes([]);
+    } finally {
+      setClearing(false);
     }
   };
 
@@ -69,8 +90,8 @@ export default function Dossier() {
           <h1 className="text-4xl md:text-5xl font-black text-white italic tracking-tighter">THE DOSSIER.</h1>
           <p className="text-slate-500 font-bold uppercase tracking-[0.2em] text-[10px] mt-2">Personal Study Tracker & Mistakes Feed</p>
         </div>
-        <button onClick={clearArchive} className="w-full md:w-auto px-6 py-2 rounded-lg border border-rose-500/20 text-rose-500 text-[10px] font-black uppercase tracking-widest hover:bg-rose-500 hover:text-white transition-all">
-          Clear Study History
+        <button onClick={clearArchive} disabled={clearing} className="w-full md:w-auto px-6 py-2 rounded-lg border border-rose-500/20 text-rose-500 text-[10px] font-black uppercase tracking-widest hover:bg-rose-500 hover:text-white transition-all disabled:opacity-40 disabled:cursor-not-allowed">
+          {clearing ? 'Clearing...' : 'Clear Study History'}
         </button>
       </section>
 

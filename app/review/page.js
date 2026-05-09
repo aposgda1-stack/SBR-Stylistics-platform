@@ -16,17 +16,35 @@ export default function ReviewPage() {
     }
   }, []);
 
+  const [clearing, setClearing] = useState(false);
+
   const clearMistakes = async () => {
-    localStorage.removeItem('stylistics_mistakes');
-    setMistakes([]);
-    // Also clear from DB
-    const userId = localStorage.getItem('stylistics_user_id');
-    if (userId) {
-      await fetch('/api/user', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ userId, mistakes: [] })
-      });
+    if (clearing) return;
+    setClearing(true);
+    try {
+      // Attempt to clear from DB first
+      const userId = localStorage.getItem('stylistics_user_id');
+      if (userId) {
+        const res = await fetch('/api/user', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ userId, mistakes: [] })
+        });
+        // Only clear local if server confirmed success
+        if (!res.ok) {
+          console.error('Failed to clear mistakes from server');
+        }
+      }
+      // Always clear localStorage after attempting server sync
+      localStorage.removeItem('stylistics_mistakes');
+      setMistakes([]);
+    } catch (e) {
+      console.error('Clear mistakes error', e);
+      // Still clear locally even if server fails
+      localStorage.removeItem('stylistics_mistakes');
+      setMistakes([]);
+    } finally {
+      setClearing(false);
     }
   };
 
@@ -40,9 +58,10 @@ export default function ReviewPage() {
         {mistakes.length > 0 && (
           <button 
             onClick={clearMistakes}
-            className="text-xs font-bold text-rose-500 uppercase tracking-widest border border-rose-500/20 px-4 py-2 rounded-lg hover:bg-rose-500/10 transition-all"
+            disabled={clearing}
+            className="text-xs font-bold text-rose-500 uppercase tracking-widest border border-rose-500/20 px-4 py-2 rounded-lg hover:bg-rose-500/10 transition-all disabled:opacity-40 disabled:cursor-not-allowed"
           >
-            Clear Archive
+            {clearing ? 'Clearing...' : 'Clear Archive'}
           </button>
         )}
       </div>

@@ -6,9 +6,16 @@ import { NextResponse } from "next/server";
 export async function POST(req) {
   try {
     await dbConnect();
-    const { email, password } = await req.json();
+    const body = await req.json();
+    const { email, password } = body;
 
-    const user = await UserProgress.findOne({ email });
+    if (!email || !password) {
+      return NextResponse.json({ error: "Email and password required" }, { status: 400 });
+    }
+
+    const normalizedEmail = email.toLowerCase().trim();
+    const user = await UserProgress.findOne({ email: normalizedEmail });
+    
     if (!user || !user.password) {
       return NextResponse.json({ error: "Invalid credentials" }, { status: 401 });
     }
@@ -20,9 +27,15 @@ export async function POST(req) {
 
     return NextResponse.json({ 
       success: true, 
-      user: { userId: user.userId, name: user.name, email: user.email, totalPoints: user.totalPoints } 
+      user: { 
+        userId: user.userId, 
+        name: user.name, 
+        email: user.email, 
+        totalPoints: user.totalPoints 
+      } 
     });
   } catch (error) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    console.error("Login error:", error);
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
 }

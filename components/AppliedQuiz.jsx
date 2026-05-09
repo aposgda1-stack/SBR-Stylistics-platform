@@ -195,9 +195,10 @@ export default function AppliedQuiz({ questions, onComplete, mode, startIndex = 
                   style = 'bg-blue-600 text-white border-transparent shadow-[0_0_30px_rgba(37,99,235,0.3)]';
                 }
 
+                // Using option text + index for a unique but stable key
                 return (
                   <button 
-                    key={i}
+                    key={`opt-${currentIndex}-${i}`}
                     disabled={showExplanation && mode === 'practice'}
                     onClick={(e) => handleSelect(opt, e)}
                     className={`group relative p-5 md:p-7 rounded-2xl md:rounded-[24px] border-2 text-left transition-all duration-300 flex items-center justify-between active:scale-95 ${style}`}

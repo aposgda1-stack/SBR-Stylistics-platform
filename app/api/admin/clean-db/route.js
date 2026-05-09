@@ -2,14 +2,14 @@ import dbConnect from "@/lib/mongodb";
 import { UserProgress } from "@/lib/models";
 import { NextResponse } from "next/server";
 
-const ADMIN_SECRET = process.env.ADMIN_SECRET || 'sbr-admin-2026';
+const ADMIN_SECRET = process.env.ADMIN_SECRET;
 
 export async function GET(req) {
   // Secure this route with a secret token
   const { searchParams } = new URL(req.url);
   const secret = searchParams.get('secret');
 
-  if (secret !== ADMIN_SECRET) {
+  if (!ADMIN_SECRET || secret !== ADMIN_SECRET) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 

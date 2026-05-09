@@ -3,6 +3,8 @@ import { UserProgress } from "@/lib/models";
 import bcrypt from "bcryptjs";
 import { NextResponse } from "next/server";
 
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 export async function POST(req) {
   try {
     await dbConnect();
@@ -12,7 +14,18 @@ export async function POST(req) {
       return NextResponse.json({ error: "Missing fields" }, { status: 400 });
     }
 
-    const existingUser = await UserProgress.findOne({ email });
+    // Validate field formats
+    if (typeof name !== 'string' || name.trim().length < 2 || name.trim().length > 60) {
+      return NextResponse.json({ error: "Name must be between 2 and 60 characters" }, { status: 400 });
+    }
+    if (!EMAIL_REGEX.test(email) || email.length > 120) {
+      return NextResponse.json({ error: "Invalid email address" }, { status: 400 });
+    }
+    if (typeof password !== 'string' || password.length < 6 || password.length > 128) {
+      return NextResponse.json({ error: "Password must be at least 6 characters" }, { status: 400 });
+    }
+
+    const existingUser = await UserProgress.findOne({ email: email.toLowerCase() });
     if (existingUser) {
       return NextResponse.json({ error: "Email already registered" }, { status: 400 });
     }
@@ -22,8 +35,8 @@ export async function POST(req) {
 
     const newUser = await UserProgress.create({
       userId,
-      name,
-      email,
+      name: name.trim(),
+      email: email.toLowerCase(),
       password: hashedPassword,
       authSource: "custom",
       totalPoints: 0

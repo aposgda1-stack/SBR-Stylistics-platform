@@ -99,8 +99,9 @@ export default function WordBox({ terms, onComplete, mode, onError }) {
             bgStyle = correct ? 'bg-emerald-500/5' : 'bg-rose-500/5';
           }
 
+          // Use term name as stable key to avoid UI glitches on reorder
           return (
-            <div key={i} className={`flex flex-col gap-3 p-5 md:p-8 rounded-[24px] md:rounded-[32px] border transition-all ${bgStyle} ${borderStyle} ${elevation}`}>
+            <div key={t.term} className={`flex flex-col gap-3 p-5 md:p-8 rounded-[24px] md:rounded-[32px] border transition-all ${bgStyle} ${borderStyle} ${elevation}`}>
               <div 
                 onClick={() => handleSlotClick(i)}
                 className={`w-full min-h-[56px] md:min-h-[72px] rounded-xl md:rounded-2xl border-2 border-dashed flex items-center justify-center transition-all px-4 md:px-6 text-center cursor-pointer active:scale-95
@@ -134,13 +135,13 @@ export default function WordBox({ terms, onComplete, mode, onError }) {
         <div className="max-w-3xl mx-auto">
           {!showResults && (
             <div className="flex flex-nowrap md:flex-wrap gap-2 overflow-x-auto md:overflow-visible pb-4 md:pb-8 px-1 no-scrollbar">
-              {shuffledTerms.map((t, i) => {
+              {shuffledTerms.map((t) => {
                 const isUsed = Object.values(placedWords).includes(t.term);
                 const isSelected = selectedTerm === t.term;
 
                 return (
                   <button 
-                    key={i}
+                    key={t.term}
                     onClick={() => handleTermClick(t.term)}
                     className={`px-5 py-3 md:px-6 md:py-4 rounded-2xl text-[10px] md:text-xs font-black uppercase tracking-widest transition-all whitespace-nowrap border-2
                       ${isSelected ? 'bg-blue-600 text-white border-blue-500 scale-105 shadow-[0_0_20px_rgba(37,99,235,0.3)]' : 
