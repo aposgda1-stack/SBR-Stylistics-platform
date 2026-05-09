@@ -14,11 +14,11 @@
     },
     {
       "id": "q2",
-      "text": "The Taliban speaker says: 'free of guilt and remorse. Knowing you are virtuous, good and decent.'",
-      "question": "What is the stylistic function of these adjectives?",
-      "options": ["Negative shading", "Evaluative devices used to maintain 'nobility'", "Deontic obligation", "Lexical substitution"],
-      "correct": "Evaluative devices used to maintain 'nobility'",
-      "explanation": "Evaluative adjectives are used here to moralize and justify the speaker's actions.",
+      "text": "Modality parameters include Probability, Obligation, Willingness, and:",
+      "question": "The fourth parameter is:",
+      "options": ["Lexical Density", "Usuality", "Deixis", "Anaphora"],
+      "correct": "Usuality",
+      "explanation": "Usuality is the parameter that measures how often an event occurs.",
       "chapter": "lecture-04"
     },
     {

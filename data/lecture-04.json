@@ -95,116 +95,25 @@
       "explanation": "Evaluative verbs (deplore, regret, welcome) carry a clear presupposition of the speaker's stance."
     },
     {
-      "text": "'The first casualty of war is truth.'",
-      "question": "This statement, which asserts a timeless truth about a whole set of things, is a:",
-      "options": ["Metaphorized Modality", "Generic Sentence", "Modal Auxiliary", "Specific Description"],
+      "text": "Which modality parameter is concerned with the frequency of an event (e.g., often, never, always)?",
+      "question": "Definition Check:",
+      "options": ["Probability", "Obligation", "Willingness", "Usuality"],
+      "correct": "Usuality",
+      "explanation": "Usuality is the parameter that measures the frequency or habituality of a state or action."
+    },
+    {
+      "text": "The use of modal auxiliaries like 'can', 'may', or 'must' to qualify a claim is called:",
+      "question": "Theory Check:",
+      "options": ["Direct Modalization", "Metaphorized Modality", "Generic Assertion", "Lexical Cohesion"],
+      "correct": "Direct Modalization",
+      "explanation": "Using modal verbs directly is the primary way of modalizing a proposition."
+    },
+    {
+      "text": "A sentence that asserts a timeless truth about a category (e.g. 'The English are a nation of shopkeepers') is a:",
+      "question": "Theory Check:",
+      "options": ["Specific Description", "Generic Sentence", "Modal Auxiliary", "Evaluative Adverb"],
       "correct": "Generic Sentence",
-      "explanation": "Generic sentences assert general truths in the simple present tense."
-    },
-    {
-      "text": "'Pandas' preferred diet is bamboo shoots.'",
-      "question": "This is a generic sentence. Which modality parameter does it occupy the endpoint of?",
-      "options": ["Probability", "Obligation", "Willingness", "Usuality"],
-      "correct": "Usuality",
-      "explanation": "Generic sentences represent what is 'always the case', the extreme of usuality."
-    },
-    {
-      "text": "'It is a truth universally acknowledged, that a single man... must be in want of a wife.'",
-      "question": "How does the text describe the use of this generic sentence by Austen's narrator?",
-      "options": ["As a scientific fact", "As an ironic exploitation of the generic form", "As a specific description of one man", "As a modal error"],
-      "correct": "As an ironic exploitation of the generic form",
-      "explanation": "Austen uses the generic form ironically to mock social prejudices."
-    },
-    {
-      "text": "'Four and three should be seven.'",
-      "question": "According to the text, why does adding modality to an absolute truth (like 4+3=7) feel strange?",
-      "options": ["It's ungrammatical.", "It discloses less-than-total commitment to a fact that should be absolute.", "Numbers don't have modality.", "It's too formal."],
-      "correct": "It discloses less-than-total commitment to a fact that should be absolute.",
-      "explanation": "Modality always introduces a degree of doubt or opinion away from the absolute positive/negative."
-    },
-    {
-      "text": "In 'Living in Sin', the girl thought the studio 'would keep itself'.",
-      "question": "This use of 'would' expresses which parameter?",
-      "options": ["Willingness / Habitual Usuality", "Obligation", "Probability", "Futurity"],
-      "correct": "Willingness / Habitual Usuality",
-      "explanation": "In narratives, 'would' often signals habitual usuality or willingness."
-    },
-    {
-      "text": "'Unfortunately he turned out to be gay.'",
-      "question": "The word 'Unfortunately' reveals the speaker's attitude. It is a/an:",
-      "options": ["Modal Auxiliary", "Evaluative Adverb", "Generic Assertion", "Lexical Cohesion"],
-      "correct": "Evaluative Adverb",
-      "explanation": "Evaluative adverbs (unfortunately, surprisingly) signal the speaker's stance towards the proposition."
-    },
-    {
-      "text": "'Light breaks where no sun shines...'",
-      "question": "T.S. Eliot (and Dylan Thomas) use paradoxes. Paradox is described in the text as a mismatch between:",
-      "options": ["Words and sounds", "Normal sets of things and meaning", "A speaker and a listener", "Past and future"],
-      "correct": "Normal sets of things and meaning",
-      "explanation": "Semantic deviation (paradox) involves a mismatch in logically consistent meaning relations."
-    },
-    {
-      "text": "Identify the modality: 'Why should I?'",
-      "question": "This question asks for a/an:",
-      "options": ["Reason for obligation", "Proof of probability", "Statement of usuality", "Expression of willingness"],
-      "correct": "Reason for obligation",
-      "explanation": "'Should' in this context is querying the necessity or duty (obligation)."
-    },
-    {
-      "text": "From 'Living in Sin' (Adrienne Rich): 'She had thought the studio would keep itself; / no dust upon the furniture of love.'",
-      "question": "The phrase 'She had thought' is an example of:",
-      "options": ["Direct modal auxiliary", "Metaphorized (Advanced) Modality", "Unmodalized futurity", "Generic sentence"],
-      "correct": "Metaphorized (Advanced) Modality",
-      "explanation": "'Thought' here is not reporting a literal cognitive act but expressing the speaker's subjective probability/expectation.",
-      "source": "Curriculum Exercise"
-    },
-    {
-      "text": "From the textbook dialogue: 'You could stay, you know.' / 'Why should I?' / 'Possibly because you want to. And because I might want you to.'",
-      "question": "The word 'Possibly' expresses which modality parameter?",
-      "options": ["Obligation", "Probability", "Willingness", "Usuality"],
-      "correct": "Probability",
-      "explanation": "'Possibly' is a modal adverb expressing the speaker's assessment of the probability of the listener's desire.",
-      "source": "Curriculum Exercise"
-    },
-    {
-      "text": "From the textbook dialogue: 'I might want you to.' (Jack's reply)",
-      "question": "The modal 'might' here expresses:",
-      "options": ["Obligation", "Unmodalized futurity", "Willingness", "Usuality"],
-      "correct": "Willingness",
-      "explanation": "'Might' here signals Jack's potential willingness for the addressee to stay.",
-      "source": "Curriculum Exercise"
-    },
-    {
-      "text": "From The Kite Runner: 'Afghanistan is the land of Pashtuns. It always has been, always will be, we are the true Afghans, the pure Afghans.'",
-      "question": "This statement is best described as a/an:",
-      "options": ["Metaphorized Modality", "Generic Sentence expressing partisan ideology", "Modal Auxiliary", "Evaluative Adverb"],
-      "correct": "Generic Sentence expressing partisan ideology",
-      "explanation": "The speaker presents a sweeping, timeless 'truth' as incontestable — a generic sentence used to encode ideological prejudice.",
-      "source": "Curriculum Exercise"
-    },
-    {
-      "text": "From The Kite Runner: 'Knowing you are virtuous, good and decent. Knowing you're doing God's work. It's breathtaking.'",
-      "question": "The adjectives 'virtuous, good and decent' used by the Taliban character are:",
-      "options": ["Objective descriptions", "Evaluative adjectives revealing the speaker's attitude", "Modal adverbs", "Generic predicates"],
-      "correct": "Evaluative adjectives revealing the speaker's attitude",
-      "explanation": "These adjectives are speaker-expressive, revealing a deluded self-assessment — a key evaluative device.",
-      "source": "Curriculum Exercise"
-    },
-    {
-      "text": "Amir (The Kite Runner) says: 'Hassan always knew when something was bothering me.' The word 'always' stresses Hassan's constant ability.",
-      "question": "The word 'always' here is a marker of which modality parameter?",
-      "options": ["Probability", "Obligation", "Willingness", "Usuality"],
-      "correct": "Usuality",
-      "explanation": "'Always' is a usuality adverb indicating how frequently/constantly an action or state occurs.",
-      "source": "Curriculum Exercise"
-    },
-    {
-      "text": "Identify the modality parameter: 'I need to leave, you see. You do see, don't you?'",
-      "question": "'Need' expresses:",
-      "options": ["Probability", "Obligation", "Willingness", "Usuality"],
-      "correct": "Obligation",
-      "explanation": "'Need' signals a necessity or obligation — the speaker feels compelled to leave.",
-      "source": "Curriculum Exercise"
+      "explanation": "Generic sentences represent categorical truths about sets of things rather than specific individuals."
     }
   ]
 }

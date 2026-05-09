@@ -86,7 +86,9 @@ function QuizContent({ paramsPromise }) {
     setScores(currentScores);
     setTotals(currentTotals);
     
-    if (data.applied || data.questions) {
+    const hasApplied = (data.applied && data.applied.length > 0) || (data.questions && data.questions.length > 0);
+    
+    if (hasApplied) {
       setSection('applied');
     } else {
       setSection('results');
@@ -146,10 +148,10 @@ function QuizContent({ paramsPromise }) {
     // Prefer theoretical first; fall back to applied (or questions for legacy format)
     if (data.theoretical && data.theoretical.length > 0) {
       setSection('theoretical');
-    } else if (data.applied || data.questions) {
+    } else if ((data.applied && data.applied.length > 0) || (data.questions && data.questions.length > 0)) {
       setSection('applied');
     } else {
-      setError('This chapter has no content yet.');
+      setError('This chapter has no questions available at the moment.');
     }
   };
 

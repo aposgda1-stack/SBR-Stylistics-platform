@@ -27,14 +27,16 @@
       "question": "This sequence by Hopkins uses which lexical deviation technique?",
       "options": ["Affixation", "Compounding", "Functional Conversion", "Phonological Elision"],
       "correct": "Compounding",
-      "explanation": "Compounding joins two or more items to make a single item."
+      "explanation": "أنت لست مخطئاً! إجابتك (Affixation) صحيحة لغوياً بنسبة كبيرة لأن الكلمات 'unchilding' و 'unfathering' تعتمد فعلاً على السوابق واللواحق. لكن، لماذا نعتبرها Compounding هنا؟ لأن هذا المثال مأخوذ من تدريبات Paul Simpson التي تركز على 'تركيب الكلمات' كسمة أساسية لهوبكنز، وبما أن الكلمة الأولى 'widow-making' هي تركيب صريح، يتم تعميم التصنيف على السلسلة. في الامتحان، إذا وجدت 'Compounding' فهي الخيار الآمن والمقصود في هذا المرجع.",
+      "source": "Curriculum Exercise"
     },
     {
       "text": "'The just man justices.'",
       "question": "Using the noun 'justice' as a verb is an example of:",
       "options": ["Compounding", "Functional Conversion", "Affixation", "Syntactic Deviation"],
       "correct": "Functional Conversion",
-      "explanation": "Functional conversion adapts an item to a new grammatical function without changing its form."
+      "explanation": "تحليلك ذكي جداً! قد يبدو استخدام الاسم كفعل انحرافاً في بنية الجملة (Syntactic Deviation)، وهذا صحيح من منظور تركيبي. لكن في منهج Stylistics، عندما يتم تغيير وظيفة الكلمة (من اسم لفعل مثلاً) دون تغيير شكلها، فإننا نطلق عليها المصطلح الأدق وهو Functional Conversion (تحويل وظيفي) كنوع من أنواع الـ Lexical Deviation. لذا، التزم بهذا المصطلح لأنه هو المطلوب في تصنيف سيمبسون.",
+      "source": "Curriculum Exercise"
     },
     {
       "text": "'the achieve of... the mastery of'.",
@@ -69,14 +71,16 @@
       "question": "This is known as:",
       "options": ["Syncope", "Apocope", "Aphesis", "Elision"],
       "correct": "Aphesis",
-      "explanation": "Aphesis is the loss of the initial vowel."
+      "explanation": "Aphesis is the loss of the initial unstressed vowel. While 'Elision' is a general term for sound loss, 'Aphesis' is the specific technical term for initial loss.",
+      "source": "Curriculum Exercise"
     },
     {
       "text": "The omission of medial sounds in 'o'er'.",
       "question": "This is known as:",
       "options": ["Aphesis", "Syncope", "Apocope", "Elision"],
       "correct": "Syncope",
-      "explanation": "Syncope is the loss of medial sounds."
+      "explanation": "اختيارك لـ Elision هو اختيار صحيح عام، فكل حذف هو Elision في النهاية. ولكن في هذا السؤال، نحن نبحث عن 'الاحترافية' في التصنيف. بما أن الحذف حدث في منتصف الكلمة (medial sounds) مثل 'over' لتصبح 'o'er'، فإن المصطلح الفني المتخصص هو Syncope. تذكر دائماً: في الامتحان، ابحث عن الاسم 'الأدق' للحالة وليس الاسم العام.",
+      "source": "Curriculum Exercise"
     },
     {
       "text": "The loss of sounds from the end of a word (e.g., 'child' as 'chil').",
@@ -183,7 +187,7 @@
       "question": "The use of 'passion-winged' is an instance of:",
       "options": ["Semantic Deviation (Metaphor)", "Syntactic Deviation", "Lexical Archaism", "Phonological Syncope"],
       "correct": "Semantic Deviation (Metaphor)",
-      "explanation": "This metaphorical description is a semantic deviation from literal language.",
+      "explanation": "وجهة نظرك قوية جداً؛ فكلمة 'passion-winged' هي فعلاً Lexical Compounding لأنها تجمع كلمتين بواصلة (hyphen). ومع ذلك، في سياق هذا السؤال المستمد من امتحان 2020، كان التركيز على المعنى المجازي العميق (أن الأفكار لها أجنحة)، وهو ما يسمى Semantic Deviation (Metaphor). إذا واجهت هذا السؤال في الامتحان، فالاستعارة هي الهدف الأساسي من الصورة الجمالية.",
       "source": "Exam 2020"
     },
     {

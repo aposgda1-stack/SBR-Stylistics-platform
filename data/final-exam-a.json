@@ -41,11 +41,11 @@
     },
     {
       "id": "q5",
-      "text": "Amir's description: 'the one who went to school.... the smart one' vs 'he couldn’t read a first-grade textbook'.",
-      "question": "What is the stylistic effect of this contrast?",
-      "options": ["Positive self-presentation vs negative presentation of the other", "Maxim of Quality flout", "Narrative resolution", "Graphological deviation"],
-      "correct": "Positive self-presentation vs negative presentation of the other",
-      "explanation": "Amir highlights his own intellect while stressing Hassan's illiteracy.",
+      "text": "Modality that introduces doubt or assessment into a categorical assertion (e.g. 'It might be raining').",
+      "question": "This overall effect is called:",
+      "options": ["Positive Shading", "Negative Shading", "Neutral Shading", "Non-modalized"],
+      "correct": "Negative Shading",
+      "explanation": "Negative shading involves modality that expresses uncertainty or hesitation.",
       "chapter": "lecture-04"
     },
     {
