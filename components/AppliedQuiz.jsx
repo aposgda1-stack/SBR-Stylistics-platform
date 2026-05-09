@@ -135,7 +135,7 @@ export default function AppliedQuiz({ questions, onComplete, mode, startIndex = 
         <div className="flex justify-between items-end px-1">
           <div className="space-y-1">
             <span className="text-[10px] font-black text-slate-600 uppercase tracking-[0.2em] block">Training Progress</span>
-            <div className="text-xl font-black text-white italic">
+            <div className="text-xl font-bold text-white italic">
               {currentPos} <span className="text-slate-600 font-medium text-sm">/ {totalPossible}</span>
             </div>
           </div>
@@ -145,7 +145,7 @@ export default function AppliedQuiz({ questions, onComplete, mode, startIndex = 
               className="px-4 py-2 rounded-xl bg-[#1a1a1c] border border-white/5 flex items-center gap-2 hover:border-blue-500/50 transition-all group"
             >
               <span className="material-symbols-outlined text-sm text-slate-500 group-hover:text-blue-400 transition-colors">menu_book</span>
-              <span className="text-[10px] font-black text-slate-500 group-hover:text-blue-400 uppercase tracking-widest">Guide</span>
+              <span className="text-[10px] font-bold text-slate-500 group-hover:text-blue-400 uppercase tracking-widest">Guide</span>
             </button>
           )}
         </div>
@@ -176,7 +176,7 @@ export default function AppliedQuiz({ questions, onComplete, mode, startIndex = 
           </div>
 
           <div className="flex flex-col gap-6 md:gap-8">
-            <p className="text-base md:text-xl text-white font-black uppercase tracking-tight">
+            <p className="text-base md:text-xl text-white font-bold tracking-tight">
               {currentQ.question || 'Select the correct stylistic feature:'}
             </p>
 
@@ -203,7 +203,7 @@ export default function AppliedQuiz({ questions, onComplete, mode, startIndex = 
                     onClick={(e) => handleSelect(opt, e)}
                     className={`group relative p-5 md:p-7 rounded-2xl md:rounded-[24px] border-2 text-left transition-all duration-300 flex items-center justify-between active:scale-95 ${style}`}
                   >
-                    <span className="text-xs md:text-base font-black uppercase tracking-widest">{opt}</span>
+                    <span className="text-xs md:text-base font-semibold tracking-wide">{opt}</span>
                     <div className="w-8 h-8 rounded-full border border-current/20 flex items-center justify-center">
                        {mode === 'practice' && showExplanation && isCorrect ? <span className="material-symbols-outlined text-sm font-bold">check</span> : 
                         mode === 'practice' && showExplanation && isSelected && !isCorrect ? <span className="material-symbols-outlined text-sm font-bold">close</span> : 
@@ -228,7 +228,7 @@ export default function AppliedQuiz({ questions, onComplete, mode, startIndex = 
               </p>
               <button 
                 onClick={() => nextQuestion()}
-                className="mt-8 md:mt-12 w-full md:w-auto bg-white text-black px-12 py-5 rounded-2xl font-black text-xs uppercase tracking-[0.2em] hover:bg-blue-500 hover:text-white transition-all shadow-2xl"
+                className="mt-8 md:mt-12 w-full md:w-auto bg-white text-black px-12 py-5 rounded-2xl font-bold text-xs uppercase tracking-[0.2em] hover:bg-blue-500 hover:text-white transition-all shadow-2xl"
               >
                 {currentIndex === shuffledQuestions.length - 1 ? 'Show Mastery' : 'Next Drill'}
               </button>

@@ -109,7 +109,7 @@ export default function WordBox({ terms, onComplete, mode, onError }) {
                     (showResults && mode === 'practice' ? (correct ? 'bg-emerald-500 text-white border-transparent' : 'bg-rose-500 text-white border-transparent') : 'bg-white text-black font-black border-transparent shadow-lg') 
                     : 'border-white/10 text-slate-600 hover:border-white/20'}`}
               >
-                <span className="text-[10px] md:text-xs font-black uppercase tracking-widest">
+                <span className="text-[10px] md:text-xs font-bold tracking-widest">
                   {placed || 'Tap here to place concept'}
                 </span>
               </div>
@@ -143,12 +143,12 @@ export default function WordBox({ terms, onComplete, mode, onError }) {
                   <button 
                     key={t.term}
                     onClick={() => handleTermClick(t.term)}
-                    className={`px-5 py-3 md:px-6 md:py-4 rounded-2xl text-[10px] md:text-xs font-black uppercase tracking-widest transition-all whitespace-nowrap border-2
+                    className={`px-5 py-3 md:px-6 md:py-4 rounded-2xl text-[10px] md:text-xs font-bold transition-all whitespace-nowrap border-2
                       ${isSelected ? 'bg-blue-600 text-white border-blue-500 scale-105 shadow-[0_0_20px_rgba(37,99,235,0.3)]' : 
                         isUsed ? 'bg-white/5 text-slate-700 border-transparent opacity-30 pointer-events-none' : 
                         'bg-[#1a1a1c] text-slate-300 border-white/5 hover:border-blue-500/50'}`}
                   >
-                    {t.term}
+                    <span className="font-bold tracking-wide">{t.term}</span>
                   </button>
                 );
               })}
