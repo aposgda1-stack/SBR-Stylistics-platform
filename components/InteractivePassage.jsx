@@ -6,13 +6,15 @@ import { Check, X, Search, ChevronRight, AlertCircle, RefreshCw, ArrowLeft } fro
 export default function InteractivePassage({ data, onComplete }) {
   const [selections, setSelections] = useState([]);
   const [pendingSelection, setPendingSelection] = useState([]); // Array of word indices
+  const [analysisQueue, setAnalysisQueue] = useState([]); // Array of strings to analyze
+  const [currentQueueIndex, setCurrentQueueIndex] = useState(0);
   const [currentSelection, setCurrentSelection] = useState(''); // The string text
   const [currentStep, setCurrentStep] = useState(0); // 0: category, 1: type, 2: subtype/option
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [menuPosition, setMenuPosition] = useState({ x: 0, y: 0 });
   
   // Form State
-  const [category, setCategory] = useState(data.tasks[0]?.type || 'Foregrounding');
+  const [category, setCategory] = useState('');
   const [type, setType] = useState('');
   const [subtype, setSubtype] = useState('');
   const [customInput, setCustomInput] = useState('');
@@ -37,7 +39,6 @@ export default function InteractivePassage({ data, onComplete }) {
     setPendingSelection(newPending);
 
     if (newPending.length > 0) {
-      // Position menu near the clicked word
       const rect = e.target.getBoundingClientRect();
       setMenuPosition({
         x: rect.left + window.scrollX,
@@ -49,37 +50,72 @@ export default function InteractivePassage({ data, onComplete }) {
   const handleStartAnalysis = () => {
     if (pendingSelection.length === 0) return;
     
-    // Sort indices and join tokens to get the text
-    const selectedText = pendingSelection.sort((a, b) => a - b).map(i => tokens[i]).join('').trim();
-    setCurrentSelection(selectedText);
-    setCurrentStep(0); // Start at Step 0
-    setCategory(''); // Reset category to force selection
-    setType('');
-    setSubtype('');
-    setCustomInput('');
-    setIsMenuOpen(true);
+    // Group contiguous tokens into phrases
+    const sortedIndices = [...pendingSelection].sort((a, b) => a - b);
+    const groups = [];
+    let currentGroup = [sortedIndices[0]];
+
+    for (let i = 1; i < sortedIndices.length; i++) {
+      if (sortedIndices[i] === sortedIndices[i - 1] + 1) {
+        currentGroup.push(sortedIndices[i]);
+      } else {
+        groups.push(currentGroup);
+        currentGroup = [sortedIndices[i]];
+      }
+    }
+    groups.push(currentGroup);
+
+    const queue = groups.map(group => group.map(i => tokens[i]).join('').trim()).filter(t => t.length > 0);
+    
+    if (queue.length > 0) {
+      setAnalysisQueue(queue);
+      setCurrentQueueIndex(0);
+      setCurrentSelection(queue[0]);
+      setCurrentStep(0);
+      setCategory('');
+      setType('');
+      setIsMenuOpen(true);
+    }
   };
 
-  const handleAddSelection = () => {
-    if (!type) return;
-    
+  const handleNextInQueue = (finalData) => {
+    // Add current to selections
     const newSelection = {
       id: Math.random().toString(36).substr(2, 9),
       text: currentSelection,
       category,
       type,
-      subtype,
-      customInput
+      ...finalData
     };
-    
-    setSelections([...selections, newSelection]);
-    closeMenu();
+    const updatedSelections = [...selections, newSelection];
+    setSelections(updatedSelections);
+
+    // Check if there is more in queue
+    const nextIndex = currentQueueIndex + 1;
+    if (nextIndex < analysisQueue.length) {
+      setCurrentQueueIndex(nextIndex);
+      setCurrentSelection(analysisQueue[nextIndex]);
+      setCurrentStep(0);
+      setCategory('');
+      setType('');
+      setSubtype('');
+      setCustomInput('');
+    } else {
+      closeMenu();
+    }
+  };
+
+  const handleAddSelection = () => {
+    if (!type) return;
+    handleNextInQueue({ subtype, customInput });
   };
 
   const closeMenu = () => {
     setIsMenuOpen(false);
-    setCurrentSelection(null);
+    setCurrentSelection('');
     setPendingSelection([]);
+    setAnalysisQueue([]);
+    setCurrentQueueIndex(0);
     setCurrentStep(0);
   };
 
@@ -311,7 +347,10 @@ export default function InteractivePassage({ data, onComplete }) {
               className="absolute z-50 w-80 bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl overflow-hidden"
             >
               <div className="p-3 bg-slate-800 border-b border-slate-700 flex justify-between items-center">
-                <span className="text-sm text-white font-bold truncate pr-4 italic">"{currentSelection}"</span>
+                <div className="flex flex-col">
+                  <span className="text-[10px] text-emerald-400 font-black uppercase tracking-widest mb-0.5">تحليل {currentQueueIndex + 1} من {analysisQueue.length}</span>
+                  <span className="text-sm text-white font-bold truncate pr-4 italic">"{currentSelection}"</span>
+                </div>
                 <button onClick={closeMenu} className="text-slate-400 hover:text-white transition-colors">
                   <X size={16} />
                 </button>
@@ -389,16 +428,7 @@ export default function InteractivePassage({ data, onComplete }) {
                                     onClick={() => {
                                       const finalSubtype = type === 'Deviation' ? opt : '';
                                       const finalCustom = type !== 'Deviation' ? opt : '';
-                                      
-                                      setSelections([...selections, {
-                                        id: Math.random().toString(36).substr(2, 9),
-                                        text: currentSelection,
-                                        category,
-                                        type,
-                                        subtype: finalSubtype,
-                                        customInput: finalCustom
-                                      }]);
-                                      closeMenu();
+                                      handleNextInQueue({ subtype: finalSubtype, customInput: finalCustom });
                                     }}
                                     className="p-3 bg-slate-800 border border-slate-700 rounded-xl text-xs font-medium text-slate-300 text-right hover:border-emerald-500 hover:text-emerald-400 transition-all flex justify-between items-center"
                                   >
