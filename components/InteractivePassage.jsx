@@ -1,7 +1,7 @@
 'use client';
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Check, X, Search, ChevronRight, AlertCircle, RefreshCw, ArrowLeft } from 'lucide-react';
+import { Check, X, Search, ChevronRight, AlertCircle, RefreshCw, ArrowLeft, ArrowRight } from 'lucide-react';
 
 export default function InteractivePassage({ data, onComplete }) {
   const [selections, setSelections] = useState([]);
@@ -22,6 +22,7 @@ export default function InteractivePassage({ data, onComplete }) {
   const [showHint, setShowHint] = useState(false);
 
   const [showFeedback, setShowFeedback] = useState(false);
+  const [currentFeedback, setCurrentFeedback] = useState(null); // { isCorrect, explanation, correctType }
   const passageRef = useRef(null);
 
   // Split passage into words/tokens
@@ -79,7 +80,40 @@ export default function InteractivePassage({ data, onComplete }) {
   };
 
   const handleNextInQueue = (finalData) => {
-    // Add current to selections
+    const selText = currentSelection.trim().toLowerCase();
+    
+    // Check correctness immediately for feedback
+    const correctAns = data.correctAnswers.find(ans => {
+      const ansText = ans.text.trim().toLowerCase();
+      const textMatch = selText.includes(ansText) || ansText.includes(selText);
+      const categoryMatch = category === ans.category;
+      const typeMatch = type === ans.type;
+      const subtypeMatch = (ans.subtype || '') === (finalData.subtype || '');
+      const customMatch = (ans.correctOption || '') === (finalData.customInput || '');
+      return textMatch && categoryMatch && typeMatch && subtypeMatch && customMatch;
+    });
+
+    const isCorrect = !!correctAns;
+    
+    // If wrong, find the "true" answer for this text to explain
+    const trueAns = data.correctAnswers.find(ans => {
+      const ansText = ans.text.trim().toLowerCase();
+      return selText.includes(ansText) || ansText.includes(selText);
+    });
+
+    setCurrentFeedback({
+      isCorrect,
+      explanation: isCorrect ? correctAns.explanation : (trueAns ? trueAns.explanation : 'هذا الجزء لا يحتوي على ظاهرة لغوية مسجلة في هذا السؤال.'),
+      correctType: trueAns ? `${trueAns.type} ${trueAns.subtype ? `(${trueAns.subtype})` : ''}` : 'None',
+      userChoice: `${type} ${finalData.subtype ? `(${finalData.subtype})` : ''}`,
+      finalData // temporary store to add after feedback
+    });
+
+    setCurrentStep(3); // Feedback Step
+  };
+
+  const confirmFeedbackAndContinue = () => {
+    const finalData = currentFeedback.finalData;
     const newSelection = {
       id: Math.random().toString(36).substr(2, 9),
       text: currentSelection,
@@ -87,10 +121,10 @@ export default function InteractivePassage({ data, onComplete }) {
       type,
       ...finalData
     };
-    const updatedSelections = [...selections, newSelection];
-    setSelections(updatedSelections);
+    
+    setSelections([...selections, newSelection]);
+    setCurrentFeedback(null);
 
-    // Check if there is more in queue
     const nextIndex = currentQueueIndex + 1;
     if (nextIndex < analysisQueue.length) {
       setCurrentQueueIndex(nextIndex);
@@ -117,6 +151,7 @@ export default function InteractivePassage({ data, onComplete }) {
     setAnalysisQueue([]);
     setCurrentQueueIndex(0);
     setCurrentStep(0);
+    setCurrentFeedback(null);
   };
 
   const removeSelection = (id) => {
@@ -336,7 +371,6 @@ export default function InteractivePassage({ data, onComplete }) {
           </div>
         )}
 
-        {/* Floating Menu */}
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
@@ -401,7 +435,7 @@ export default function InteractivePassage({ data, onComplete }) {
                         ))}
                       </div>
                     </motion.div>
-                  ) : (
+                  ) : currentStep === 2 ? (
                     <motion.div key="step2" initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }}>
                       <div className="flex items-center gap-2 mb-3">
                         <button onClick={() => setCurrentStep(1)} className="text-slate-500 hover:text-white"><ArrowLeft size={14}/></button>
@@ -441,7 +475,7 @@ export default function InteractivePassage({ data, onComplete }) {
                           } else {
                             return (
                               <button 
-                                onClick={handleAddSelection}
+                                onClick={() => handleNextInQueue({})}
                                 className="w-full py-4 bg-emerald-600 text-black font-black uppercase tracking-widest text-xs rounded-xl shadow-lg transition-all"
                               >
                                 تأكيد الاختيار
@@ -450,6 +484,38 @@ export default function InteractivePassage({ data, onComplete }) {
                           }
                         })()}
                       </div>
+                    </motion.div>
+                  ) : (
+                    <motion.div key="step3" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }}>
+                      <div className={`p-4 rounded-2xl border-2 mb-4 ${currentFeedback?.isCorrect ? 'bg-emerald-500/10 border-emerald-500/30' : 'bg-rose-500/10 border-rose-500/30'}`}>
+                        <div className="flex items-center gap-3 mb-3">
+                          {currentFeedback?.isCorrect ? (
+                            <div className="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-black font-black">✓</div>
+                          ) : (
+                            <div className="w-8 h-8 bg-rose-500 rounded-full flex items-center justify-center text-white font-black">✕</div>
+                          )}
+                          <h4 className={`font-black text-sm ${currentFeedback?.isCorrect ? 'text-emerald-400' : 'text-rose-400'}`}>
+                            {currentFeedback?.isCorrect ? 'إجابة صحيحة!' : 'إجابة غير دقيقة'}
+                          </h4>
+                        </div>
+                        {!currentFeedback?.isCorrect && (
+                          <div className="mb-3 p-2 bg-black/20 rounded-lg">
+                            <p className="text-[10px] text-slate-500 uppercase font-black mb-1">لقد اخترت:</p>
+                            <p className="text-xs text-rose-300 font-bold">{currentFeedback?.userChoice}</p>
+                            <p className="text-[10px] text-slate-500 uppercase font-black mt-2 mb-1">الإجابة الصحيحة:</p>
+                            <p className="text-xs text-emerald-400 font-bold">{currentFeedback?.correctType}</p>
+                          </div>
+                        )}
+                        <p className="text-xs text-slate-300 leading-relaxed italic">
+                          "{currentFeedback?.explanation}"
+                        </p>
+                      </div>
+                      <button 
+                        onClick={confirmFeedbackAndContinue}
+                        className="w-full py-4 bg-white text-black font-black uppercase tracking-widest text-xs rounded-xl hover:bg-emerald-400 transition-all flex items-center justify-center gap-2"
+                      >
+                        {currentQueueIndex + 1 < analysisQueue.length ? 'الكلمة التالية' : 'إتمام التحليل'} <ArrowRight size={16} />
+                      </button>
                     </motion.div>
                   )}
                 </AnimatePresence>
