@@ -11,7 +11,7 @@ export default function MockExamPage() {
   const [isFinished, setIsFinished] = useState(false);
   const [examResults, setExamResults] = useState([]); 
   const [totalScore, setTotalScore] = useState(0);
-  const [timeLeft, setTimeLeft] = useState(1800); // 30 minutes
+  const [timeLeft, setTimeLeft] = useState(2400); // 40 minutes
 
   useEffect(() => {
     fetch('/api/lecture?id=mock-exam')

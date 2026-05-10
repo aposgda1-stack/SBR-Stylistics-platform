@@ -152,5 +152,57 @@
         "explanation": "Flouting the maxim of Quantity/Manner by being overly detailed about minor points to avoid a direct negative opinion."
       }
     ]
+  },
+  {
+    "id": "q4-politeness-master",
+    "chapter": "Faces",
+    "title": "Politeness & Face Management",
+    "passage": "Professor: (Entering office) Good morning, can I help you?\nStudent: Oh, good morning Professor. I'm terribly sorry to bother you, I know you're busy, but I was wondering if you could possibly look at my draft for five minutes?\nProfessor: Well, I have a meeting soon, but you're such a dedicated student, so let's have a quick look. I love the way you've structured the introduction by the way.",
+    "hint": "لاحظ محاولات الطالب لعدم إزعاج البروفيسور (Negative Face) ومدح البروفيسور للطالب (Positive Face).",
+    "tasks": [
+      {
+        "type": "Faces",
+        "instructions": "Analyze the dialogue for Positive and Negative face threats and strategies."
+      }
+    ],
+    "options": {
+      "strategies": [
+        "Apologizing / Admitting Impingement",
+        "Hedging / Pessimism (could possibly)",
+        "Complimenting / Noticing interests",
+        "Seeking agreement",
+        "Giving deference"
+      ]
+    },
+    "correctAnswers": [
+      {
+        "text": "I'm terribly sorry to bother you",
+        "category": "Faces",
+        "type": "Negative",
+        "correctOption": "Apologizing / Admitting Impingement",
+        "explanation": "Negative Politeness Strategy: The student apologizes for the intrusion on the professor's time."
+      },
+      {
+        "text": "could possibly",
+        "category": "Faces",
+        "type": "Negative",
+        "correctOption": "Hedging / Pessimism (could possibly)",
+        "explanation": "Negative Politeness Strategy: Using a hedge to minimize the force of the request."
+      },
+      {
+        "text": "you're such a dedicated student",
+        "category": "Faces",
+        "type": "Positive",
+        "correctOption": "Complimenting / Noticing interests",
+        "explanation": "Positive Politeness Strategy: The professor attends to the student's positive face by offering a compliment."
+      },
+      {
+        "text": "I love the way you've structured the introduction",
+        "category": "Faces",
+        "type": "Positive",
+        "correctOption": "Complimenting / Noticing interests",
+        "explanation": "Positive Politeness Strategy: Giving approval and noticing the student's work."
+      }
+    ]
   }
 ]
