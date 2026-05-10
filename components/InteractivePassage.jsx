@@ -98,28 +98,72 @@ export default function InteractivePassage({ data, onComplete }) {
   const calculateScore = () => {
     let correctCount = 0;
     const totalPossible = data.correctAnswers.length;
+    let hintPenalty = showHint ? 0.05 : 0; 
 
     selections.forEach(sel => {
-      const isCorrect = data.correctAnswers.some(ans => 
-        (sel.text.toLowerCase().includes(ans.text.toLowerCase()) || ans.text.toLowerCase().includes(sel.text.toLowerCase())) &&
-        sel.type === ans.type &&
-        (sel.subtype === ans.subtype || !ans.subtype) &&
-        (sel.customInput === ans.correctOption || !ans.correctOption)
-      );
+      const isCorrect = data.correctAnswers.some(ans => {
+        const selText = sel.text.trim().toLowerCase();
+        const ansText = ans.text.trim().toLowerCase();
+        
+        const textMatch = selText.includes(ansText) || ansText.includes(selText);
+        const categoryMatch = sel.category === ans.category;
+        const typeMatch = sel.type === ans.type;
+        const subtypeMatch = (ans.subtype || '') === (sel.subtype || '');
+        const customMatch = (ans.correctOption || '') === (sel.customInput || '');
+        
+        return textMatch && categoryMatch && typeMatch && subtypeMatch && customMatch;
+      });
       if (isCorrect) correctCount++;
     });
+
+    const rawPercentage = (correctCount / totalPossible);
+    const finalPercentage = Math.max(0, Math.round((rawPercentage - hintPenalty) * 100));
 
     return {
       points: correctCount,
       total: totalPossible,
-      percentage: Math.round((correctCount / totalPossible) * 100)
+      percentage: finalPercentage,
+      usedHint: showHint,
+      earnedPoints: correctCount * 10 // 10 points per correct discovery
     };
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const result = calculateScore();
     setScore(result);
     setShowFeedback(true);
+
+    // PERSISTENCE: Save to database
+    const savedProgress = JSON.parse(localStorage.getItem('stylistics_user_progress') || '{}');
+    const userId = localStorage.getItem('stylistics_user_id') || savedProgress.userId;
+
+    if (userId) {
+      try {
+        await fetch('/api/user', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            userId,
+            quizResult: {
+              quizId: `mock-${data.id}`,
+              score: result.points,
+              totalQuestions: result.total
+            },
+            activity: {
+              type: 'applied_analysis',
+              title: data.title,
+              score: `${result.percentage}%`,
+              timestamp: new Date()
+            }
+          })
+        });
+        // Trigger global points update
+        window.dispatchEvent(new Event('stylistics_points_updated'));
+      } catch (err) {
+        console.error('Failed to save progress to DB');
+      }
+    }
+
     if (onComplete) onComplete(selections, result);
   };
 
