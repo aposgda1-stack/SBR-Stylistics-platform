@@ -1,14 +1,14 @@
 [
   {
-    "id": "q1-foregrounding",
+    "id": "q1-foregrounding-master",
     "chapter": "Foregrounding",
-    "title": "Exercise 1: Foregrounding Analysis",
-    "passage": "pity this busy monster, manunkind,\nnot. Progress is a comfortable disease;",
-    "hint": "ابحث عن كلمات مبتكرة (Neologisms) وتركيبات متناقضة (Paradoxes).",
+    "title": "Mastering Foregrounding: e.e. cummings",
+    "passage": "pity this busy monster, manunkind,\nnot. Progress is a comfortable disease:\nyour victim (death and life safely beyond)\nplays with the bigness of his littleness\n--- electrons deify one razorblade\ninto a mountainrange; lenses extend\nunwish through curving wherewhen till tomorrow\nwill be yesterday; goodbye billions etcetera\n\nwe doctors know\na hopeless case if—listen: there's a hell\nof a good universe next door; let's go",
+    "hint": "ابحث عن كلمات مخترعة، وتناقضات في المعنى، وتكرار في البنية القواعدية.",
     "tasks": [
       {
         "type": "Foregrounding",
-        "instructions": "Identify the elements of foregrounding in this extract and classify their types."
+        "instructions": "Analyze this poem for all levels of foregrounding (Deviation, Parallelism, Repetition)."
       }
     ],
     "correctAnswers": [
@@ -17,60 +17,59 @@
         "category": "Foregrounding",
         "type": "Deviation",
         "subtype": "Lexical",
-        "explanation": "Lexical deviation achieved through neologism (nonce-formation) by blending 'mankind' and 'unkind'."
+        "explanation": "Lexical deviation (Neologism): Blending 'mankind' with 'unkind' to create a new word that satirizes humanity."
       },
       {
         "text": "comfortable disease",
         "category": "Foregrounding",
         "type": "Deviation",
         "subtype": "Semantic",
-        "explanation": "Semantic deviation involving paradox/mismatch between 'comfortable' and 'disease'."
-      }
-    ]
-  },
-  {
-    "id": "q2-foregrounding",
-    "chapter": "Foregrounding",
-    "title": "Exercise 2: Eliot's Hollow Men",
-    "passage": "We are the hollow men\nWe are the stuffed men",
-    "hint": "لاحظ التكرار في بنية الجملة (Syntactic Structure).",
-    "tasks": [
-      {
-        "type": "Foregrounding",
-        "instructions": "Identify parallelism or repetition in this extract."
-      }
-    ],
-    "correctAnswers": [
-      {
-        "text": "We are the hollow men\nWe are the stuffed men",
-        "category": "Foregrounding",
-        "type": "Parallelism",
-        "subtype": "",
-        "explanation": "Structural parallelism where the syntactic structure is identical but the lexical item (hollow/stuffed) varies."
+        "explanation": "Semantic deviation (Oxymoron/Paradox): The conflicting association of 'comfortable' with 'disease'."
       },
       {
-        "text": "We are the",
+        "text": "bigness of his littleness",
         "category": "Foregrounding",
-        "type": "Repetition",
-        "subtype": "",
-        "explanation": "Repetition of the phrase 'We are the' emphasizes the collective, identical nature of the speakers."
+        "type": "Deviation",
+        "subtype": "Semantic",
+        "explanation": "Semantic deviation: A paradox highlighting the insignificance of human achievements."
+      },
+      {
+        "text": "mountainrange",
+        "category": "Foregrounding",
+        "type": "Deviation",
+        "subtype": "Graphological",
+        "explanation": "Graphological deviation: Removal of the space between two words to create a visual and lexical blend."
+      },
+      {
+        "text": "wherewhen",
+        "category": "Foregrounding",
+        "type": "Deviation",
+        "subtype": "Lexical",
+        "explanation": "Lexical deviation: Compounding of two adverbs into a single noun-like entity."
+      },
+      {
+        "text": "unwish",
+        "category": "Foregrounding",
+        "type": "Deviation",
+        "subtype": "Lexical",
+        "explanation": "Lexical deviation: Using a prefix 'un-' with a noun 'wish' to create an innovative lexical item."
       }
     ]
   },
   {
-    "id": "q3-cohesion",
+    "id": "q2-cohesion-master",
     "chapter": "Cohesion",
-    "title": "Exercise 3: Cohesive Devices",
-    "passage": "The main course was dried lamb chops, dried mashed potatoes, and tinned spaghetti in tomato sauce. Cassandra, leaning across to address someone, entangled her dangling crucifix in the spaghetti. It had to be wiped clean.",
-    "hint": "ركز على الضمائر (Pronouns) والكلمات المتكررة.",
+    "title": "Prose Cohesion Analysis",
+    "passage": "The main course was dried lamb chops, dried mashed potatoes, and tinned spaghetti in tomato sauce. Cassandra, leaning across to address her brother, entangled her dangling crucifix in the spaghetti. It had to be wiped clean. She did so with a napkin, while he just watched. Both were silent, but the tension was thick. Eventually, they finished the meal and left the room.",
+    "hint": "تتبع الضمائر (It, She, He, Both, They) وحدد الكلمات المتكررة.",
     "tasks": [
       {
         "type": "Cohesion",
-        "instructions": "Extract examples of cohesion, determine their type, and specify references if applicable."
+        "instructions": "Identify all cohesive devices (Reference, Ellipsis, Lexical Repetition)."
       }
     ],
     "options": {
-      "references": ["Cassandra", "crucifix", "spaghetti", "tomato sauce"]
+      "references": ["Cassandra", "brother", "crucifix", "spaghetti", "napkin", "The meal"]
     },
     "correctAnswers": [
       {
@@ -78,14 +77,79 @@
         "category": "Cohesion",
         "type": "Lexical",
         "subtype": "Repetition",
-        "explanation": "Lexical cohesion through the repetition of the word 'spaghetti'."
+        "explanation": "Lexical cohesion through the repetition of the noun 'spaghetti'."
       },
       {
         "text": "It",
         "category": "Cohesion",
         "type": "Reference",
         "correctOption": "crucifix",
-        "explanation": "Pronoun 'It' is an anaphoric reference back to the noun phrase 'crucifix'."
+        "explanation": "Anaphoric reference: The pronoun 'It' refers back to the 'crucifix'."
+      },
+      {
+        "text": "She",
+        "category": "Cohesion",
+        "type": "Reference",
+        "correctOption": "Cassandra",
+        "explanation": "Anaphoric reference: 'She' refers back to 'Cassandra'."
+      },
+      {
+        "text": "he",
+        "category": "Cohesion",
+        "type": "Reference",
+        "correctOption": "brother",
+        "explanation": "Anaphoric reference: 'he' refers back to 'her brother'."
+      },
+      {
+        "text": "Both",
+        "category": "Cohesion",
+        "type": "Reference",
+        "correctOption": "Cassandra and brother",
+        "explanation": "Reference: 'Both' refers to the two characters mentioned previously."
+      }
+    ]
+  },
+  {
+    "id": "q3-maxims-master",
+    "chapter": "Maxims",
+    "title": "The Gricean Maxims Challenge",
+    "passage": "A: Have you finished that report yet?\nB: I've been working since five o'clock this morning without a break.\nA: Where is the stapler?\nB: There is a stationery shop around the corner.\nA: What do you think of my new dress?\nB: The color is very vibrant and the stitching is quite professional.",
+    "hint": "فكر في كيفية تهرب المتحدث (B) من الإجابة المباشرة.",
+    "tasks": [
+      {
+        "type": "Maxims",
+        "instructions": "Identify which maxims are being flouted and explain the resulting implicature."
+      }
+    ],
+    "options": {
+      "effects": [
+        "To imply 'No' without saying it directly by emphasizing hard work.",
+        "To imply the location of the object by pointing to its source.",
+        "To avoid saying the dress is ugly by focusing on technical details.",
+        "To provide exactly the right amount of info."
+      ]
+    },
+    "correctAnswers": [
+      {
+        "text": "I've been working since five o'clock this morning without a break.",
+        "category": "Maxims",
+        "type": "Relation",
+        "correctOption": "To imply 'No' without saying it directly by emphasizing hard work.",
+        "explanation": "Flouting the maxim of Relation to indirectly answer the question."
+      },
+      {
+        "text": "There is a stationery shop around the corner.",
+        "category": "Maxims",
+        "type": "Relation",
+        "correctOption": "To imply the location of the object by pointing to its source.",
+        "explanation": "Flouting the maxim of Relation; B suggests where A can get a new one or where it might have come from."
+      },
+      {
+        "text": "The color is very vibrant and the stitching is quite professional.",
+        "category": "Maxims",
+        "type": "Quantity",
+        "correctOption": "To avoid saying the dress is ugly by focusing on technical details.",
+        "explanation": "Flouting the maxim of Quantity/Manner by being overly detailed about minor points to avoid a direct negative opinion."
       }
     ]
   }
