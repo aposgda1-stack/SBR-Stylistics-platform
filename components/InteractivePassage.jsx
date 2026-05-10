@@ -53,10 +53,11 @@ export default function InteractivePassage({ data, onComplete }) {
     const selectedText = pendingSelection.sort((a, b) => a - b).map(i => tokens[i]).join('').trim();
     setCurrentSelection(selectedText);
     setCurrentStep(0); // Start at Step 0
-    setIsMenuOpen(true);
+    setCategory(''); // Reset category to force selection
     setType('');
     setSubtype('');
     setCustomInput('');
+    setIsMenuOpen(true);
   };
 
   const handleAddSelection = () => {
@@ -84,6 +85,14 @@ export default function InteractivePassage({ data, onComplete }) {
 
   const removeSelection = (id) => {
     setSelections(selections.filter(s => s.id !== id));
+  };
+
+  // Helper to get local options for the current selection
+  const getLocalOptions = () => {
+    const match = data.correctAnswers.find(ans => 
+      ans.text.toLowerCase() === currentSelection?.toLowerCase()
+    );
+    return match?.options || null;
   };
 
   const calculateScore = () => {
@@ -317,50 +326,55 @@ export default function InteractivePassage({ data, onComplete }) {
                       </div>
                       
                       <div className="space-y-2">
-                        {(type === 'Deviation' ? ['Lexical', 'Grammatical', 'Phonological', 'Graphological', 'Semantic'] :
-                          type === 'Reference' ? (data.options?.references || []) :
-                          category === 'Maxims' ? (data.options?.effects || []) :
-                          category === 'Faces' ? (data.options?.strategies || []) :
-                          []
-                        ).length > 0 ? (
-                          <div className="grid grid-cols-1 gap-2">
-                            {(type === 'Deviation' ? ['Lexical', 'Grammatical', 'Phonological', 'Graphological', 'Semantic'] :
-                              type === 'Reference' ? (data.options?.references || []) :
-                              category === 'Maxims' ? (data.options?.effects || []) :
-                              category === 'Faces' ? (data.options?.strategies || []) :
-                              []
-                            ).map((opt) => (
-                              <button
-                                key={opt}
-                                onClick={() => {
-                                  const finalSubtype = type === 'Deviation' ? opt : '';
-                                  const finalCustom = type !== 'Deviation' ? opt : '';
-                                  
-                                  setSelections([...selections, {
-                                    id: Math.random().toString(36).substr(2, 9),
-                                    text: currentSelection,
-                                    category,
-                                    type,
-                                    subtype: finalSubtype,
-                                    customInput: finalCustom
-                                  }]);
-                                  closeMenu();
-                                }}
-                                className="p-3 bg-slate-800 border border-slate-700 rounded-xl text-xs font-medium text-slate-300 text-right hover:border-emerald-500 hover:text-emerald-400 transition-all flex justify-between items-center"
+                        {(() => {
+                          const localOptions = getLocalOptions();
+                          const availableOptions = (
+                            type === 'Deviation' ? ['Lexical', 'Grammatical', 'Phonological', 'Graphological', 'Semantic'] :
+                            type === 'Reference' ? (localOptions?.references || data.options?.references || []) :
+                            category === 'Maxims' ? (localOptions?.effects || data.options?.effects || []) :
+                            category === 'Faces' ? (localOptions?.strategies || data.options?.strategies || []) :
+                            []
+                          );
+
+                          if (availableOptions.length > 0) {
+                            return (
+                              <div className="grid grid-cols-1 gap-2">
+                                {availableOptions.map((opt) => (
+                                  <button
+                                    key={opt}
+                                    onClick={() => {
+                                      const finalSubtype = type === 'Deviation' ? opt : '';
+                                      const finalCustom = type !== 'Deviation' ? opt : '';
+                                      
+                                      setSelections([...selections, {
+                                        id: Math.random().toString(36).substr(2, 9),
+                                        text: currentSelection,
+                                        category,
+                                        type,
+                                        subtype: finalSubtype,
+                                        customInput: finalCustom
+                                      }]);
+                                      closeMenu();
+                                    }}
+                                    className="p-3 bg-slate-800 border border-slate-700 rounded-xl text-xs font-medium text-slate-300 text-right hover:border-emerald-500 hover:text-emerald-400 transition-all flex justify-between items-center"
+                                  >
+                                    {opt}
+                                    <ChevronRight size={14} className="opacity-30" />
+                                  </button>
+                                ))}
+                              </div>
+                            );
+                          } else {
+                            return (
+                              <button 
+                                onClick={handleAddSelection}
+                                className="w-full py-4 bg-emerald-600 text-black font-black uppercase tracking-widest text-xs rounded-xl shadow-lg transition-all"
                               >
-                                {opt}
-                                <ChevronRight size={14} className="opacity-30" />
+                                تأكيد الاختيار
                               </button>
-                            ))}
-                          </div>
-                        ) : (
-                          <button 
-                            onClick={handleAddSelection}
-                            className="w-full py-4 bg-emerald-600 text-black font-black uppercase tracking-widest text-xs rounded-xl shadow-lg transition-all"
-                          >
-                            تأكيد الاختيار
-                          </button>
-                        )}
+                            );
+                          }
+                        })()}
                       </div>
                     </motion.div>
                   )}
