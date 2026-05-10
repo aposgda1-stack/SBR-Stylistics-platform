@@ -116,37 +116,40 @@ export default function MockExamPage() {
 
   return (
     <div className="min-h-screen bg-[#020617] text-slate-200">
-      <div className="fixed top-0 left-0 right-0 z-[100] bg-slate-950/90 backdrop-blur-md border-b border-slate-800 shadow-2xl">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      {/* FORCE COVER GLOBAL NAVBAR */}
+      <div className="fixed top-0 left-0 right-0 z-[9999] bg-slate-950/95 backdrop-blur-xl border-b border-emerald-500/20 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between h-20">
           <div className="flex items-center gap-4">
-            <div className="w-10 h-10 bg-emerald-500/10 rounded-xl flex items-center justify-center border border-emerald-500/20 shadow-inner">
-              <BookOpen className="text-emerald-500" size={20} />
+            <div className="w-12 h-12 bg-emerald-500/10 rounded-2xl flex items-center justify-center border border-emerald-500/30 shadow-[0_0_20px_rgba(16,185,129,0.1)]">
+              <BookOpen className="text-emerald-500" size={24} />
             </div>
             <div>
-              <h2 className="text-xs font-black text-white uppercase tracking-wider">الاختبار التدريبي</h2>
-              <p className="text-[10px] text-emerald-400 font-bold">القطعة {currentIndex + 1} من {examData.length}</p>
+              <h2 className="text-sm font-black text-white uppercase tracking-[0.2em]">الاختبار التدريبي الشامل</h2>
+              <div className="flex items-center gap-2 mt-1">
+                <span className="text-[10px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded-full font-black tracking-tighter uppercase">Passage {currentIndex + 1} / {examData.length}</span>
+              </div>
             </div>
           </div>
           
-          <div className={`flex items-center gap-2 px-4 py-2 rounded-xl border-2 transition-all ${timeLeft < 300 ? 'bg-rose-500/10 border-rose-500 animate-pulse' : 'bg-slate-900 border-slate-700'}`}>
-             <Timer className={`text-slate-400 ${timeLeft < 300 ? 'text-rose-400' : ''}`} size={16} />
-             <span className={`text-sm font-black font-mono ${timeLeft < 300 ? 'text-rose-400' : 'text-white'}`}>
+          <div className={`flex items-center gap-3 px-6 py-2.5 rounded-2xl border-2 transition-all duration-500 ${timeLeft < 300 ? 'bg-rose-500/20 border-rose-500 shadow-[0_0_30px_rgba(244,63,94,0.2)]' : 'bg-slate-900/80 border-slate-800'}`}>
+             <Timer className={`${timeLeft < 300 ? 'text-rose-400 animate-pulse' : 'text-emerald-500'}`} size={20} />
+             <span className={`text-xl font-black font-mono tracking-wider ${timeLeft < 300 ? 'text-rose-400' : 'text-white'}`}>
                 {formatTime(timeLeft)}
              </span>
           </div>
 
-          <div className="hidden md:flex items-center gap-2">
+          <div className="hidden lg:flex items-center gap-2">
             {examData.map((_, i) => (
               <div 
                 key={i} 
-                className={`h-1.5 w-12 rounded-full transition-all duration-500 ${i === currentIndex ? 'bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.4)]' : i < currentIndex ? 'bg-emerald-800' : 'bg-slate-800'}`}
+                className={`h-2 w-16 rounded-full transition-all duration-700 ${i === currentIndex ? 'bg-emerald-500 shadow-[0_0_20px_rgba(16,185,129,0.5)]' : i < currentIndex ? 'bg-emerald-800/50' : 'bg-slate-800'}`}
               />
             ))}
           </div>
         </div>
       </div>
 
-      <main className="pt-28 pb-32 px-4 md:px-8">
+      <main className="pt-32 pb-40 px-4 md:px-8 relative z-10">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentIndex}
