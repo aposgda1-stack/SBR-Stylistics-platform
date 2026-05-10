@@ -5,7 +5,8 @@ import { Check, X, Search, ChevronRight, AlertCircle, RefreshCw, ArrowLeft } fro
 
 export default function InteractivePassage({ data, onComplete }) {
   const [selections, setSelections] = useState([]);
-  const [currentSelection, setCurrentSelection] = useState(null);
+  const [pendingSelection, setPendingSelection] = useState([]); // Array of word indices
+  const [currentSelection, setCurrentSelection] = useState(''); // The string text
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [menuPosition, setMenuPosition] = useState({ x: 0, y: 0 });
   
@@ -20,24 +21,40 @@ export default function InteractivePassage({ data, onComplete }) {
   const [showFeedback, setShowFeedback] = useState(false);
   const passageRef = useRef(null);
 
-  const handleMouseUp = (e) => {
+  // Split passage into words/tokens
+  const tokens = data.passage.split(/(\s+)/); // Preserve spaces
+
+  const toggleWord = (index, e) => {
     if (showFeedback) return;
-    const selection = window.getSelection();
-    const text = selection.toString().trim();
     
-    if (text.length > 0) {
-      const rect = selection.getRangeAt(0).getBoundingClientRect();
-      setCurrentSelection(text);
+    let newPending = [...pendingSelection];
+    if (newPending.includes(index)) {
+      newPending = newPending.filter(i => i !== index);
+    } else {
+      newPending.push(index);
+    }
+    setPendingSelection(newPending);
+
+    if (newPending.length > 0) {
+      // Position menu near the clicked word
+      const rect = e.target.getBoundingClientRect();
       setMenuPosition({
-        x: rect.left + window.scrollX + (rect.width / 2),
+        x: rect.left + window.scrollX,
         y: rect.bottom + window.scrollY + 10
       });
-      setIsMenuOpen(true);
-      // Reset form
-      setType('');
-      setSubtype('');
-      setCustomInput('');
     }
+  };
+
+  const handleStartAnalysis = () => {
+    if (pendingSelection.length === 0) return;
+    
+    // Sort indices and join tokens to get the text
+    const selectedText = pendingSelection.sort((a, b) => a - b).map(i => tokens[i]).join('').trim();
+    setCurrentSelection(selectedText);
+    setIsMenuOpen(true);
+    setType('');
+    setSubtype('');
+    setCustomInput('');
   };
 
   const handleAddSelection = () => {
@@ -59,7 +76,7 @@ export default function InteractivePassage({ data, onComplete }) {
   const closeMenu = () => {
     setIsMenuOpen(false);
     setCurrentSelection(null);
-    window.getSelection().removeAllRanges();
+    setPendingSelection([]);
   };
 
   const removeSelection = (id) => {
@@ -75,7 +92,7 @@ export default function InteractivePassage({ data, onComplete }) {
         (sel.text.toLowerCase().includes(ans.text.toLowerCase()) || ans.text.toLowerCase().includes(sel.text.toLowerCase())) &&
         sel.type === ans.type &&
         (sel.subtype === ans.subtype || !ans.subtype) &&
-        (sel.customInput === ans.subtype || sel.customInput === ans.correctOption || !ans.correctOption)
+        (sel.customInput === ans.correctOption || !ans.correctOption)
       );
       if (isCorrect) correctCount++;
     });
@@ -122,7 +139,7 @@ export default function InteractivePassage({ data, onComplete }) {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row gap-6 max-w-6xl mx-auto w-full">
+    <div className="flex flex-col lg:flex-row gap-6 max-w-6xl mx-auto w-full pb-24 lg:pb-0">
       
       {/* Left: The Passage */}
       <div className="flex-1 bg-slate-900/50 border border-slate-800 rounded-2xl p-6 md:p-8 relative">
@@ -136,7 +153,7 @@ export default function InteractivePassage({ data, onComplete }) {
               onClick={() => setShowHint(!showHint)}
               className="p-2 bg-amber-500/10 text-amber-500 rounded-lg border border-amber-500/20 hover:bg-amber-500/20 transition-all flex items-center gap-2 text-xs font-bold"
             >
-              <AlertCircle size={14} /> {showHint ? 'إخفاء التلميح' : 'عرض تلميح'}
+              <AlertCircle size={14} /> {showHint ? 'إخفاء' : 'تلميح'}
             </button>
           )}
         </div>
@@ -152,13 +169,44 @@ export default function InteractivePassage({ data, onComplete }) {
           <div className="relative">
             <div 
               ref={passageRef}
-              onMouseUp={handleMouseUp}
-              className="text-lg md:text-xl text-slate-200 leading-relaxed font-serif whitespace-pre-wrap select-text p-4 bg-slate-800/50 rounded-xl border border-slate-700/50"
+              className="text-lg md:text-xl text-slate-200 leading-relaxed font-serif whitespace-pre-wrap p-4 bg-slate-800/50 rounded-xl border border-slate-700/50 flex flex-wrap gap-y-1"
             >
-              {data.passage}
+              {tokens.map((token, idx) => {
+                const isSelected = pendingSelection.includes(idx);
+                const isSpace = token.trim() === '';
+                return (
+                  <span
+                    key={idx}
+                    onClick={(e) => !isSpace && toggleWord(idx, e)}
+                    className={`cursor-pointer rounded transition-all duration-200 ${isSpace ? '' : (isSelected ? 'bg-amber-500 text-black px-0.5 shadow-[0_0_10px_rgba(245,158,11,0.4)]' : 'hover:bg-white/10 px-0.5')}`}
+                  >
+                    {token}
+                  </span>
+                );
+              })}
             </div>
+
+            {/* Floating Selection Control for Mobile */}
+            <AnimatePresence>
+              {pendingSelection.length > 0 && (
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 20 }}
+                  className="fixed bottom-24 left-4 right-4 md:absolute md:bottom-[-20px] md:left-1/2 md:-translate-x-1/2 z-40"
+                >
+                  <button
+                    onClick={handleStartAnalysis}
+                    className="w-full bg-amber-500 text-black font-black text-xs uppercase tracking-widest py-4 px-8 rounded-2xl shadow-2xl flex items-center justify-center gap-2 border-2 border-white/20"
+                  >
+                    تحليل الجزء المختار <ChevronRight size={18} />
+                  </button>
+                </motion.div>
+              )}
+            </AnimatePresence>
+
             <p className="mt-4 text-xs text-emerald-400 flex items-center gap-1 opacity-70">
-              <Search size={14} /> قم بتظليل (Highlight) أي كلمة أو جملة باستخدام الماوس لتحليلها.
+              <Search size={14} /> اضغط على الكلمات لتحديدها، ثم اضغط على زر التحليل.
             </p>
           </div>
         ) : (
@@ -281,11 +329,9 @@ export default function InteractivePassage({ data, onComplete }) {
                               <button
                                 key={opt}
                                 onClick={() => {
-                                  if (type === 'Deviation') setSubtype(opt);
-                                  else setCustomInput(opt);
-                                  // Auto-save after last step
-                                  const finalSubtype = type === 'Deviation' ? opt : subtype;
-                                  const finalCustom = type !== 'Deviation' ? opt : customInput;
+                                  const finalSubtype = type === 'Deviation' ? opt : '';
+                                  const finalCustom = type !== 'Deviation' ? opt : '';
+                                  
                                   setSelections([...selections, {
                                     id: Math.random().toString(36).substr(2, 9),
                                     text: currentSelection,
