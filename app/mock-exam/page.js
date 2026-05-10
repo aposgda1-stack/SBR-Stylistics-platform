@@ -9,14 +9,20 @@ export default function MockExamPage() {
   const [examData, setExamData] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFinished, setIsFinished] = useState(false);
-  const [examResults, setExamResults] = useState([]); 
-  const [totalScore, setTotalScore] = useState(0);
+  const [examResults, setExamResults] = useState([]); // <--- هاد السطر كان محذوف بالخطأ
+  const [totalScore, setTotalScore] = useState(0);    // <--- وهذا أيضاً
   const [timeLeft, setTimeLeft] = useState(2400); // 40 minutes
 
   useEffect(() => {
     fetch('/api/lecture?id=mock-exam')
       .then(res => res.json())
-      .then(data => setExamData(data))
+      .then(data => {
+        if (Array.isArray(data)) {
+          setExamData(data);
+        } else {
+          console.error("Data is not an array:", data);
+        }
+      })
       .catch(err => console.error("Failed to load mock exam data"));
   }, []);
 
@@ -36,6 +42,7 @@ export default function MockExamPage() {
     const newResults = [...examResults];
     newResults[currentIndex] = { selections, result };
     setExamResults(newResults);
+    console.log("Passage complete recorded for index:", currentIndex);
   };
 
   const handleNext = () => {
