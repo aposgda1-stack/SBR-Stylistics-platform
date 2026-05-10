@@ -13,6 +13,7 @@ export default function Home() {
   const [countdown, setCountdown] = useState('');
   const [avatar, setAvatar] = useState(null);
   const [userName, setUserName] = useState('Researcher');
+  const [rank, setRank] = useState('...');
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -42,6 +43,7 @@ export default function Home() {
           setPoints(data.user.totalPoints || 0);
           setAccuracy(data.stats?.accuracy || 0);
           setProgress(data.stats?.progress || 0);
+          setRank(data.stats?.numericRank || '...');
           setAvatar(data.user.avatar || null);
           
           if (data.user.avatar) {
@@ -182,8 +184,12 @@ export default function Home() {
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
               <span className="text-[9px] font-black text-slate-300 uppercase tracking-widest italic">SBR ACTIVE</span>
             </div>
+            <div className="px-3 py-1.5 bg-emerald-500/10 rounded-lg border border-emerald-500/20 flex items-center gap-2">
+              <span className="material-symbols-outlined text-emerald-500 text-xs font-black">trophy</span>
+              <span className="text-[9px] font-black text-emerald-400 uppercase tracking-widest italic">RANK: #{rank}</span>
+            </div>
             <div className="px-3 py-1.5 bg-secondary/10 rounded-lg border border-secondary/20 flex items-center gap-2">
-              <span className="text-[9px] font-black text-secondary uppercase tracking-widest italic">RANK: {points >= 10000 ? 'VANGUARD' : points >= 5000 ? 'ANALYST' : points >= 2000 ? 'THINKER' : 'SCHOLAR'}</span>
+              <span className="text-[9px] font-black text-secondary uppercase tracking-widest italic">TIER: {points >= 10000 ? 'VANGUARD' : points >= 5000 ? 'ANALYST' : points >= 2000 ? 'THINKER' : 'SCHOLAR'}</span>
             </div>
           </div>
         </section>

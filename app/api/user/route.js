@@ -143,12 +143,19 @@ export async function GET(req) {
       : Object.keys(user.chapterProgress || {}).length;
     const progress = Math.min(100, Math.round((progressCount / 12) * 100));
 
+    // Calculate Numeric Rank
+    const numericRank = await UserProgress.countDocuments({
+      totalPoints: { $gt: user.totalPoints || 0 },
+      name: { $nin: ['Student', 'Test User', 'student', 'test user'] }
+    }) + 1;
+
     return NextResponse.json({ 
       user, 
       stats: {
         accuracy,
         progress,
         totalQuizzes,
+        numericRank,
         rank: (user.totalPoints || 0) > 10000 ? 'LEGEND'
             : (user.totalPoints || 0) > 5000  ? 'VANGUARD'
             : (user.totalPoints || 0) > 2000  ? 'SCHOLAR'
