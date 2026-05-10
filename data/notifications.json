@@ -23,6 +23,14 @@
       "date": "2026-05-09",
       "type": "update",
       "unread": true
+    },
+    {
+      "id": "exam-feedback-live",
+      "title": "New: Academic Feedback in Exams",
+      "msg": "By popular demand, real-time linguistic analysis and feedback are now available in all Past Papers and Final Exam models. Learn as you test!",
+      "date": "2026-05-10",
+      "type": "feature",
+      "unread": true
     }
   ]
 }

@@ -70,11 +70,7 @@ export default function WordBox({ terms, onComplete, mode, onError }) {
   };
 
   const validate = () => {
-    if (mode === 'practice') {
-      setShowResults(true);
-    } else {
-      finalize();
-    }
+    setShowResults(true);
   };
 
   const finalize = () => {

@@ -96,7 +96,27 @@ export default function AppliedQuiz({ questions, onComplete, mode, startIndex = 
       syncToCloud({ activity });
     } else {
       playSound('click');
-      setTimeout(() => nextQuestion(newAnswers), 300);
+      setShowExplanation(true);
+      if (isCorrect) {
+        playSound('success');
+      } else {
+        playSound('error');
+        // Still save mistakes in exam mode for the dossier!
+        const mistake = {
+          text: currentQ.text,
+          userAnswer: option,
+          correct: currentQ.correct,
+          explanation: currentQ.explanation,
+          chapter: currentQ.chapter || 'Applied Analysis',
+          timestamp: new Date().toISOString()
+        };
+        const currentMistakes = JSON.parse(localStorage.getItem('stylistics_mistakes') || '[]');
+        if (!currentMistakes.find(m => m.text === mistake.text)) {
+          const updatedMistakes = [...currentMistakes, mistake];
+          localStorage.setItem('stylistics_mistakes', JSON.stringify(updatedMistakes));
+          syncToCloud({ mistakes: updatedMistakes });
+        }
+      }
     }
   };
 
@@ -187,7 +207,7 @@ export default function AppliedQuiz({ questions, onComplete, mode, startIndex = 
                 
                 let style = 'bg-[#1a1a1c] border-white/5 text-slate-400 hover:border-blue-500/30 hover:bg-[#202022]';
                 
-                if (mode === 'practice' && showExplanation) {
+                if (showExplanation) {
                   if (isCorrect) style = 'bg-emerald-500 text-white border-transparent shadow-[0_0_30px_rgba(16,185,129,0.2)]';
                   else if (isSelected) style = 'bg-rose-500 text-white border-transparent opacity-60';
                   else style = 'bg-[#1a1a1c] border-transparent opacity-20';
@@ -205,8 +225,8 @@ export default function AppliedQuiz({ questions, onComplete, mode, startIndex = 
                   >
                     <span className="text-xs md:text-base font-semibold tracking-wide">{opt}</span>
                     <div className="w-8 h-8 rounded-full border border-current/20 flex items-center justify-center">
-                       {mode === 'practice' && showExplanation && isCorrect ? <span className="material-symbols-outlined text-sm font-bold">check</span> : 
-                        mode === 'practice' && showExplanation && isSelected && !isCorrect ? <span className="material-symbols-outlined text-sm font-bold">close</span> : 
+                       {showExplanation && isCorrect ? <span className="material-symbols-outlined text-sm font-bold">check</span> : 
+                        showExplanation && isSelected && !isCorrect ? <span className="material-symbols-outlined text-sm font-bold">close</span> : 
                         <span className="text-[10px] font-black opacity-20 group-hover:opacity-100 transition-opacity">{String.fromCharCode(65 + i)}</span>}
                     </div>
                   </button>
@@ -215,7 +235,7 @@ export default function AppliedQuiz({ questions, onComplete, mode, startIndex = 
             </div>
           </div>
 
-          {mode === 'practice' && showExplanation && (
+          {showExplanation && (
             <div className="mt-10 md:mt-16 p-6 md:p-10 bg-blue-500/5 border-2 border-blue-500/20 rounded-[32px] animate-in fade-in slide-in-from-bottom-4 duration-500">
               <div className="flex items-center gap-3 mb-4 md:mb-6">
                 <div className="w-8 h-8 rounded-xl bg-blue-500 flex items-center justify-center">
@@ -230,7 +250,7 @@ export default function AppliedQuiz({ questions, onComplete, mode, startIndex = 
                 onClick={() => nextQuestion()}
                 className="mt-8 md:mt-12 w-full md:w-auto bg-white text-black px-12 py-5 rounded-2xl font-bold text-xs uppercase tracking-[0.2em] hover:bg-blue-500 hover:text-white transition-all shadow-2xl"
               >
-                {currentIndex === shuffledQuestions.length - 1 ? 'Show Mastery' : 'Next Drill'}
+                {currentIndex === shuffledQuestions.length - 1 ? 'Show Mastery' : 'Next Question'}
               </button>
             </div>
           )}
