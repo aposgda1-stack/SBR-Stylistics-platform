@@ -1,0 +1,92 @@
+[
+  {
+    "id": "q1-foregrounding",
+    "chapter": "Foregrounding",
+    "title": "Exercise 1: Foregrounding Analysis",
+    "passage": "pity this busy monster, manunkind,\nnot. Progress is a comfortable disease;",
+    "hint": "ابحث عن كلمات مبتكرة (Neologisms) وتركيبات متناقضة (Paradoxes).",
+    "tasks": [
+      {
+        "type": "Foregrounding",
+        "instructions": "Identify the elements of foregrounding in this extract and classify their types."
+      }
+    ],
+    "correctAnswers": [
+      {
+        "text": "manunkind",
+        "category": "Foregrounding",
+        "type": "Deviation",
+        "subtype": "Lexical",
+        "explanation": "Lexical deviation achieved through neologism (nonce-formation) by blending 'mankind' and 'unkind'."
+      },
+      {
+        "text": "comfortable disease",
+        "category": "Foregrounding",
+        "type": "Deviation",
+        "subtype": "Semantic",
+        "explanation": "Semantic deviation involving paradox/mismatch between 'comfortable' and 'disease'."
+      }
+    ]
+  },
+  {
+    "id": "q2-foregrounding",
+    "chapter": "Foregrounding",
+    "title": "Exercise 2: Eliot's Hollow Men",
+    "passage": "We are the hollow men\nWe are the stuffed men",
+    "hint": "لاحظ التكرار في بنية الجملة (Syntactic Structure).",
+    "tasks": [
+      {
+        "type": "Foregrounding",
+        "instructions": "Identify parallelism or repetition in this extract."
+      }
+    ],
+    "correctAnswers": [
+      {
+        "text": "We are the hollow men\nWe are the stuffed men",
+        "category": "Foregrounding",
+        "type": "Parallelism",
+        "subtype": "",
+        "explanation": "Structural parallelism where the syntactic structure is identical but the lexical item (hollow/stuffed) varies."
+      },
+      {
+        "text": "We are the",
+        "category": "Foregrounding",
+        "type": "Repetition",
+        "subtype": "",
+        "explanation": "Repetition of the phrase 'We are the' emphasizes the collective, identical nature of the speakers."
+      }
+    ]
+  },
+  {
+    "id": "q3-cohesion",
+    "chapter": "Cohesion",
+    "title": "Exercise 3: Cohesive Devices",
+    "passage": "The main course was dried lamb chops, dried mashed potatoes, and tinned spaghetti in tomato sauce. Cassandra, leaning across to address someone, entangled her dangling crucifix in the spaghetti. It had to be wiped clean.",
+    "hint": "ركز على الضمائر (Pronouns) والكلمات المتكررة.",
+    "tasks": [
+      {
+        "type": "Cohesion",
+        "instructions": "Extract examples of cohesion, determine their type, and specify references if applicable."
+      }
+    ],
+    "options": {
+      "references": ["Cassandra", "crucifix", "spaghetti", "tomato sauce"]
+    },
+    "correctAnswers": [
+      {
+        "text": "spaghetti",
+        "category": "Cohesion",
+        "type": "Lexical",
+        "subtype": "Repetition",
+        "explanation": "Lexical cohesion through the repetition of the word 'spaghetti'."
+      },
+      {
+        "text": "It",
+        "category": "Cohesion",
+        "type": "Reference",
+        "correctOption": "crucifix",
+        "explanation": "Pronoun 'It' is an anaphoric reference back to the noun phrase 'crucifix'."
+      }
+    ]
+  }
+]

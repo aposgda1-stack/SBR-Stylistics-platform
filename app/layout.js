@@ -29,9 +29,18 @@ export default function RootLayout({ children }) {
 
   useEffect(() => {
     setMounted(true);
-    // Check for unread notifications
-    const lastRead = localStorage.getItem('stylistics_last_read_notif');
-    if (!lastRead) setHasUnreadNotifs(true);
+    
+    const checkUnread = async () => {
+      try {
+        const res = await fetch('/api/notifications');
+        const data = await res.json();
+        const readIds = JSON.parse(localStorage.getItem('sbr_notifications_read') || '[]');
+        const hasUnread = data.notifications.some(n => !readIds.includes(n.id));
+        setHasUnreadNotifs(hasUnread);
+      } catch (err) {
+        console.error('Notif check failed');
+      }
+    };
 
     const updatePoints = () => {
       const saved = JSON.parse(localStorage.getItem('stylistics_user_progress') || '{"totalPoints": 0}');
@@ -40,16 +49,19 @@ export default function RootLayout({ children }) {
 
     const forceUpdate = () => {
       updatePoints();
-      // Also force re-read of avatar from localStorage
       setMounted(prev => !prev); 
       setMounted(true);
     };
 
     updatePoints();
+    checkUnread();
     window.addEventListener('storage', updatePoints);
     window.addEventListener('stylistics_points_updated', updatePoints);
     window.addEventListener('avatarUpdate', forceUpdate);
-    const interval = setInterval(updatePoints, 5000);
+    const interval = setInterval(() => {
+      updatePoints();
+      checkUnread();
+    }, 10000); // Check every 10s
     
     return () => {
       window.removeEventListener('storage', updatePoints);

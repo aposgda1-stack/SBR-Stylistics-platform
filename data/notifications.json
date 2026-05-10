@@ -5,32 +5,35 @@
       "title": "Welcome to SBR 2026",
       "msg": "Master your stylistics exam with the official summarized platform. All 2020-2025 past papers are now live!",
       "date": "2026-05-08",
-      "type": "announcement",
-      "unread": true
+      "type": "announcement"
     },
     {
       "id": "new-exam-model",
       "title": "Model B Live",
       "msg": "New Mock Exam Model B is now available in the Exams section. Test your skills before Monday!",
       "date": "2026-05-08",
-      "type": "update",
-      "unread": true
+      "type": "update"
     },
     {
       "id": "curriculum-cleanup",
       "title": "Curriculum Cleanup",
       "msg": "We've reorganized Lecture 01 & 02 for better clarity. Detailed deviation questions have been moved to Lecture 02 to match the syllabus. Happy studying!",
       "date": "2026-05-09",
-      "type": "update",
-      "unread": true
+      "type": "update"
     },
     {
       "id": "exam-feedback-live",
       "title": "New: Academic Feedback in Exams",
       "msg": "By popular demand, real-time linguistic analysis and feedback are now available in all Past Papers and Final Exam models. Learn as you test!",
       "date": "2026-05-10",
-      "type": "feature",
-      "unread": true
+      "type": "feature"
+    },
+    {
+      "id": "applied-wizard-live",
+      "title": "New: Applied Linguistic Wizard",
+      "msg": "The interactive Mock Exam is here! Highlight texts and use our step-by-step wizard to classify Foregrounding, Cohesion, Maxims, and Faces. 100% automated grading enabled!",
+      "date": "2026-05-10",
+      "type": "new-feature"
     }
   ]
 }
