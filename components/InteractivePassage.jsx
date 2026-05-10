@@ -7,6 +7,7 @@ export default function InteractivePassage({ data, onComplete }) {
   const [selections, setSelections] = useState([]);
   const [pendingSelection, setPendingSelection] = useState([]); // Array of word indices
   const [currentSelection, setCurrentSelection] = useState(''); // The string text
+  const [currentStep, setCurrentStep] = useState(0); // 0: category, 1: type, 2: subtype/option
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [menuPosition, setMenuPosition] = useState({ x: 0, y: 0 });
   
@@ -51,6 +52,7 @@ export default function InteractivePassage({ data, onComplete }) {
     // Sort indices and join tokens to get the text
     const selectedText = pendingSelection.sort((a, b) => a - b).map(i => tokens[i]).join('').trim();
     setCurrentSelection(selectedText);
+    setCurrentStep(0); // Start at Step 0
     setIsMenuOpen(true);
     setType('');
     setSubtype('');
@@ -77,6 +79,7 @@ export default function InteractivePassage({ data, onComplete }) {
     setIsMenuOpen(false);
     setCurrentSelection(null);
     setPendingSelection([]);
+    setCurrentStep(0);
   };
 
   const removeSelection = (id) => {
@@ -263,8 +266,8 @@ export default function InteractivePassage({ data, onComplete }) {
               
               <div className="p-4">
                 <AnimatePresence mode="wait">
-                  {!type ? (
-                    <motion.div key="step1" initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -10 }}>
+                  {currentStep === 0 ? (
+                    <motion.div key="step0" initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -10 }}>
                       <label className="text-[10px] uppercase tracking-wider font-black text-slate-500 mb-3 block">الخطوة 1: حدد التصنيف العام</label>
                       <div className="grid grid-cols-2 gap-2">
                         {['Foregrounding', 'Cohesion', 'Maxims', 'Faces'].map((cat) => (
@@ -272,9 +275,7 @@ export default function InteractivePassage({ data, onComplete }) {
                             key={cat}
                             onClick={() => {
                               setCategory(cat);
-                              // We use a small hack to trigger the next step's "type" selection
-                              setType('pending'); 
-                              setTimeout(() => setType(''), 10);
+                              setCurrentStep(1);
                             }}
                             className={`p-3 rounded-xl text-xs font-bold border transition-all ${category === cat ? 'bg-emerald-500 border-emerald-400 text-black shadow-lg shadow-emerald-500/20' : 'bg-slate-800 border-slate-700 text-slate-300 hover:border-slate-500'}`}
                           >
@@ -283,10 +284,10 @@ export default function InteractivePassage({ data, onComplete }) {
                         ))}
                       </div>
                     </motion.div>
-                  ) : !subtype && (category === 'Foregrounding' || category === 'Cohesion' || category === 'Maxims' || category === 'Faces') ? (
-                    <motion.div key="step2" initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -10 }}>
+                  ) : currentStep === 1 ? (
+                    <motion.div key="step1" initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -10 }}>
                       <div className="flex items-center gap-2 mb-3">
-                        <button onClick={() => setType('')} className="text-slate-500 hover:text-white"><ArrowLeft size={14}/></button>
+                        <button onClick={() => setCurrentStep(0)} className="text-slate-500 hover:text-white"><ArrowLeft size={14}/></button>
                         <label className="text-[10px] uppercase tracking-wider font-black text-slate-500 block">الخطوة 2: حدد النوع في {category}</label>
                       </div>
                       <div className="grid grid-cols-2 gap-2">
@@ -297,7 +298,10 @@ export default function InteractivePassage({ data, onComplete }) {
                         ).map((t) => (
                           <button
                             key={t}
-                            onClick={() => setType(t)}
+                            onClick={() => {
+                              setType(t);
+                              setCurrentStep(2);
+                            }}
                             className="p-3 bg-slate-800 border border-slate-700 rounded-xl text-xs font-bold text-slate-200 hover:border-emerald-500 hover:text-emerald-400 transition-all"
                           >
                             {t}
@@ -306,9 +310,9 @@ export default function InteractivePassage({ data, onComplete }) {
                       </div>
                     </motion.div>
                   ) : (
-                    <motion.div key="step3" initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }}>
+                    <motion.div key="step2" initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }}>
                       <div className="flex items-center gap-2 mb-3">
-                        <button onClick={() => setType('')} className="text-slate-500 hover:text-white"><ArrowLeft size={14}/></button>
+                        <button onClick={() => setCurrentStep(1)} className="text-slate-500 hover:text-white"><ArrowLeft size={14}/></button>
                         <label className="text-[10px] uppercase tracking-wider font-black text-slate-500 block">الخطوة الأخيرة: حدد الخيار</label>
                       </div>
                       
